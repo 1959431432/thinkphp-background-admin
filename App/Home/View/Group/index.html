@@ -1,0 +1,48 @@
+<extend name="Public/base" />
+
+<block name="body">
+	<div class="wrapper">
+      <div class="bc">
+          <ul id="breadcrumbs" class="breadcrumbs">
+               <li class=""> <a href="{:U('Index/index')}">个人中心</a> </li>
+               <li class="current"><a href="#">我的等级</a></li>
+          </ul>
+          <div class="clear"></div>
+      </div>
+	
+		<!-- Events calendar -->
+		<div class="widget" style="background:#fff;">
+			<p>
+				<img src="__IMG__/huiyuan.png" alt="会员等级" width="100%" />
+			</p>
+			<div class="formRow">
+                <label>下一等级:</label>
+                <div class="formRight">
+                    <div class="contentProgress"><div class="barG tipS" id="bar9" title="{$progressWidth}%"></div></div>
+                    <ul class="ruler">
+                        <li>0</li>
+                        <li class="textC">&nbsp;</li>
+                        <li class="textR">{$_nextGroup.integral|abs}</li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="formRow">
+                <h2>当前等级 {$_userGroup.title} 福利</h2>
+                <div style="padding: 20px;overflow: hidden;">
+                	{$_userGroup.privilege|htmlspecialchars_decode}
+                </div>
+                <div class="clear"></div>
+            </div>
+            <notempty name="_nextGroup">
+	            <div class="formRow">
+	                <h2>下一等级 {$_nextGroup.title} 福利</h2>
+	                <div style="padding: 20px;overflow: hidden;">
+	                	{$_nextGroup.privilege|htmlspecialchars_decode}
+	                </div>
+	                <div class="clear"></div>
+	            </div>
+            </notempty>
+		</div>
+    </div>
+</block>

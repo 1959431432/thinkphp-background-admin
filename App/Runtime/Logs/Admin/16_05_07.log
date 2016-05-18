@@ -1,0 +1,77 @@
+[ 2016-05-07T21:57:48+08:00 ] ::1 /admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000171s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000468s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000525s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000145s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000203s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021348s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021393s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000108s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000131s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000315s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000348s ]
+
+[ 2016-05-07T21:57:50+08:00 ] ::1 /admin.php/Activity/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000167s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000253s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000278s ]
+SQL: SHOW COLUMNS FROM `e_activity` [ RunTime:0.0015s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_activity` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `e_activity` LIMIT 20   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000074s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000106s ]
+NOTIC: [8] Undefined index: title /Users/minghuang/www/exe/App/Runtime/Cache/Admin/40364c1d9e67faec4d35fbfb16f408f2.php 第 144 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010490s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010537s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000247s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000293s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000573s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000630s ]
+
+[ 2016-05-07T21:57:51+08:00 ] ::1 /admin.php/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000208s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000466s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000505s ]
+NOTIC: [2048] Declaration of Admin\Controller\UserController::condition() should be compatible with Admin\Controller\CommonController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/UserController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `e_user` [ RunTime:0.0014s ]
+NOTIC: [8] Undefined index: username /Users/minghuang/www/exe/App/Admin/Controller/UserController.class.php 第 10 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `e_user` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `e_user` LIMIT 20   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: link_page /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 142 行.
+NOTIC: [8] Undefined variable: the_first /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 159 行.
+NOTIC: [8] Undefined variable: the_end /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 159 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000074s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000114s ]
+NOTIC: [8] Undefined index: username /Users/minghuang/www/exe/App/Runtime/Cache/Admin/4295d5db477f3199c8db51638416159f.php 第 144 行.
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0016s ]
+SQL: SELECT `title` FROM `e_group` WHERE ( integral<=300012 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0016s ]
+SQL: SELECT `title` FROM `e_group` WHERE ( integral<=0 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `title` FROM `e_group` WHERE ( integral<=0 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014711s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014735s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000142s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000163s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000321s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000348s ]
+

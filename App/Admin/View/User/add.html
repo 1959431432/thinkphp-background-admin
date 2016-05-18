@@ -1,0 +1,173 @@
+<extend name="Public/base" />
+
+<block name="body">
+
+	 <!-- Main content wrapper -->
+    <div class="wrapper">
+        <div class="bc">
+            <ul id="breadcrumbs" class="breadcrumbs">
+                 <li class=""> <a href="{:U('Index/index')}">控制中心</a> </li>
+                 <li class=""> <a href="{:U('index')}">会员管理</a> </li>
+                 <li class="current"><a href="#">会员添加</a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <!-- Validation form -->
+        <form class="form validate" method="post" action="{:U('save')}">
+            <input type="hidden" name='id' value="{$vo.id}">
+        	<fieldset>
+                <div class="widget">
+                    <div class="title"><img src="__IMG__/icons/dark/alert.png" alt="" class="titleIcon" /><h6>会员表单</h6></div>
+
+                    <div class="formRow">
+                        <label>会员帐号:<span class="req">*</span></label>
+                        <div class="formRight">
+                            <input type="text" class="validate[required]" name="username" id="username" value="{$vo.username}"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+
+                    <div class="formRow">
+                        <label>会员密码:</label>
+                        <div class="formRight">
+                            <input type="text" value="" name='password' />
+                            <span class="formNote">如不修改则留空</span>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>会员经验:</label>
+                        <div class="formRight">
+                            <input type="number" name="level" id="level" value="{$vo.level|default=0}"/>
+                            <span class="formNote">会员经验(等级经验,自动获取用户等级)</span>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>会员姓名:</label>
+                        <div class="formRight">
+                            <input type="text" name="name" id="name" value="{$vo.name}"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>身份证号:</label>
+                        <div class="formRight">
+                            <input type="number" name="id_number" id="id_number" value="{$vo.id_number}"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>联系手机:</label>
+                        <div class="formRight">
+                            <input type="number" name="phone" id="phone" value="{$vo.phone}"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>其他手机:</label>
+                        <div class="formRight">
+                            <input type="number" name="other_phone" id="other_phone" value="{$vo.other_phone}"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>联系邮箱:</label>
+                        <div class="formRight">
+                            <input type="email" name="email" id="email" value="{$vo.email}"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>签到天数:</label>
+                        <div class="formRight">
+                            <input type="number" name="days" id="days" value="{$vo.days}"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>生日:</label>
+                        <div class="formRight">
+                            <input type="date" name="birth" id="birth" value="{$vo.birth}"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>详细地址:</label>
+                        <div class="formRight">
+                            <input type="text" name="address" id="address" value="{$vo.address}"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>会员积分:</label>
+                        <div class="formRight">
+                            <input type="text" name="rank" id="rank" value="{$vo.rank}"/>
+                            <span class="formNote">用于兑换商品、游戏筹码</span>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>注册时间:</label>
+                        <div class="formRight">
+                            <input type="date" disabled="disabled" name="addtime" id="addtime" value="{$vo.addtime|date='Y-m-d',###}"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>登录IP:</label>
+                        <div class="formRight">
+                            <input type="text" disabled="disabled" name="lastip" id="lastip" value="{$vo.lastip}"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>登录地址:</label>
+                        <div class="formRight">
+                            <input type="text" disabled="disabled" name="lastarea" id="lastarea" value="{$vo.lastarea}"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>登录时间:</label>
+                        <div class="formRight">
+                            <input type="date" disabled="disabled" name="lastlogin" id="lastlogin" value="{$vo.lastlogin|date='Y-m-d',###}"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>会员状态:<span class="req">*</span></label>
+                        <div class="formRight">
+                            <div class="floatL" style="margin: 2px 0 0 0;">
+
+                            <input type="radio" id="radioReq" name="status" class="validate[required]" data-prompt-position="topRight:102" value='1' checked="checked" /><label for="radioReq">开启</label>
+                            <input type="radio" id="radioReq" name="status" class="validate[required]" data-prompt-position="topRight:102" value='2' <eq name="vo.status" value='2'> checked='checked'</eq> /><label for="radioReq">关闭</label>
+
+                            </div>
+                        </div><div class="clear"></div>
+                    </div>
+                    
+                    <div class="formSubmit"><input type="submit" value="提交" class="redB" /></div>
+                    <div class="clear"></div>
+                </div>
+                
+            </fieldset>
+        </form>       
+    </div>
+</block>   

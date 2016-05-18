@@ -1,0 +1,72 @@
+<extend name="Public/base" />
+
+<block name="body">
+	<div class="wrapper">
+      <div class="bc">
+          <ul id="breadcrumbs" class="breadcrumbs">
+               <li class=""> <a href="{:U('Index/index')}">个人中心</a> </li>
+               <li class=""> <a href="{:U('Days/index')}">签到排名</a> </li>
+               <li class="current"><a href="#">查看会员签到记录</a></li>
+          </ul>
+
+          <div class="clear"></div>
+      </div>
+	
+
+		<!-- Events calendar -->
+		<div class="widget">
+			<div class="title">
+				<img src="__IMG__/icons/dark/monthCalendar.png" alt="" class="titleIcon" />
+				<h6>
+					签到记录
+				</h6>
+			</div>
+			<div class="calendar"></div>
+		</div>
+    </div>
+    <script type="text/javascript">
+    	jQuery( function( $ ){
+    		//===== Calendar =====//
+			$('.calendar').fullCalendar({
+				header: {
+					left: 'prev,next',
+					center: 'title',
+					right: 'month'
+				},
+				monthNames: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+		        monthNamesShort: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+		        dayNames: ["周日", "周一", "周二", "周三", "周四", "周五", "周六"],
+		        dayNamesShort: ["周日", "周一", "周二", "周三", "周四", "周五", "周六"],
+		        today: ["今天"],
+		        firstDay: 1,
+		        buttonText: {
+		            today: '本月',
+		            month: '月',
+		            week: '周',
+		            day: '日'
+		        },
+				editable: false,
+				events: [
+					<volist name="userSigns" id="sign">
+						{ title: '签到成功', start: "{$sign.addtime}" },
+					</volist>
+				]
+			});
+
+			$("#daysButton").click( function()
+			{
+				var ii = layer.load();
+				$.get("{:U('sign')}",{}, function( res ){
+					if( res.status == 1 ){
+						layer.msg( res.info , {icon: 6}, function(){
+							window.location.reload();
+						});
+					} else {
+						layer.msg( res.info , {icon: 5});
+					}
+		            layer.close(ii);					
+				});
+			});
+    	})
+    </script>
+</block>

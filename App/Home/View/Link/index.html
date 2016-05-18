@@ -1,0 +1,26 @@
+<extend name="Public/base" />
+
+<block name="body">
+<iframe id="showIframe" src="//baidu.com"></iframe>
+<div id="showHidenButton">隐藏
+</div>
+<script type="text/javascript">
+	$(function()
+	{
+		var bodyHeight = document.body.scrollHeight;
+		$("#showIframe").css('height',bodyHeight);
+		$("#showHidenButton").click( function(){
+			var h = $(this).html();
+			if( h == '显示'){
+				$('#leftSide').show();
+				$(this).html('隐藏');
+				$("#showIframe").css('position','relative');
+			} else {
+				$("#showIframe").css('position','absolute');
+				$('#leftSide').hide();
+				$(this).html('显示');
+			}
+		});
+	});
+</script>
+</block>

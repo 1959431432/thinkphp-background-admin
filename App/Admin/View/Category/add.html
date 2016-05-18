@@ -1,0 +1,60 @@
+<extend name="Public/base" />
+
+<block name="body">
+
+	<!-- Main content wrapper -->
+    <div class="wrapper">
+        <div class="bc">
+          <ul id="breadcrumbs" class="breadcrumbs">
+               <li class=""> <a href="{:U('Index/index')}">控制中心</a> </li>
+               <li class=""> <a href="{:U('Category/index')}">文章栏目</a> </li>
+               <li class="current"><a href="#">栏目管理</a></li>
+          </ul>
+          <div class="clear"></div>
+       </div>
+        <!-- Validation form -->
+        <form class="form validate" method="post" action="{:U('save')}">
+            <input type="hidden" name='id' value="{$vo.id}">
+        	<fieldset>
+                <div class="widget">
+                    <div class="title"><img src="__IMG__/icons/dark/alert.png" alt="" class="titleIcon" /><h6>文章栏目表单</h6></div>
+                    <div class="formRow">
+                        <label>栏目名称:<span class="req">*</span></label>
+                        <div class="formRight"><input type="text" id="category_name" class="validate[required]" name="title" id="req" value="{$vo.title}"/></div><div class="clear"></div>
+                    </div>
+                    
+                    <div class="formRow">
+                        <label>调用键:<span class="req">*</span></label>
+                        <div class="formRight"><input type="text" id="category_key" class="validate[required,custom[onlyLetterSp]]" name='key' value="{$vo.key}" /></div><div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>显示位置:</label>
+                        <div class="formRight"><input type="number" value="{$vo.position|default=0}" name='position' /></div><div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>栏目排序:</label>
+                        <div class="formRight"><input type="number" value="{$vo.sort|default=0}" name='sort' /><span class="formNote">数值越大越在前面</span></div><div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>是否开启:<span class="req">*</span></label>
+                        <div class="formRight">
+                            <div class="floatL" style="margin: 2px 0 0 0;">
+
+                            <input type="radio" id="radioReq" name="status" class="validate[required]" data-prompt-position="topRight:102" value='1' checked="checked" /><label for="radioReq">开启</label>
+                            <input type="radio" id="radioReq" name="status" class="validate[required]" data-prompt-position="topRight:102" value='2' <eq name="vo.status" value='2'> checked='checked'</eq> /><label for="radioReq">关闭</label>
+
+                            </div>
+                        </div><div class="clear"></div>
+                    </div>
+                    
+                    <div class="formSubmit"><input type="submit" value="submit" class="redB" /></div>
+                    <div class="clear"></div>
+                </div>
+            </fieldset>
+        </form>       
+    </div>
+
+</block>

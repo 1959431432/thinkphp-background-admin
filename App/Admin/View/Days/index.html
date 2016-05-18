@@ -1,0 +1,73 @@
+<extend name="Public/base" />
+
+<block name="body">
+    <div class="wrapper">
+      <div class="bc">
+          <ul id="breadcrumbs" class="breadcrumbs">
+               <li class=""> <a href="{:U('Index/index')}">控制中心</a> </li>
+               <li class="current"><a href="#">签到排名</a></li>
+          </ul>
+          <div class="clear"></div>
+      </div>
+      <div class="widgets">
+			<div class="oneTwo">
+				<div class="widget">
+	                <div class="title"><img src="__IMG__/icons/dark/stats.png" alt="" class="titleIcon"><h6>今日签到</h6></div>
+	                <div class="updates">
+	                	<volist name="today" id="day">
+		                	<div class="newUpdate">
+		                        <div class="uDone">
+		                            <a href="{:U('detail',array('uid'=>$day['uid']))}" title="查看会员签到记录">
+		                            	<i style="padding: 2px 5px;background: #9E9E9E;color: #fff;margin-right: 8px;    vertical-align: bottom;">{$i}</i>
+		                            	<strong>
+		                            		<img src="__IMG__/{$day.uid|getUserImg}" style="vertical-align: middle;">
+		                            		{$day.uid|getUsername}
+		                            	</strong>
+		                            </a>
+		                        </div>
+		                        <div class="uDate"><span class="uDay"></span></div>
+		                        <div class="clear"></div>
+		                    </div>
+	                    </volist>
+	                    <div class="newUpdate">
+	                    	<div class="body textC">
+		                        <!-- Sample page content to illustrate the layering of the dialog -->
+		                        <a href="#" title="" class="button greyishB" id="opener" style="margin: 5px;"><span>查看更多今日签到</span></a>
+		                    </div>
+	                    </div>	
+	                </div>
+	            </div>
+			</div>
+			<div class="oneTwo">
+				<div class="widget">
+	                <div class="title"><img src="__IMG__/icons/dark/stats.png" alt="" class="titleIcon"><h6>总签到排名</h6></div>
+	                
+	                <div class="updates">
+	                	<volist name="sumDay" id="day">
+		                	<div class="newUpdate">
+		                        <div class="uDone">
+		                            <a href="{:U('detail',array('uid'=>$day['uid']))}" title="查看会员签到记录">
+		                            	<i style="padding: 2px 5px;background: #9E9E9E;color: #fff;margin-right: 8px;    vertical-align: bottom;">{$i}</i>
+		                            	<strong>
+		                            		<img src="__IMG__/{$day.uid|getUserImg}" style="vertical-align: middle;">
+		                            		{$day.uid|getUsername}
+		                            	</strong>
+		                            </a>
+		                        </div>
+		                        <div class="uDate"><span class="uDay">{$day.total}天</span></div>
+		                        <div class="clear"></div>
+		                    </div>
+	                    </volist>
+	                    <div class="newUpdate">
+	                    	<div class="body textC">
+		                        <!-- Sample page content to illustrate the layering of the dialog -->
+		                        <a href="#" title="" class="button greyishB" id="opener" style="margin: 5px;"><span>查看更多总签到</span></a>
+		                    </div>
+	                    </div>	
+	                </div>
+	            </div>
+			</div>
+			<div class="clear"></div>
+		</div>
+    </div>
+</block>

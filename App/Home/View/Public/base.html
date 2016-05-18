@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+<title>Crown - premium responsive admin template for backend systems</title>
+<link href="__CSS__/main.css" rel="stylesheet" type="text/css" />
+<link href="__CSS__/style.css" rel="stylesheet" type="text/css" />
+
+<include file="Common@Tool:script" />
+
+<body>
+
+<!-- Left side content -->
+<div id="leftSide">
+    <div class="logo"><a href="index.html"><img src="__IMG__/logo.png" alt="" /></a></div>
+    
+    <div class="sidebarSep"></div>
+
+    <!-- General balance widget -->
+    <div class="genBalance">
+        <a href="#" title="" class="amount">
+            <span> 当前积分:</span>
+            <span class="balanceAmount">
+                {:session('user.level')}
+            </span>
+        </a>
+    </div>
+    <!-- Next update progress widget -->
+    <div class="nextUpdate">
+        <ul>
+            <li><img src="__IMG__/{$_userGroup.img}" title='{$_userGroup.title}' title='{$_userGroup.title}'> &nbsp; 下一等级:</li>
+            <li>还需
+                <?php 
+                    $progressWidth = $_user['level'] / $_nextGroup['integral'] * 100;
+                    $diffIntegral  = $_nextGroup['integral'] - $_user['level'];
+                    echo $diffIntegral;
+                ?></li>
+        </ul>
+        <div class="pWrapper"><div class="progressG" title="{$progressWidth}%"></div></div>
+    </div>
+    
+    <div class="sidebarSep"></div>
+    
+    <!-- Left navigation -->
+    <ul id="menu" class="nav">
+        <volist name="_menu" id="menus">
+            <if condition="$menus['children'] neq false">
+                <li class="{$menus.class}"><a class='exp inactive' href="#" title=""><span>{$menus.title}</span></a>
+                    <ul class="sub">
+                        <volist name="menus['children']" id="menu">
+                            <li><a href="{:U($menu['url'])}" title="">{$menu.title}</a></li>
+                        </volist>
+                    </ul>
+                </li>
+            <else />
+                <li class="{$menus.class}"><a href="{:U($menus['url'])}" title=""><span>{$menus.title}</span></a></li>
+            </if>
+        </volist>
+    </ul>
+</div>
+
+
+<!-- Right side -->
+<div id="rightSide">
+    <!-- Top fixed navigation -->
+    <div class="topNav">
+        <div class="wrapper">
+            <div class="welcome"><a href="#" title=""><img src="__IMG__/userPic.png" alt="" /></a><span>您好，{$_user['username']}</span></div>
+            <div class="userNav">
+                <ul>
+                    <li><a href="{:U('setting/index')}" title=""><img src="__IMG__/icons/topnav/profile.png" alt="" /><span>个人资料</span></a></li>
+                    <li><a href="{:U('Public/logout')}" title="退出客户端"><img src="__IMG__/icons/topnav/logout.png" alt="" /><span>退出</span></a></li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <!-- Responsive header -->
+    <div class="resp">
+        <div class="respHead">
+            <a href="index.html" title=""><img src="__IMG__/loginLogo.png" alt="" /></a>
+        </div>
+        
+        <div class="cLine"></div>
+        <div class="smalldd">
+            <span class="goTo"><img src="__IMG__/icons/light/home.png" alt="" />导航菜单</span>
+            <ul class="smallDropdown">
+                <volist name="_menu" id="menus">
+                    <if condition="$menus['children'] neq false">
+                        <li class="{$menus.class}"><a class='exp' href="#" title=""><span>{$menus.title}</span></a>
+                            <ul class="sub">
+                                <volist name="menus['children']" id="menu">
+                                    <li><a href="{:U($menu['url'])}" title="">{$menu.title}</a></li>
+                                </volist>
+                            </ul>
+                        </li>
+                    <else />
+                        <li class="{$menus.class}"><a href="{:U($menus['url'])}" title=""><span>{$menus.title}</span></a></li>
+                    </if>
+                </volist>
+            </ul>
+        </div>
+        <div class="cLine"></div>
+    </div>
+
+
+    <!-- Title area -->
+   <!--  <div class="titleArea">
+        <div class="wrapper">
+            <div class="pageTitle">
+                <h5>Dashboard</h5>
+                <span>Do your layouts deserve better than Lorem Ipsum.</span>
+            </div>
+            <div class="middleNav">
+                <ul>
+                    <li class="mUser">
+                        <a title="会员等级排名" class="tipN"><span class="users"></span></a>
+                    </li>
+                    <li class="mMessages">
+                        <a title="网站消息" class='tipN'>
+                            <span class="messages"></span>
+                            <span class="numberMiddle">8</span>
+
+                        </a>
+                    </li>
+                    <li class="mFiles">
+                        <a href="#" title="优惠活动" class="tipN">
+                            <span class="files"></span>
+                        </a>
+                    </li>
+                    <li class="mOrders">
+                        <a title="积分商品" class="tipN">
+                            <span class="orders"></span>
+                            <span class="numberMiddle">8</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+     -->
+    <div class="line"></div>
+
+
+    <!-- 管理员显示
+        
+    <div class="statsRow">
+        <div class="wrapper">
+            <div class="controlB">
+                <ul>
+                    <li><a href="#" title=""><img src="__IMG__/icons/control/32/plus.png" alt="" /><span>Add new session</span></a></li>
+                    <li><a href="#" title=""><img src="__IMG__/icons/control/32/database.png" alt="" /><span>New DB entry</span></a></li>
+                    <li><a href="#" title=""><img src="__IMG__/icons/control/32/hire-me.png" alt="" /><span>Add new user</span></a></li>
+                    <li><a href="#" title=""><img src="__IMG__/icons/control/32/statistics.png" alt="" /><span>Check statistics</span></a></li>
+                    <li><a href="#" title=""><img src="__IMG__/icons/control/32/comment.png" alt="" /><span>Review comments</span></a></li>
+                    <li><a href="#" title=""><img src="__IMG__/icons/control/32/order-149.png" alt="" /><span>Check orders</span></a></li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="line"></div>
+
+    -->
+
+    <block name="body">
+
+    </block>
+
+    <!-- Footer line -->
+    <div id="footer">
+        <div class="wrapper">As usually all rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></div>
+    </div>
+
+</div>
+
+<div class="clear"></div>
+
+</body>
+</html>

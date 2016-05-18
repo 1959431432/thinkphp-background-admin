@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+<title>注册新会员</title>
+<link href="__CSS__/main.css" rel="stylesheet" type="text/css" />
+<link href="__CSS__/style.css" rel="stylesheet" type="text/css" />
+
+<include file="Common@Tool:script" />
+
+</head>
+
+
+<body style="background: none;">
+<!-- Main content wrapper -->
+<div class="loginWrapper">
+    <div class="loginLogo"><img src="__IMG__/loginLogo.png" alt="" /></div>
+    <div class="widget">
+        <div class="title"><img src="__IMG__/icons/dark/files.png" alt="" class="titleIcon" /><h6>注册新会员</h6></div>
+        <form action="" class="form validate" method="post">
+            <fieldset>
+                <div class="formRow">
+                    <label for="username">帐号:</label>
+                    <div class="loginInput"><input type="text" name="username" class="validate[required]" id="username" /></div>
+                    <div class="clear"></div>
+                </div>
+                
+                <div class="formRow">
+                    <label for="password">密码:</label>
+                    <div class="loginInput"><input type="password" name="password" class="validate[required]" id="password" /></div>
+                    <div class="clear"></div>
+                </div>
+                
+                <div class="loginControl">
+                    <div class="rememberMe"><a href="{:U('Public/login')}">已有帐号？立即登录</a></div>
+                    <input type="submit" value="注册" class="dredB logMeIn" />
+                    <div class="clear"></div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>    
+<div class="clear"></div>
+</body>
+</html>
