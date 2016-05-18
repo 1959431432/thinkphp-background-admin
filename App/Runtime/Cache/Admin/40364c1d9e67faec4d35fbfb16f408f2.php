@@ -179,7 +179,7 @@
               </thead>
               <tbody>
 	        	<?php if(is_array($lists)): $i = 0; $__LIST__ = $lists;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="gradeA">
-		       			<td class="center"><?php echo ($vo["title"]); ?></td>
+		       			<td class="center searchContent"><?php echo ($vo["title"]); ?></td>
 		       			<td class="center"><?php echo (getGroupTitle($vo["integral"])); ?></td>
 		       			<td class="center"><?php echo (date('Y-m-d',$vo["starttime"])); ?></td>
 		       			<td class="center"><?php echo (date('Y-m-d',$vo["endtime"])); ?></td>

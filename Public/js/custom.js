@@ -718,8 +718,6 @@ $(function() {
 	
 	$("select, input:checkbox, input:radio, input:file").uniform();
 
-	
-
 
 	$(".confirm").on('click',function()
 	{
@@ -731,20 +729,35 @@ $(function() {
 		}
 	});
 
+	new showSearch().run();
 });
 
-function searchToggle(obj, evt){
-    var container = $(obj).closest('.search-wrapper');
 
-    if(!container.hasClass('active')){
-          container.addClass('active');
-          evt.preventDefault();
-    }
-    else if(container.hasClass('active') && $(obj).closest('.input-holder').length == 0){
-          container.removeClass('active');
-          // clear input
-          container.find('.search-input').val('');
-          // clear and hide result container when we press close
-          container.find('.result-container').fadeOut(100, function(){$(this).empty();});
-    }
+// 替换搜索高亮
+// @搜索框必须加一个class等于searchInput
+// @显示内容替换成高亮必须加一个class等于searchContent
+function showSearch(){
+	this.run = function()
+	{
+		var searchInputName = $('.searchInput').attr('name'),searchInputValue= this.GetQueryString( searchInputName );
+		$('.searchContent').each( function(){
+			var t = decodeURIComponent($(this).html());
+			var r = t.replace( searchInputValue, "<b style='color:#F44336'>"+searchInputValue+"</b>");
+			$(this).html( r );
+		})
+	}
+	this.GetQueryString = function( name ){
+		var s = window.location.search.replace('?','');
+	    var arrStr = s.split( '&' );
+	    for( k in arrStr ){
+	    	if( k ){
+	    		var a = arrStr[k].split('=');
+	    		if( a[0] == name ){
+	    			// 对utf8编码转换成gbk
+	    			return decodeURIComponent(a[1]); 
+	    		}
+	    	}
+	    }
+	}
 }
+

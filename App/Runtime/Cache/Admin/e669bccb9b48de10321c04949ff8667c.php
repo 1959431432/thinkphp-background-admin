@@ -140,76 +140,82 @@
     </div>
     
     
-
-
-	<div class="wrapper">
-		<div class="bc">
+	
+    <!-- Main content wrapper -->
+    <div class="wrapper">
+        <div class="bc">
             <ul id="breadcrumbs" class="breadcrumbs">
                  <li class=""> <a href="<?php echo U('Index/index');?>">控制中心</a> </li>
-                 <li class="current"><a href="#">文章列表</a></li>
+                 <li class=""> <a href="<?php echo U('index');?>">文章列表</a> </li>
+                 <li class="current"><a href="#">文章管理</a></li>
             </ul>
             <div class="clear"></div>
         </div>
-	  <div class="widget">
-        <div class="title">
-		  <h6>文章列表</h6>
-		  <h6 class='fr'>
-		  	<a class='' href="<?php echo U('add');?>">＋添加</a>
-		  </h6>
-		  <h6 class="fr">
-		  	<form class='form'> 
-		  		<input type="text" class='searchInput' name="title" placeholder="请输入文章标题" value="<?php echo ($_GET['title']); ?>" /> 
-		  		<input type='submit' class='redB searchButton' value='搜索'>
-		  	</form>
-		  </h6>
-        </div>
-          <table cellpadding="0" cellspacing="0" width="100%" class="sTable withCheck display">
-              <thead>
-                  <tr>
-                    <th>文章标题</th>
-		            <!-- <th>说明</th> -->
-		            <th>调用键</th>
-		            <th>点击次数</th>
-		            <th>排序</th>
-		            <th>添加时间</th>
-		            <th>操作</th>
-                  </tr>
-              </thead>
-              <tbody>
-	        	<?php if(is_array($lists)): $i = 0; $__LIST__ = $lists;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="gradeA">
-		       			<td class="center searchContent"><?php echo ($vo["title"]); ?></td>
-		       			<td class="center"><?php echo ((isset($vo["key"]) && ($vo["key"] !== ""))?($vo["key"]):"暂无"); ?></td>
-		       			<td class="center"><?php echo ($vo["click"]); ?></td>
-		       			<td class="center"><?php echo ($vo["sort"]); ?></td>
-		       			<td class="center"><?php echo (date('Y-m-d H:i',$vo["add_time"])); ?></td>
-		       			<td class="center">
-		       				<a class='confirm' href="<?php echo U('del',array('id'=>$vo['id']));?>">删除</a> &nbsp;&nbsp;
-		       				<a href="<?php echo U('add',array('id'=>$vo['id']));?>">修改</a>
-		       			</td>
-			        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-              </tbody>
-              <tfoot>
-              	<tr>
-              		<td colspan="6" class='pagination'>
-              			<?php echo ($showPage); ?>
-              		</td>
-              	</tr>
-              </tfoot>
-          </table>
-        </div>
-	</div>
-	<script type="text/javascript">
-		oTable = $('.dTable').dataTable({
-			"bJQueryUI": true,
-			"sPaginationType": "full_numbers",
-			"sDom": '<""l>t<"F"fp>',
-			'oLanguage':{
-				"sProcessing": "正在加载中......",
-				"sLengthMenu": "<span class='itemsPerPage'>每页显示:</span> _MENU_",
-				"sSearch": "搜索",
-			}
-		});
-	</script>
+
+        <!-- Validation form -->
+        <form class="form validate" method="post" action="<?php echo U('save');?>">
+            <input type="hidden" name='id' value="<?php echo ($vo["id"]); ?>">
+        	<fieldset>
+                <div class="widget">
+                    <div class="title"><img src="/Public/images//icons/dark/alert.png" alt="" class="titleIcon" /><h6>文章表单</h6></div>
+                    <div class="formRow">
+                        <label>文章标题:<span class="req">*</span></label>
+                        <div class="formRight"><input type="text" class="validate[required]" name="title" id="req" value="<?php echo ($vo["title"]); ?>"/></div><div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>文章栏目:<span class="req">*</span></label>
+                        <div class="formRight">
+                        <select name="cid" id="cid" data-placeholder="请选择文章栏目" class="validate[required]]">
+                                <option value="">请选择文章栏目</option> 
+                                <?php if(is_array($categorys)): $i = 0; $__LIST__ = $categorys;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$category): $mod = ($i % 2 );++$i;?><option value="<?php echo ($category["id"]); ?>" <?php if(($vo["cid"]) == $category["id"]): ?>selected='selected'<?php endif; ?>>
+                                        <?php echo ($category["title"]); ?>
+                                    </option><?php endforeach; endif; else: echo "" ;endif; ?>
+                            </select>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    
+                    <div class="formRow">
+                        <label>调用键:</label>
+                        <div class="formRight"><input type="text" placeholder="可以为空" name='key' value="<?php echo ($vo["key"]); ?>" /></div><div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>点击次数:</label>
+                        <div class="formRight"><input type="number" value="<?php echo ((isset($vo["click"]) && ($vo["click"] !== ""))?($vo["click"]):0); ?>" name='click' /></div><div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>文章排序:</label>
+                        <div class="formRight"><input type="number" value="<?php echo ((isset($vo["sort"]) && ($vo["sort"] !== ""))?($vo["sort"]):0); ?>" name='sort' /><span class="formNote">数值越大越在前面</span></div><div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>文章内容:</label>
+                        <div class="formRight"><textarea rows="8" cols="" id='editor' name="content" placeholder="可以为空"><?php echo ($vo["content"]); ?></textarea></div><div class="clear"></div>
+                    </div>
+                    
+                    <div class="formRow">
+                        <label>是否开启:<span class="req">*</span></label>
+                        <div class="formRight">
+                            <div class="floatL" style="margin: 2px 0 0 0;">
+
+                            <input type="radio" id="radioReq" name="status" class="validate[required]" data-prompt-position="topRight:102" value='1' checked="checked" /><label for="radioReq">开启</label>
+                            <input type="radio" id="radioReq2" name="status" class="validate[required]" data-prompt-position="topRight:102" value='2' <?php if(($vo["status"]) == "2"): ?>checked='checked'<?php endif; ?> /><label for="radioReq2">关闭</label>
+
+                            </div>
+                        </div><div class="clear"></div>
+                    </div>
+                    
+                    <div class="formSubmit"><input type="submit" value="submit" class="redB" /></div>
+                    <div class="clear"></div>
+                </div>
+                
+            </fieldset>
+        </form>       
+    </div>
+
 
     <!-- Footer line -->
     <div id="footer">

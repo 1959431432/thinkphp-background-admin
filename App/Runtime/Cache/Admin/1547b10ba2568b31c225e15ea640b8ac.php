@@ -140,76 +140,48 @@
     </div>
     
     
-
-
-	<div class="wrapper">
-		<div class="bc">
-            <ul id="breadcrumbs" class="breadcrumbs">
-                 <li class=""> <a href="<?php echo U('Index/index');?>">控制中心</a> </li>
-                 <li class="current"><a href="#">文章列表</a></li>
-            </ul>
-            <div class="clear"></div>
-        </div>
-	  <div class="widget">
+    
+    <div class="wrapper">
+      <div class="bc">
+          <ul id="breadcrumbs" class="breadcrumbs">
+               <li class=""> <a href="<?php echo U('Index/index');?>">控制中心</a> </li>
+               <li class="current"><a href="#">分组管理</a></li>
+          </ul>
+          <div class="clear"></div>
+      </div>
+      <div class="widget">
         <div class="title">
-		  <h6>文章列表</h6>
-		  <h6 class='fr'>
-		  	<a class='' href="<?php echo U('add');?>">＋添加</a>
-		  </h6>
-		  <h6 class="fr">
-		  	<form class='form'> 
-		  		<input type="text" class='searchInput' name="title" placeholder="请输入文章标题" value="<?php echo ($_GET['title']); ?>" /> 
-		  		<input type='submit' class='redB searchButton' value='搜索'>
-		  	</form>
-		  </h6>
+          <h6>会员分组</h6>
         </div>
-          <table cellpadding="0" cellspacing="0" width="100%" class="sTable withCheck display">
+          <table cellpadding="0" cellspacing="0" width="100%" class="sTable withCheck display dTable">
               <thead>
                   <tr>
-                    <th>文章标题</th>
-		            <!-- <th>说明</th> -->
-		            <th>调用键</th>
-		            <th>点击次数</th>
-		            <th>排序</th>
-		            <th>添加时间</th>
-		            <th>操作</th>
+                    <th>名称</th>
+                    <th>积分</th>
+                    <th>图片</th>
+                    <th>排序</th>
+                    <th>状态</th>
+                    <th>操作</th>
                   </tr>
               </thead>
               <tbody>
-	        	<?php if(is_array($lists)): $i = 0; $__LIST__ = $lists;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="gradeA">
-		       			<td class="center searchContent"><?php echo ($vo["title"]); ?></td>
-		       			<td class="center"><?php echo ((isset($vo["key"]) && ($vo["key"] !== ""))?($vo["key"]):"暂无"); ?></td>
-		       			<td class="center"><?php echo ($vo["click"]); ?></td>
-		       			<td class="center"><?php echo ($vo["sort"]); ?></td>
-		       			<td class="center"><?php echo (date('Y-m-d H:i',$vo["add_time"])); ?></td>
-		       			<td class="center">
-		       				<a class='confirm' href="<?php echo U('del',array('id'=>$vo['id']));?>">删除</a> &nbsp;&nbsp;
-		       				<a href="<?php echo U('add',array('id'=>$vo['id']));?>">修改</a>
-		       			</td>
-			        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+                <?php if(is_array($lists)): $i = 0; $__LIST__ = $lists;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="gradeA">
+                        <td class="center"><?php echo ($vo["title"]); ?></td>
+                        <td class="center"><?php echo ($vo["integral"]); ?></td>
+                        <td class="center"><img src="/Public/images//<?php echo ($vo["img"]); ?>"></td>
+                        <td class="center"><?php echo ($vo["order"]); ?></td>
+                        <td class="center">
+                            <?php echo (statusTitle($vo["status"])); ?>
+                        </td>
+                        <td class="center">
+                            <a class='confirm' href="<?php echo U('del',array('id'=>$vo['id']));?>">删除</a> &nbsp;&nbsp;
+                            <a href="<?php echo U('add',array('id'=>$vo['id']));?>">修改</a>
+                        </td>
+                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
               </tbody>
-              <tfoot>
-              	<tr>
-              		<td colspan="6" class='pagination'>
-              			<?php echo ($showPage); ?>
-              		</td>
-              	</tr>
-              </tfoot>
           </table>
         </div>
-	</div>
-	<script type="text/javascript">
-		oTable = $('.dTable').dataTable({
-			"bJQueryUI": true,
-			"sPaginationType": "full_numbers",
-			"sDom": '<""l>t<"F"fp>',
-			'oLanguage':{
-				"sProcessing": "正在加载中......",
-				"sLengthMenu": "<span class='itemsPerPage'>每页显示:</span> _MENU_",
-				"sSearch": "搜索",
-			}
-		});
-	</script>
+    </div>
 
     <!-- Footer line -->
     <div id="footer">

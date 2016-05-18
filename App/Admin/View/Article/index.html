@@ -19,7 +19,7 @@
 		  </h6>
 		  <h6 class="fr">
 		  	<form class='form'> 
-		  		<input type="text" class='searchInput' name="username" placeholder="请输入文章标题" value="{$_GET['username']}" /> 
+		  		<input type="text" class='searchInput' name="title" placeholder="请输入文章标题" value="{$_GET['title']}" /> 
 		  		<input type='submit' class='redB searchButton' value='搜索'>
 		  	</form>
 		  </h6>
@@ -39,7 +39,7 @@
               <tbody>
 	        	<volist name="lists" id="vo">
 	                <tr class="gradeA">
-		       			<td class="center">{$vo.title}</td>
+		       			<td class="center searchContent">{$vo.title}</td>
 		       			<td class="center">{$vo.key|default="暂无"}</td>
 		       			<td class="center">{$vo.click}</td>
 		       			<td class="center">{$vo.sort}</td>

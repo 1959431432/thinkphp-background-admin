@@ -18,7 +18,11 @@ return array(
 		array('title'=>'签到排名','url'=>'Days/index','class'=>'tables','children'=>false),
 		array('title'=>'积分商城','url'=>'Ip/index','class'=>'files','children'=>false),
 		array('title'=>'系统设置','url'=>'System/index','class'=>'setting','children'=>false),
-		array('title'=>'意见反馈','url'=>'Message/index','class'=>'errors','children'=>false),
+		array('title'=>'消息中心','url'=>'#','class'=>'errors','children'=>array(
+			array('title'=>'发送消息','url'=>'Message/add','class'=>''),
+			array('title'=>'消息记录','url'=>'Message/index','class'=>''),
+			array('title'=>'用户反馈','url'=>'Message/feedback','class'=>''),
+		)),
 		array('title'=>'退出','url'=>'Public/logout','class'=>'typo','children'=>false),
 	),
 );

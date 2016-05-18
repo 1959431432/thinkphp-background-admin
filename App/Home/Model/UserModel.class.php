@@ -34,7 +34,11 @@ class UserModel extends CommonModel
 		if( empty( $user ) ){
 			$this->error = '帐号或密码错误';
 			return false;
-		}		
+		}
+		if( $user['status'] != 1 ){
+			$this->error = '帐号已经被禁用，请联系客服解冻';
+			return false;
+		}
 		// 修改最后登入时间
 		$user['lastlogin'] = NOW_TIME;
 

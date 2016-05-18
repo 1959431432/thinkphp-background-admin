@@ -141,75 +141,177 @@
     
     
 
-
-	<div class="wrapper">
-		<div class="bc">
+	 <!-- Main content wrapper -->
+    <div class="wrapper">
+        <div class="bc">
             <ul id="breadcrumbs" class="breadcrumbs">
                  <li class=""> <a href="<?php echo U('Index/index');?>">控制中心</a> </li>
-                 <li class="current"><a href="#">文章列表</a></li>
+                 <li class=""> <a href="<?php echo U('index');?>">会员列表</a> </li>
+                 <li class="current"><a href="#">会员管理</a></li>
             </ul>
             <div class="clear"></div>
         </div>
-	  <div class="widget">
-        <div class="title">
-		  <h6>文章列表</h6>
-		  <h6 class='fr'>
-		  	<a class='' href="<?php echo U('add');?>">＋添加</a>
-		  </h6>
-		  <h6 class="fr">
-		  	<form class='form'> 
-		  		<input type="text" class='searchInput' name="title" placeholder="请输入文章标题" value="<?php echo ($_GET['title']); ?>" /> 
-		  		<input type='submit' class='redB searchButton' value='搜索'>
-		  	</form>
-		  </h6>
-        </div>
-          <table cellpadding="0" cellspacing="0" width="100%" class="sTable withCheck display">
-              <thead>
-                  <tr>
-                    <th>文章标题</th>
-		            <!-- <th>说明</th> -->
-		            <th>调用键</th>
-		            <th>点击次数</th>
-		            <th>排序</th>
-		            <th>添加时间</th>
-		            <th>操作</th>
-                  </tr>
-              </thead>
-              <tbody>
-	        	<?php if(is_array($lists)): $i = 0; $__LIST__ = $lists;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="gradeA">
-		       			<td class="center searchContent"><?php echo ($vo["title"]); ?></td>
-		       			<td class="center"><?php echo ((isset($vo["key"]) && ($vo["key"] !== ""))?($vo["key"]):"暂无"); ?></td>
-		       			<td class="center"><?php echo ($vo["click"]); ?></td>
-		       			<td class="center"><?php echo ($vo["sort"]); ?></td>
-		       			<td class="center"><?php echo (date('Y-m-d H:i',$vo["add_time"])); ?></td>
-		       			<td class="center">
-		       				<a class='confirm' href="<?php echo U('del',array('id'=>$vo['id']));?>">删除</a> &nbsp;&nbsp;
-		       				<a href="<?php echo U('add',array('id'=>$vo['id']));?>">修改</a>
-		       			</td>
-			        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-              </tbody>
-              <tfoot>
-              	<tr>
-              		<td colspan="6" class='pagination'>
-              			<?php echo ($showPage); ?>
-              		</td>
-              	</tr>
-              </tfoot>
-          </table>
-        </div>
-	</div>
-	<script type="text/javascript">
-		oTable = $('.dTable').dataTable({
-			"bJQueryUI": true,
-			"sPaginationType": "full_numbers",
-			"sDom": '<""l>t<"F"fp>',
-			'oLanguage':{
-				"sProcessing": "正在加载中......",
-				"sLengthMenu": "<span class='itemsPerPage'>每页显示:</span> _MENU_",
-				"sSearch": "搜索",
-			}
-		});
-	</script>
+        <!-- Validation form -->
+        <form class="form validate" method="post" action="<?php echo U('save');?>">
+            <input type="hidden" name='id' value="<?php echo ($vo["id"]); ?>">
+        	<fieldset>
+                <div class="widget">
+                    <div class="title"><img src="/Public/images//icons/dark/alert.png" alt="" class="titleIcon" /><h6>会员表单</h6></div>
+
+                    <div class="formRow">
+                        <label>会员帐号:<span class="req">*</span></label>
+                        <div class="formRight">
+                            <input type="text" class="validate[required]" name="username" id="username" value="<?php echo ($vo["username"]); ?>"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+
+                    <div class="formRow">
+                        <label>会员密码:</label>
+                        <div class="formRight">
+                            <input type="text" value="" name='password' />
+                            <span class="formNote">如不修改则留空</span>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>会员经验:</label>
+                        <div class="formRight">
+                            <input type="number" name="level" id="level" value="<?php echo ((isset($vo["level"]) && ($vo["level"] !== ""))?($vo["level"]):0); ?>"/>
+                            <span class="formNote">会员经验(等级经验,自动获取用户等级)</span>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>会员姓名:</label>
+                        <div class="formRight">
+                            <input type="text" name="name" id="name" value="<?php echo ($vo["name"]); ?>"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>身份证号:</label>
+                        <div class="formRight">
+                            <input type="number" name="id_number" id="id_number" value="<?php echo ($vo["id_number"]); ?>"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>联系手机:</label>
+                        <div class="formRight">
+                            <input type="number" name="phone" id="phone" value="<?php echo ($vo["phone"]); ?>"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>其他手机:</label>
+                        <div class="formRight">
+                            <input type="number" name="other_phone" id="other_phone" value="<?php echo ($vo["other_phone"]); ?>"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>联系邮箱:</label>
+                        <div class="formRight">
+                            <input type="email" name="email" id="email" value="<?php echo ($vo["email"]); ?>"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>签到天数:</label>
+                        <div class="formRight">
+                            <input type="number" name="days" id="days" value="<?php echo ($vo["days"]); ?>"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>生日:</label>
+                        <div class="formRight">
+                            <input type="date" name="birth" id="birth" value="<?php echo ($vo["birth"]); ?>"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>详细地址:</label>
+                        <div class="formRight">
+                            <input type="text" name="address" id="address" value="<?php echo ($vo["address"]); ?>"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>会员积分:</label>
+                        <div class="formRight">
+                            <input type="text" name="rank" id="rank" value="<?php echo ($vo["rank"]); ?>"/>
+                            <span class="formNote">用于兑换商品、游戏筹码</span>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>注册时间:</label>
+                        <div class="formRight">
+                            <input type="date" disabled="disabled" name="addtime" id="addtime" value="<?php echo (date('Y-m-d',$vo["addtime"])); ?>"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>登录IP:</label>
+                        <div class="formRight">
+                            <input type="text" disabled="disabled" name="lastip" id="lastip" value="<?php echo ($vo["lastip"]); ?>"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>登录地址:</label>
+                        <div class="formRight">
+                            <input type="text" disabled="disabled" name="lastarea" id="lastarea" value="<?php echo ($vo["lastarea"]); ?>"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>登录时间:</label>
+                        <div class="formRight">
+                            <input type="date" disabled="disabled" name="lastlogin" id="lastlogin" value="<?php echo (date('Y-m-d',$vo["lastlogin"])); ?>"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>会员状态:<span class="req">*</span></label>
+                        <div class="formRight">
+                            <div class="floatL" style="margin: 2px 0 0 0;">
+
+                            <input type="radio" id="radioReq" name="status" class="validate[required]" data-prompt-position="topRight:102" value='1' checked="checked" />
+                            <label for="radioReq">开启</label>
+
+                            <input type="radio" id="radioReq2" name="status" class="validate[required]" data-prompt-position="topRight:102" value='2' <?php if(($vo["status"]) == "2"): ?>checked='checked'<?php endif; ?> />
+                            <label for="radioReq2">关闭</label>
+
+                            </div>
+                        </div><div class="clear"></div>
+                    </div>
+                    
+                    <div class="formSubmit"><input type="submit" value="提交" class="redB" /></div>
+                    <div class="clear"></div>
+                </div>
+                
+            </fieldset>
+        </form>       
+    </div>
 
     <!-- Footer line -->
     <div id="footer">

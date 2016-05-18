@@ -163,7 +163,7 @@
 		                            	</strong>
 		                            </a>
 		                        </div>
-		                        <div class="uDate"><span class="uDay"></span></div>
+		                        <div class="uDate" style="width: 70px;"><span class="uDay" style="font-size: 12px;">第<?php echo ($i); ?>个签到</span></div>
 		                        <div class="clear"></div>
 		                    </div><?php endforeach; endif; else: echo "" ;endif; ?>
 	                    <div class="newUpdate">
@@ -190,7 +190,7 @@
 		                            	</strong>
 		                            </a>
 		                        </div>
-		                        <div class="uDate"><span class="uDay"><?php echo ($day["total"]); ?>天</span></div>
+		                        <div class="uDate"><span class="uDay" style="font-size: 14px;">签到<?php echo ($day["total"]); ?>天</span></div>
 		                        <div class="clear"></div>
 		                    </div><?php endforeach; endif; else: echo "" ;endif; ?>
 	                    <div class="newUpdate">

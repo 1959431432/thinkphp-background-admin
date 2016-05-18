@@ -1,0 +1,77 @@
+<extend name="Public/base" />
+
+<block name="body">
+	<div class="wrapper">
+      <div class="bc">
+          <ul id="breadcrumbs" class="breadcrumbs">
+               <li class=""> <a href="{:U('Index/index')}">控制中心</a> </li>
+               <li class=""> <a href="{:U('Index/index')}">信息中心</a> </li>
+               <li class="current"><a href="#">消息管理</a></li>
+          </ul>
+          <div class="clear"></div>
+      </div>
+    	<form class="form validate" method="post" action="{:U('save')}">
+            <input type="hidden" name='id' value='{$vo.id}' />
+        	<fieldset>
+                <div class="widget">
+                    <div class="title"><img src="__IMG__/icons/dark/alert.png" alt="" class="titleIcon" /><h6>站内信</h6></div>
+
+                    <div class="formRow">
+                        <label>发送标题:<span class='req'>*</span></label>
+                        <div class="formRight">
+                            <input type="text" class="validate[required]" value="{$vo.title}" name='title' id="title" />
+                            <!-- <span class="formNote">用户会员等级根据此项排序</span> -->
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>选择用户:</label>
+                        <div class="formRight searchDrop">
+                        <select name='touid' data-placeholder="选择接受人" class="chzn-select" style="width:350px;" tabindex="2">
+                            <option value="0">全站会员</option> 
+                            <volist name="users" id="user">
+                                <eq name="user.id" value="$vo.touid">
+                                   <option value="{$user.id}" selected="selected">{$user.username}</option> 
+                                <else />
+	                               <option value="{$user.id}">{$user.username}</option> 
+                                </eq>
+	                        </volist>
+                        </select>
+                        </div>             
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>发送内容:</label>
+                        <div class="formRight"><textarea rows="8" cols="" name="content" placeholder="请填写发送信息">{$vo.content}</textarea></div><div class="clear"></div>
+                    </div>
+
+                    <!-- <div class="formRow">
+                        <label>验证码:</label>
+                        <div class="formRight">
+                        	<span class="oneTwo">
+                        		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="20px">
+                        			<rect width="50" height="20" style="fill:rgb(0,0,255);stroke-width:1;stroke:rgb(0,0,0)" />
+								  <text x="0" y="15" fill="red">I love SVG</text>
+								</svg>
+                        	</span>
+                        	<span class='oneTwo'>
+                            	<input type="text" value="" name='title' />
+                        	</span>
+                        </div>
+                        <div class="clear"></div>
+                    </div> -->
+                    
+                    <div class="formSubmit"><input type="submit" value="提交" class="redB" /></div>
+                    <div class="clear"></div>
+                </div>
+                
+            </fieldset>
+        </form>
+
+			<div class="clear"></div>
+		</div>
+    </div>
+    </div>
+</block>

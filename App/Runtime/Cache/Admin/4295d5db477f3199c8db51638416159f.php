@@ -179,7 +179,7 @@
               </thead>
               <tbody>
 	        	<?php if(is_array($lists)): $i = 0; $__LIST__ = $lists;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="gradeA">
-		       			<td class="center"><?php echo ($vo["username"]); ?></td>
+		       			<td class="center searchContent"><?php echo ($vo["username"]); ?></td>
 		       			<td class="center"><?php echo (getUserGroupTitle($vo["level"])); ?></td>
 		       			<td class="center"><?php echo ((isset($vo["name"]) && ($vo["name"] !== ""))?($vo["name"]):'未填写'); ?></td>
 		       			<td class="center"><?php echo ($vo["rank"]); ?></td>

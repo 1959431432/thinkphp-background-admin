@@ -11,6 +11,14 @@ class ArticleController extends CommonController
 		$categorys = D('Category')->getArticleCategory();
 		$this->assign('categorys',$categorys);
 	}	
+
+	protected function condition(){
+		$where = parent::condition();
+		if( '' != $where['title'] ){
+			$where['title'] = array( 'like', '%'.$where['title'].'%');
+		}
+		return $where;
+	}
 }
 
  ?>

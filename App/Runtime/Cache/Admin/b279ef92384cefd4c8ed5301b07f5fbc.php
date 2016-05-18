@@ -140,76 +140,75 @@
     </div>
     
     
-
-
 	<div class="wrapper">
-		<div class="bc">
-            <ul id="breadcrumbs" class="breadcrumbs">
-                 <li class=""> <a href="<?php echo U('Index/index');?>">控制中心</a> </li>
-                 <li class="current"><a href="#">文章列表</a></li>
-            </ul>
-            <div class="clear"></div>
-        </div>
-	  <div class="widget">
-        <div class="title">
-		  <h6>文章列表</h6>
-		  <h6 class='fr'>
-		  	<a class='' href="<?php echo U('add');?>">＋添加</a>
-		  </h6>
-		  <h6 class="fr">
-		  	<form class='form'> 
-		  		<input type="text" class='searchInput' name="title" placeholder="请输入文章标题" value="<?php echo ($_GET['title']); ?>" /> 
-		  		<input type='submit' class='redB searchButton' value='搜索'>
-		  	</form>
-		  </h6>
-        </div>
-          <table cellpadding="0" cellspacing="0" width="100%" class="sTable withCheck display">
-              <thead>
-                  <tr>
-                    <th>文章标题</th>
-		            <!-- <th>说明</th> -->
-		            <th>调用键</th>
-		            <th>点击次数</th>
-		            <th>排序</th>
-		            <th>添加时间</th>
-		            <th>操作</th>
-                  </tr>
-              </thead>
-              <tbody>
-	        	<?php if(is_array($lists)): $i = 0; $__LIST__ = $lists;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="gradeA">
-		       			<td class="center searchContent"><?php echo ($vo["title"]); ?></td>
-		       			<td class="center"><?php echo ((isset($vo["key"]) && ($vo["key"] !== ""))?($vo["key"]):"暂无"); ?></td>
-		       			<td class="center"><?php echo ($vo["click"]); ?></td>
-		       			<td class="center"><?php echo ($vo["sort"]); ?></td>
-		       			<td class="center"><?php echo (date('Y-m-d H:i',$vo["add_time"])); ?></td>
-		       			<td class="center">
-		       				<a class='confirm' href="<?php echo U('del',array('id'=>$vo['id']));?>">删除</a> &nbsp;&nbsp;
-		       				<a href="<?php echo U('add',array('id'=>$vo['id']));?>">修改</a>
-		       			</td>
-			        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-              </tbody>
-              <tfoot>
-              	<tr>
-              		<td colspan="6" class='pagination'>
-              			<?php echo ($showPage); ?>
-              		</td>
-              	</tr>
-              </tfoot>
-          </table>
-        </div>
-	</div>
-	<script type="text/javascript">
-		oTable = $('.dTable').dataTable({
-			"bJQueryUI": true,
-			"sPaginationType": "full_numbers",
-			"sDom": '<""l>t<"F"fp>',
-			'oLanguage':{
-				"sProcessing": "正在加载中......",
-				"sLengthMenu": "<span class='itemsPerPage'>每页显示:</span> _MENU_",
-				"sSearch": "搜索",
-			}
-		});
-	</script>
+      <div class="bc">
+          <ul id="breadcrumbs" class="breadcrumbs">
+               <li class=""> <a href="<?php echo U('Index/index');?>">控制中心</a> </li>
+               <li class=""> <a href="<?php echo U('Index/index');?>">信息中心</a> </li>
+               <li class="current"><a href="#">消息管理</a></li>
+          </ul>
+          <div class="clear"></div>
+      </div>
+    	<form class="form validate" method="post" action="<?php echo U('save');?>">
+            <input type="hidden" name='id' value='<?php echo ($vo["id"]); ?>' />
+        	<fieldset>
+                <div class="widget">
+                    <div class="title"><img src="/Public/images//icons/dark/alert.png" alt="" class="titleIcon" /><h6>站内信</h6></div>
+
+                    <div class="formRow">
+                        <label>发送标题:<span class='req'>*</span></label>
+                        <div class="formRight">
+                            <input type="text" class="validate[required]" value="<?php echo ($vo["title"]); ?>" name='title' id="title" />
+                            <!-- <span class="formNote">用户会员等级根据此项排序</span> -->
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>选择用户:</label>
+                        <div class="formRight searchDrop">
+                        <select name='touid' data-placeholder="选择接受人" class="chzn-select" style="width:350px;" tabindex="2">
+                            <option value="0">全站会员</option> 
+                            <?php if(is_array($users)): $i = 0; $__LIST__ = $users;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$user): $mod = ($i % 2 );++$i; if(($user["id"]) == $vo["touid"]): ?><option value="<?php echo ($user["id"]); ?>" selected="selected"><?php echo ($user["username"]); ?></option> 
+                                <?php else: ?>
+	                               <option value="<?php echo ($user["id"]); ?>"><?php echo ($user["username"]); ?></option><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                        </select>
+                        </div>             
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>发送内容:</label>
+                        <div class="formRight"><textarea rows="8" cols="" name="content" placeholder="请填写发送信息"><?php echo ($vo["content"]); ?></textarea></div><div class="clear"></div>
+                    </div>
+
+                    <!-- <div class="formRow">
+                        <label>验证码:</label>
+                        <div class="formRight">
+                        	<span class="oneTwo">
+                        		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="20px">
+                        			<rect width="50" height="20" style="fill:rgb(0,0,255);stroke-width:1;stroke:rgb(0,0,0)" />
+								  <text x="0" y="15" fill="red">I love SVG</text>
+								</svg>
+                        	</span>
+                        	<span class='oneTwo'>
+                            	<input type="text" value="" name='title' />
+                        	</span>
+                        </div>
+                        <div class="clear"></div>
+                    </div> -->
+                    
+                    <div class="formSubmit"><input type="submit" value="提交" class="redB" /></div>
+                    <div class="clear"></div>
+                </div>
+                
+            </fieldset>
+        </form>
+
+			<div class="clear"></div>
+		</div>
+    </div>
+    </div>
 
     <!-- Footer line -->
     <div id="footer">
