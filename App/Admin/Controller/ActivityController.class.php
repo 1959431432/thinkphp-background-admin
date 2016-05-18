@@ -10,7 +10,7 @@ class ActivityController extends CommonController
 		$this->assign('groups',D('Common/Group')->idAndTitle());
 	}
 
-		protected function condition(){
+	protected function condition(){
 		$where = parent::condition();
 		if( '' != $where['title'] ){
 			$where['title'] = array( 'like', '%'.$where['title'].'%');
