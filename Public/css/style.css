@@ -71,7 +71,7 @@
     text-decoration: none;
     color: #666666;
     font-weight: bold;
-    background: url(../images/backgrounds/pagingBg.png) repeat-x 0 0;
+    background: url(../../images/backgrounds/pagingBg.png) repeat-x 0 0;
     border: 1px solid #d5d5d5;
     font-size: 11px;
 }
@@ -80,7 +80,7 @@
 }
 
 .pagination span.current {
-    background: url(../images/backgrounds/sideGradient.png) repeat-x;
+    background: url(../../images/backgrounds/sideGradient.png) repeat-x;
     color: #fff;
     border-color: #424852;
 }
