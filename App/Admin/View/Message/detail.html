@@ -5,8 +5,8 @@
       <div class="bc">
           <ul id="breadcrumbs" class="breadcrumbs">
                <li class=""> <a href="{:U('Index/index')}">控制中心</a> </li>
-               <li class=""> <a href="{:U('Index/index')}">消息中心</a> </li>
-               <li class="current"><a href="#">消息管理</a></li>
+               <li class=""> <a href="{:U('Message/feedback')}">反馈列表</a> </li>
+               <li class="current"><a href="#">查看用户反馈</a></li>
           </ul>
           <div class="clear"></div>
       </div>
@@ -14,37 +14,21 @@
             <input type="hidden" name='id' value='{$vo.id}' />
         	<fieldset>
                 <div class="widget">
-                    <div class="title"><img src="__IMG__/icons/dark/alert.png" alt="" class="titleIcon" /><h6>站内信</h6></div>
+                    <div class="title"><img src="__IMG__/icons/dark/alert.png" alt="" class="titleIcon" /><h6>用户反馈</h6></div>
 
                     <div class="formRow">
-                        <label>发送标题:<span class='req'>*</span></label>
+                        <label>反馈标题:</label>
                         <div class="formRight">
-                            <input type="text" class="validate[required]" value="{$vo.title}" name='title' id="title" />
+                            {$vo.title}
                             <!-- <span class="formNote">用户会员等级根据此项排序</span> -->
                         </div>
                         <div class="clear"></div>
                     </div>
 
-                    <div class="formRow">
-                        <label>选择用户:</label>
-                        <div class="formRight searchDrop">
-                        <select name='touid' data-placeholder="选择接受人" class="chzn-select" style="width:350px;" tabindex="2">
-                            <option value="0">全站会员</option> 
-                            <volist name="users" id="user">
-                                <eq name="user.id" value="$vo.touid">
-                                   <option value="{$user.id}" selected="selected">{$user.username}</option> 
-                                <else />
-	                               <option value="{$user.id}">{$user.username}</option> 
-                                </eq>
-	                        </volist>
-                        </select>
-                        </div>             
-                        <div class="clear"></div>
-                    </div>
 
                     <div class="formRow">
-                        <label>发送内容:</label>
-                        <div class="formRight"><textarea rows="8" cols="" name="content" placeholder="请填写发送信息">{$vo.content}</textarea></div><div class="clear"></div>
+                        <label>反馈内容:</label>
+                        <div class="formRight">{$vo.content}</div><div class="clear"></div>
                     </div>
 
                     <!-- <div class="formRow">
@@ -62,8 +46,6 @@
                         </div>
                         <div class="clear"></div>
                     </div> -->
-                    
-                    <div class="formSubmit"><input type="submit" value="提交" class="redB" /></div>
                     <div class="clear"></div>
                 </div>
                 

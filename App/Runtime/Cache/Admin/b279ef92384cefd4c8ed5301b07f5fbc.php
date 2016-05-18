@@ -144,7 +144,7 @@
       <div class="bc">
           <ul id="breadcrumbs" class="breadcrumbs">
                <li class=""> <a href="<?php echo U('Index/index');?>">控制中心</a> </li>
-               <li class=""> <a href="<?php echo U('Index/index');?>">信息中心</a> </li>
+               <li class=""> <a href="<?php echo U('Index/index');?>">消息中心</a> </li>
                <li class="current"><a href="#">消息管理</a></li>
           </ul>
           <div class="clear"></div>

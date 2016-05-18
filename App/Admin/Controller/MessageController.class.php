@@ -22,8 +22,22 @@ class MessageController extends CommonController
 		if( '' != $where['title'] ){
 			$where['title'] = array( 'like', '%'.$where['title'].'%');
 		}
-		$where['uid'] = 0;
+		$where['touid'] = 0;
 		return $where;
+	}
+
+	public function feedback()
+	{
+		$where = $this->condition();
+		$where['uid']   = array( 'neq', 0 );
+		$where['touid'] = 0;
+		$this->lists( $where );
+        $this->display();
+	}
+
+	public function detail()
+	{
+		$this->add();
 	}
 }
 

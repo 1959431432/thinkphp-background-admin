@@ -140,62 +140,60 @@
     </div>
     
     
-    <div class="wrapper">
-    <div class="bc">
-        <ul id="breadcrumbs" class="breadcrumbs">
-             <li class="">
-                  <a href="<?php echo U('Index/index');?>">控制中心</a>
-             </li>
-             <li class="current"><a href="#">消息中心</a></li>
-        </ul>
-        <div class="clear"></div>
+	<div class="wrapper">
+      <div class="bc">
+          <ul id="breadcrumbs" class="breadcrumbs">
+               <li class=""> <a href="<?php echo U('Index/index');?>">控制中心</a> </li>
+               <li class=""> <a href="<?php echo U('Message/feedback');?>">反馈列表</a> </li>
+               <li class="current"><a href="#">查看用户反馈</a></li>
+          </ul>
+          <div class="clear"></div>
+      </div>
+    	<form class="form validate" method="post" action="<?php echo U('save');?>">
+            <input type="hidden" name='id' value='<?php echo ($vo["id"]); ?>' />
+        	<fieldset>
+                <div class="widget">
+                    <div class="title"><img src="/Public/images//icons/dark/alert.png" alt="" class="titleIcon" /><h6>用户反馈</h6></div>
+
+                    <div class="formRow">
+                        <label>反馈标题:</label>
+                        <div class="formRight">
+                            <?php echo ($vo["title"]); ?>
+                            <!-- <span class="formNote">用户会员等级根据此项排序</span> -->
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+
+                    <div class="formRow">
+                        <label>反馈内容:</label>
+                        <div class="formRight"><?php echo ($vo["content"]); ?></div><div class="clear"></div>
+                    </div>
+
+                    <!-- <div class="formRow">
+                        <label>验证码:</label>
+                        <div class="formRight">
+                        	<span class="oneTwo">
+                        		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="20px">
+                        			<rect width="50" height="20" style="fill:rgb(0,0,255);stroke-width:1;stroke:rgb(0,0,0)" />
+								  <text x="0" y="15" fill="red">I love SVG</text>
+								</svg>
+                        	</span>
+                        	<span class='oneTwo'>
+                            	<input type="text" value="" name='title' />
+                        	</span>
+                        </div>
+                        <div class="clear"></div>
+                    </div> -->
+                    <div class="clear"></div>
+                </div>
+                
+            </fieldset>
+        </form>
+
+			<div class="clear"></div>
+		</div>
     </div>
-      <div class="widget">
-        <div class="title">
-          <h6>消息列表</h6>
-          <h6 class='fr'>
-            <a class='' href="<?php echo U('add');?>">＋发送消息</a>
-          </h6>
-          <h6 class="fr">
-            <form class='form'> 
-                <input type="text" class='searchInput' name="title" placeholder="请输入消息标题" value="<?php echo ($_GET['title']); ?>" /> 
-                <input type='submit' class='redB searchButton' value='搜索'>
-            </form>
-          </h6>
-        </div>
-          <table cellpadding="0" cellspacing="0" width="100%" class="sTable withCheck display myTable">
-              <thead>
-                  <tr>
-                    <th>消息标题</th>
-                    <th>接受用户</th>
-                    <th>发送时间</th>
-                    <th>操作</th>
-                  </tr>
-              </thead>
-              <tbody>
-                <?php if(is_array($lists)): $i = 0; $__LIST__ = $lists;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="gradeA">
-                        <td class="center searchContent"><?php echo ($vo["title"]); ?></td>
-                        <td class="center">
-                            <?php if(($vo["touid"]) == "0"): ?>全站会员
-                            <?php else: ?>
-                                <?php echo (getUsername($vo["touid"])); endif; ?>                            
-                        </td>
-                        <td class="center"><?php echo (date('Y-m-d',$vo["addtime"])); ?></td>
-                        <td class="center">
-                            <a class='confirm' href="<?php echo U('del',array('id'=>$vo['id']));?>">删除</a> &nbsp;&nbsp;
-                            <a href="<?php echo U('add',array('id'=>$vo['id']));?>">修改</a> &nbsp;&nbsp;
-                        </td>
-                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-              </tbody>
-              <tfoot>
-                <tr>
-                    <td colspan="10" class='pagination'>
-                        <?php echo ($showPage); ?>
-                    </td>
-                </tr>
-              </tfoot>
-          </table>
-        </div>
     </div>
 
     <!-- Footer line -->

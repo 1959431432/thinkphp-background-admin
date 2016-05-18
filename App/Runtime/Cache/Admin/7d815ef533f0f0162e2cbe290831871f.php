@@ -146,16 +146,13 @@
              <li class="">
                   <a href="<?php echo U('Index/index');?>">控制中心</a>
              </li>
-             <li class="current"><a href="#">消息中心</a></li>
+             <li class="current"><a href="#">反馈列表</a></li>
         </ul>
         <div class="clear"></div>
     </div>
       <div class="widget">
         <div class="title">
-          <h6>消息列表</h6>
-          <h6 class='fr'>
-            <a class='' href="<?php echo U('add');?>">＋发送消息</a>
-          </h6>
+          <h6>反馈列表</h6>
           <h6 class="fr">
             <form class='form'> 
                 <input type="text" class='searchInput' name="title" placeholder="请输入消息标题" value="<?php echo ($_GET['title']); ?>" /> 
@@ -167,7 +164,7 @@
               <thead>
                   <tr>
                     <th>消息标题</th>
-                    <th>接受用户</th>
+                    <th>发送用户</th>
                     <th>发送时间</th>
                     <th>操作</th>
                   </tr>
@@ -176,14 +173,12 @@
                 <?php if(is_array($lists)): $i = 0; $__LIST__ = $lists;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="gradeA">
                         <td class="center searchContent"><?php echo ($vo["title"]); ?></td>
                         <td class="center">
-                            <?php if(($vo["touid"]) == "0"): ?>全站会员
-                            <?php else: ?>
-                                <?php echo (getUsername($vo["touid"])); endif; ?>                            
+                           <?php echo (getUsername($vo["uid"])); ?>
                         </td>
                         <td class="center"><?php echo (date('Y-m-d',$vo["addtime"])); ?></td>
                         <td class="center">
                             <a class='confirm' href="<?php echo U('del',array('id'=>$vo['id']));?>">删除</a> &nbsp;&nbsp;
-                            <a href="<?php echo U('add',array('id'=>$vo['id']));?>">修改</a> &nbsp;&nbsp;
+                            <a href="<?php echo U('detail',array('id'=>$vo['id']));?>">查看</a>
                         </td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
               </tbody>

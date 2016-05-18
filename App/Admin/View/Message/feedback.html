@@ -7,16 +7,13 @@
              <li class="">
                   <a href="{:U('Index/index')}">控制中心</a>
              </li>
-             <li class="current"><a href="#">消息中心</a></li>
+             <li class="current"><a href="#">反馈列表</a></li>
         </ul>
         <div class="clear"></div>
     </div>
       <div class="widget">
         <div class="title">
-          <h6>消息列表</h6>
-          <h6 class='fr'>
-            <a class='' href="{:U('add')}">＋发送消息</a>
-          </h6>
+          <h6>反馈列表</h6>
           <h6 class="fr">
             <form class='form'> 
                 <input type="text" class='searchInput' name="title" placeholder="请输入消息标题" value="{$_GET['title']}" /> 
@@ -28,7 +25,7 @@
               <thead>
                   <tr>
                     <th>消息标题</th>
-                    <th>接受用户</th>
+                    <th>发送用户</th>
                     <th>发送时间</th>
                     <th>操作</th>
                   </tr>
@@ -38,16 +35,12 @@
                     <tr class="gradeA">
                         <td class="center searchContent">{$vo.title}</td>
                         <td class="center">
-                            <eq name="vo.touid" value="0">
-                                全站会员
-                            <else />
-                                {$vo.touid|getUsername}
-                            </eq>                            
+                           {$vo.uid|getUsername}
                         </td>
                         <td class="center">{$vo.addtime|date='Y-m-d',###}</td>
                         <td class="center">
                             <a class='confirm' href="{:U('del',array('id'=>$vo['id']))}">删除</a> &nbsp;&nbsp;
-                            <a href="{:U('add',array('id'=>$vo['id']))}">修改</a> &nbsp;&nbsp;
+                            <a href="{:U('detail',array('id'=>$vo['id']))}">查看</a>
                         </td>
                     </tr>
                 </volist>

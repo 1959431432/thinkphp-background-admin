@@ -19,13 +19,13 @@ class BaseController extends Controller {
     }
 
     public function index(){
-    	$this->lists();
+        $where = $where = $this->condition();
+    	$this->lists( $where );
 		$this->display();
     }
 
-    protected function lists(){
+    protected function lists( $where = array() ){
         $model = $this->getModel();
-        $where = $where = $this->condition();
         $count = $model->where($where)->count();
         $page  = new \Think\Page( $count, $this->limit );
         $page->setConfig('prev','&lt;');
