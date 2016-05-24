@@ -3,8 +3,8 @@ namespace Home\Controller;
 use Think\Controller;
 
 /**
-* 
-*/
+ * 公共处理控制器
+ */
 class PublicController extends Controller
 {
 	public function login()

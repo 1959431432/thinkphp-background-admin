@@ -84,12 +84,33 @@
 <!-- Left side content -->
 <div id="leftSide">
     <div class="logo"><a href="index.html"><img src="/Public/images//logo.png" alt="" /></a></div>
+    
+    <div class="sidebarSep"></div>
 
+    <!-- General balance widget -->
+    <div class="genBalance">
+        <a href="#" title="" class="amount">
+            <span> 当前积分:</span>
+            <span class="balanceAmount">
+                <?php echo session('user.level');?>
+            </span>
+        </a>
+    </div>
+    <!-- Next update progress widget -->
+    <div class="nextUpdate">
+        <ul>
+            <li><img src="/Public/images//<?php echo ($_userGroup["img"]); ?>" title='<?php echo ($_userGroup["title"]); ?>' title='<?php echo ($_userGroup["title"]); ?>'> &nbsp; 下一等级:</li>
+            <li>还需
+                <?php  $progressWidth = $_user['level'] / $_nextGroup['integral'] * 100; $diffIntegral = $_nextGroup['integral'] - $_user['level']; echo $diffIntegral; ?></li>
+        </ul>
+        <div class="pWrapper"><div class="progressG" title="<?php echo ($progressWidth); ?>%"></div></div>
+    </div>
+    
     <div class="sidebarSep"></div>
     
     <!-- Left navigation -->
     <ul id="menu" class="nav">
-        <?php if(is_array($_menu)): $i = 0; $__LIST__ = $_menu;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menus): $mod = ($i % 2 );++$i; if($menus['children'] != false): ?><li class="<?php echo ($menus["class"]); ?>"><a class='exp' href="#" title=""><span><?php echo ($menus["title"]); ?></span></a>
+        <?php if(is_array($_menu)): $i = 0; $__LIST__ = $_menu;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menus): $mod = ($i % 2 );++$i; if($menus['children'] != false): ?><li class="<?php echo ($menus["class"]); ?>"><a class='exp inactive' href="#" title=""><span><?php echo ($menus["title"]); ?></span></a>
                     <ul class="sub">
                         <?php if(is_array($menus['children'])): $i = 0; $__LIST__ = $menus['children'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menu): $mod = ($i % 2 );++$i;?><li><a href="<?php echo U($menu['url']);?>" title=""><?php echo ($menu["title"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
                     </ul>
@@ -105,11 +126,10 @@
     <!-- Top fixed navigation -->
     <div class="topNav">
         <div class="wrapper">
-            <div class="welcome"><a href="#" title=""><img src="/Public/images//userPic.png" alt="" /></a><span>Howdy, Eugene!</span></div>
+            <div class="welcome"><a href="#" title=""><img src="/Public/images//userPic.png" alt="" /></a><span>您好，<?php echo ($_user['username']); ?></span></div>
             <div class="userNav">
                 <ul>
-                    <li><a href="#" title=""><img src="/Public/images//icons/topnav/profile.png" alt="" /><span>个人资料</span><span class="numberTop">？</span></a></li>
-                    <li><a href="#" title=""><img src="/Public/images//icons/topnav/settings.png" alt="" /><span>设置</span></a></li>
+                    <li><a href="<?php echo U('setting/index');?>" title=""><img src="/Public/images//icons/topnav/profile.png" alt="" /><span>个人资料</span></a></li>
                     <li><a href="<?php echo U('Public/logout');?>" title="退出客户端"><img src="/Public/images//icons/topnav/logout.png" alt="" /><span>退出</span></a></li>
                 </ul>
             </div>
@@ -138,52 +158,114 @@
         </div>
         <div class="cLine"></div>
     </div>
+
+
+    <!-- Title area -->
+   <!--  <div class="titleArea">
+        <div class="wrapper">
+            <div class="pageTitle">
+                <h5>Dashboard</h5>
+                <span>Do your layouts deserve better than Lorem Ipsum.</span>
+            </div>
+            <div class="middleNav">
+                <ul>
+                    <li class="mUser">
+                        <a title="会员等级排名" class="tipN"><span class="users"></span></a>
+                    </li>
+                    <li class="mMessages">
+                        <a title="网站消息" class='tipN'>
+                            <span class="messages"></span>
+                            <span class="numberMiddle">8</span>
+
+                        </a>
+                    </li>
+                    <li class="mFiles">
+                        <a href="#" title="优惠活动" class="tipN">
+                            <span class="files"></span>
+                        </a>
+                    </li>
+                    <li class="mOrders">
+                        <a title="积分商品" class="tipN">
+                            <span class="orders"></span>
+                            <span class="numberMiddle">8</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+     -->
+    <div class="line"></div>
+
+
+    <!-- 管理员显示
+        
+    <div class="statsRow">
+        <div class="wrapper">
+            <div class="controlB">
+                <ul>
+                    <li><a href="#" title=""><img src="/Public/images//icons/control/32/plus.png" alt="" /><span>Add new session</span></a></li>
+                    <li><a href="#" title=""><img src="/Public/images//icons/control/32/database.png" alt="" /><span>New DB entry</span></a></li>
+                    <li><a href="#" title=""><img src="/Public/images//icons/control/32/hire-me.png" alt="" /><span>Add new user</span></a></li>
+                    <li><a href="#" title=""><img src="/Public/images//icons/control/32/statistics.png" alt="" /><span>Check statistics</span></a></li>
+                    <li><a href="#" title=""><img src="/Public/images//icons/control/32/comment.png" alt="" /><span>Review comments</span></a></li>
+                    <li><a href="#" title=""><img src="/Public/images//icons/control/32/order-149.png" alt="" /><span>Check orders</span></a></li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
     
+    <div class="line"></div>
+
+    -->
+
     
-    
-    <div class="wrapper">
+	<div class="wrapper">
       <div class="bc">
           <ul id="breadcrumbs" class="breadcrumbs">
-               <li class=""> <a href="<?php echo U('Index/index');?>">控制中心</a> </li>
-               <li class="current"><a href="#">分组管理</a></li>
+               <li class=""> <a href="<?php echo U('Index/index');?>">个人中心</a> </li>
+               <li class="current"><a href="#">我的等级</a></li>
           </ul>
           <div class="clear"></div>
       </div>
-      <div class="widget">
-        <div class="title">
-          <h6>会员分组</h6>
-        </div>
-          <table cellpadding="0" cellspacing="0" width="100%" class="sTable withCheck display dTable">
-              <thead>
-                  <tr>
-                    <th>名称</th>
-                    <th>积分</th>
-                    <th>图片</th>
-                    <th>排序</th>
-                    <th>人数</th>
-                    <th>状态</th>
-                    <th>操作</th>
-                  </tr>
-              </thead>
-              <tbody>
-                <?php if(is_array($lists)): $i = 0; $__LIST__ = $lists;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="gradeA">
-                        <td class="center"><?php echo ($vo["title"]); ?></td>
-                        <td class="center"><?php echo ($vo["integral"]); ?></td>
-                        <td class="center"><img src="/Public/images//<?php echo ($vo["img"]); ?>"></td>
-                        <td class="center"><?php echo ($vo["order"]); ?></td>
-                        <td class="center"><?php echo (getGroupUserCount($vo["id"])); ?></td>
-                        <td class="center">
-                            <?php echo (statusTitle($vo["status"])); ?>
-                        </td>
-                        <td class="center">
-                            <a class='confirm' href="<?php echo U('del',array('id'=>$vo['id']));?>">删除</a> &nbsp;&nbsp;
-                            <a href="<?php echo U('add',array('id'=>$vo['id']));?>">修改</a>
-                        </td>
-                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-              </tbody>
-          </table>
-        </div>
+	
+		<!-- Events calendar -->
+		<div class="widget" style="background:#fff;">
+			<p>
+				<img src="/Public/images//huiyuan.png" alt="会员等级" width="100%" />
+			</p>
+			<div class="formRow">
+                <label>下一等级:</label>
+                <div class="formRight">
+                    <div class="contentProgress"><div class="barG tipS" id="bar9" title="<?php echo ($progressWidth); ?>%"></div></div>
+                    <ul class="ruler">
+                        <li>0</li>
+                        <li class="textC">&nbsp;</li>
+                        <li class="textR"><?php echo (abs($_nextGroup["integral"])); ?></li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="formRow">
+                <h2>当前等级 <?php echo ($_userGroup["title"]); ?> 福利</h2>
+                <div style="padding: 20px;overflow: hidden;">
+                	<?php echo (htmlspecialchars_decode($_userGroup["privilege"])); ?>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <?php if(!empty($_nextGroup)): ?><div class="formRow">
+	                <h2>下一等级 <?php echo ($_nextGroup["title"]); ?> 福利</h2>
+	                <div style="padding: 20px;overflow: hidden;">
+	                	<?php echo (htmlspecialchars_decode($_nextGroup["privilege"])); ?>
+	                </div>
+	                <div class="clear"></div>
+	            </div><?php endif; ?>
+		</div>
     </div>
+
 
     <!-- Footer line -->
     <div id="footer">
@@ -192,56 +274,7 @@
 
 </div>
 
-
-
 <div class="clear"></div>
-    
-    <script type="text/javascript">
-        $(function(){
-            oTable = $('.dTable').dataTable({
-                "oLanguage" : { // 汉化
-                    "sProcessing" : "正在加载数据...",
-                    "sLengthMenu": "<span class='itemsPerPage'>每页显示:</span> _MENU_ <a class='add_link' href='<?php echo U('add');?>'>+ 添加</a>",
-                    "sZeroRecords" : "没有您要搜索的内容",
-                    "sInfo" : "从_START_ 到 _END_ 条记录——总记录数为 _TOTAL_ 条",
-                    "sInfoEmpty" : "记录数为0",
-                    "sInfoFiltered" : "(全部记录数 _MAX_  条)",
-                    "sInfoPostFix" : "",
-                    "sSearch" : "搜索",
-                    "sUrl" : "",
-                    "oPaginate" : {
-                        "sFirst" : "第一页",
-                        "sPrevious" : " 上一页 ",
-                        "sNext" : " 下一页 ",
-                        "sLast" : " 最后一页 "
-                    }
-                },
-                "bJQueryUI": true,
-                "sPaginationType": "full_numbers",
-                "sDom": '<""l>t<"F"fp>',
-            });
-            //点击打开文件选择器  
-            $("#upload").on('click', function() {
-                $.ajaxFileUpload({  
-                    url:"<?php echo U('upload');?>",  
-                    secureuri:false,  
-                    fileElementId:'fileToUpload',//file标签的id  
-                    dataType: 'json',//返回数据的类型  
-                    success: function (data, status) {
-                        if( data.status == 1 ){
-                            $('#hidden_inputFile').val( data.fileName );
-                            $("#showImg").attr('src',"/<?php echo C('UPLOAD_CONFIG.rootPath');?>"+data.fileName)
-                            layer.msg( '文件上传成功' , {icon: 6});
-                        } else {
-                            layer.msg( data.error , {icon: 5});
-                        }
-                    },  
-                    error: function (data, status, e) {  
-                        alert(e);  
-                    }  
-                }); 
-            });  
-        });  
-    </script>
+
 </body>
 </html>

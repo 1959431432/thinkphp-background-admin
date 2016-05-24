@@ -1,12 +1,17 @@
 <?php
 namespace Home\Controller;
 use \Common\Controller\BaseController;
+/**
+ * 前台公共控制器
+ */
 class CommonController extends BaseController {
 
 	public function _initialize()
 	{
 		parent::_initialize();
+
 		$user = session('user');
+		
 		if( empty( $user ) ){
 			tourl('public/login');
 		}

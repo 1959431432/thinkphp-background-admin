@@ -19,7 +19,7 @@ class BaseController extends Controller {
     }
 
     public function index(){
-        $where = $where = $this->condition();
+        $where = $this->condition();
     	$this->lists( $where );
 		$this->display();
     }
@@ -28,11 +28,12 @@ class BaseController extends Controller {
         $model = $this->getModel();
         $count = $model->where($where)->count();
         $page  = new \Think\Page( $count, $this->limit );
+        $page->setConfig('theme','%FIRST% %UP_PAGE% %LINK_PAGE% %DOWN_PAGE% %END% %HEADER%');
         $page->setConfig('prev','&lt;');
         $page->setConfig('next','&gt;');
         $lists = $model->where( $where )->limit( $page->listRows, $page->firstRow )->select(); 
         $this->assign('lists',$lists);
-        $this->assign('showPage',$page->show());
+        $this->assign('showPage',$page->show2());
     }
 
     protected function condition( $where = array() ){

@@ -67,6 +67,26 @@ function getImg( $img )
 	return __ROOT__ . '/' . C('UPLOAD_CONFIG.rootPath') . $img;
 }
 
+// 获取分组下的用户人数
+function getGroupUserCount( $groupid )
+{
+	$where = getGroupUserCondition( $groupid );
+	return M('User')->where( $where )->count();
+}
+
+// 获取分组下的会员条件
+function getGroupUserCondition( $groupid )
+{
+	$group = M('group')->field('integral')->find($groupid);
+	$nextGroup = D('group')->where('integral > ' . $group['integral'])->field('integral')->find();
+	if( ! empty( $nextGroup ) ){
+		$where['level'] = array( 'between', array( $group['integral'], $nextGroup['integral']-1 ) );
+	} else {
+		$where['level'] = array('gt',$group['integral']);
+	}
+	return $where;
+}
+
 function dd( $prem ) {
 	dump( $prem );
 	exit();

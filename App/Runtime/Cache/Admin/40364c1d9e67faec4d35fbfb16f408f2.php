@@ -147,7 +147,7 @@
 	         <li class="">
 	              <a href="<?php echo U('Index/index');?>">控制中心</a>
 	         </li>
-	         <li class="current"><a href="#">活动管理</a></li>
+	         <li class="current"><a href="#">活动列表</a></li>
 	    </ul>
 	    <div class="clear"></div>
 	</div>

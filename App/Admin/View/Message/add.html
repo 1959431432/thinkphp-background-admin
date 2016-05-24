@@ -47,21 +47,16 @@
                         <div class="formRight"><textarea rows="8" cols="" name="content" placeholder="请填写发送信息">{$vo.content}</textarea></div><div class="clear"></div>
                     </div>
 
-                    <!-- <div class="formRow">
-                        <label>验证码:</label>
+                    <div class="formRow">
+                        <label>消息类型:<span class="req">*</span></label>
                         <div class="formRight">
-                        	<span class="oneTwo">
-                        		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="20px">
-                        			<rect width="50" height="20" style="fill:rgb(0,0,255);stroke-width:1;stroke:rgb(0,0,0)" />
-								  <text x="0" y="15" fill="red">I love SVG</text>
-								</svg>
-                        	</span>
-                        	<span class='oneTwo'>
-                            	<input type="text" value="" name='title' />
-                        	</span>
-                        </div>
-                        <div class="clear"></div>
-                    </div> -->
+                            <div class="floatL" style="margin: 2px 0 0 0;">
+                            <input type="radio" id="radioReq" name="type" class="validate[required]" data-prompt-position="topRight:102" value='1' checked="checked" /><label for="radioReq">警告</label>
+                            <input type="radio" id="radioReq2" name="type" class="validate[required]" data-prompt-position="topRight:102" value='2' <eq name="vo.type" value='2'> checked='checked'</eq> /><label for="radioReq2">提醒</label>
+
+                            </div>
+                        </div><div class="clear"></div>
+                    </div>
                     
                     <div class="formSubmit"><input type="submit" value="提交" class="redB" /></div>
                     <div class="clear"></div>

@@ -20,6 +20,16 @@
 		  </h6>
 		  <h6 class="fr">
 		  	<form class='form'> 
+                <select name='groupid'>
+                    <option value="">会员等级</option> 
+                    <volist name="groups" id="group">
+                        <eq name="group.id" value="$_GET['groupid']">
+                           <option value="{$group.id}" selected="selected">{$group.title}</option> 
+                        <else />
+                           <option value="{$group.id}">{$group.title}</option> 
+                        </eq>
+                    </volist>
+                </select>
 		  		<input type="text" class='searchInput' name="username" placeholder="请输入会员名称" value="{$_GET['username']}" /> 
 		  		<input type='submit' class='redB searchButton' value='搜索'>
 		  	</form>

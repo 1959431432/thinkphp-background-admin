@@ -147,7 +147,7 @@
 	         <li class="">
 	              <a href="<?php echo U('Index/index');?>">控制中心</a>
 	         </li>
-	         <li class="current"><a href="#">会员管理</a></li>
+	         <li class="current"><a href="#">会员列表</a></li>
 	    </ul>
 	    <div class="clear"></div>
 	</div>
@@ -159,6 +159,12 @@
 		  </h6>
 		  <h6 class="fr">
 		  	<form class='form'> 
+                <select name='groupid'>
+                    <option value="">会员等级</option> 
+                    <?php if(is_array($groups)): $i = 0; $__LIST__ = $groups;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$group): $mod = ($i % 2 );++$i; if(($group["id"]) == $_GET['groupid']): ?><option value="<?php echo ($group["id"]); ?>" selected="selected"><?php echo ($group["title"]); ?></option> 
+                        <?php else: ?>
+                           <option value="<?php echo ($group["id"]); ?>"><?php echo ($group["title"]); ?></option><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                </select>
 		  		<input type="text" class='searchInput' name="username" placeholder="请输入会员名称" value="<?php echo ($_GET['username']); ?>" /> 
 		  		<input type='submit' class='redB searchButton' value='搜索'>
 		  	</form>

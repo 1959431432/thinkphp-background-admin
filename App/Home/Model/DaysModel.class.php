@@ -2,8 +2,8 @@
 namespace Home\Model;
 
 /**
-* 
-*/
+ * 签到模型 
+ */
 class DaysModel extends CommonModel
 {
 	public function sign()

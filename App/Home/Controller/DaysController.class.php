@@ -1,8 +1,8 @@
 <?php 
 namespace Home\Controller;
 /**
-* 
-*/
+ * 签到控制器
+ */
 class DaysController extends CommonController
 {
 	public function index()

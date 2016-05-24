@@ -2,8 +2,8 @@
 namespace Admin\Model;
 
 /**
-* 
-*/
+ * 文章栏目模型
+ */
 class CategoryModel extends CommonModel
 {
 	public function getArticleCategory()

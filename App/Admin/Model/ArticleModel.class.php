@@ -1,8 +1,8 @@
 <?php 
 namespace Admin\Model;
 /**
-* 
-*/
+ * 文章模型
+ */
 class ArticleModel extends CommonModel
 {
 	protected $_auto = array(

@@ -225,11 +225,11 @@
     
     
     <!-- Main content wrapper -->
-    <div class="wrapper">
+    <div class="wrapper" style="margin-top: 50px;">
     
         <!-- Note -->
-        <div class="nNote nInformation hideit">
-            <p><strong>INFORMATION: </strong>Top buttons area has 3 versions - 2 kinds of buttons and statistics. All of them could be viewed on <a href="ui_elements.html" title="">Interface elements page</a></p>
+        <div class="nNote nWarning hideit">
+            <p><strong>网站公告: </strong>This is a warning message. You can use this to warn users on any events</p>
         </div>
         
         <!-- Chart -->

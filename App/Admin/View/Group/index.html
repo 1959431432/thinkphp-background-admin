@@ -22,6 +22,7 @@
                     <th>积分</th>
                     <th>图片</th>
                     <th>排序</th>
+                    <th>人数</th>
                     <th>状态</th>
                     <th>操作</th>
                   </tr>
@@ -33,6 +34,7 @@
                         <td class="center">{$vo.integral}</td>
                         <td class="center"><img src="__IMG__/{$vo.img}"></td>
                         <td class="center">{$vo.order}</td>
+                        <td class="center">{$vo.id|getGroupUserCount}</td>
                         <td class="center">
                             {$vo.status|statusTitle}
                         </td>

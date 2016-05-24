@@ -140,50 +140,89 @@
     </div>
     
     
-    
+
+	 <!-- Main content wrapper -->
     <div class="wrapper">
-      <div class="bc">
-          <ul id="breadcrumbs" class="breadcrumbs">
-               <li class=""> <a href="<?php echo U('Index/index');?>">控制中心</a> </li>
-               <li class="current"><a href="#">分组管理</a></li>
-          </ul>
-          <div class="clear"></div>
-      </div>
-      <div class="widget">
-        <div class="title">
-          <h6>会员分组</h6>
+        <div class="bc">
+            <ul id="breadcrumbs" class="breadcrumbs">
+                 <li class=""> <a href="<?php echo U('Index/index');?>">控制中心</a> </li>
+                 <li class=""> <a href="<?php echo U('index');?>">分组管理</a> </li>
+                 <li class="current"><a href="#">分组添加</a></li>
+            </ul>
+            <div class="clear"></div>
         </div>
-          <table cellpadding="0" cellspacing="0" width="100%" class="sTable withCheck display dTable">
-              <thead>
-                  <tr>
-                    <th>名称</th>
-                    <th>积分</th>
-                    <th>图片</th>
-                    <th>排序</th>
-                    <th>人数</th>
-                    <th>状态</th>
-                    <th>操作</th>
-                  </tr>
-              </thead>
-              <tbody>
-                <?php if(is_array($lists)): $i = 0; $__LIST__ = $lists;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="gradeA">
-                        <td class="center"><?php echo ($vo["title"]); ?></td>
-                        <td class="center"><?php echo ($vo["integral"]); ?></td>
-                        <td class="center"><img src="/Public/images//<?php echo ($vo["img"]); ?>"></td>
-                        <td class="center"><?php echo ($vo["order"]); ?></td>
-                        <td class="center"><?php echo (getGroupUserCount($vo["id"])); ?></td>
-                        <td class="center">
-                            <?php echo (statusTitle($vo["status"])); ?>
-                        </td>
-                        <td class="center">
-                            <a class='confirm' href="<?php echo U('del',array('id'=>$vo['id']));?>">删除</a> &nbsp;&nbsp;
-                            <a href="<?php echo U('add',array('id'=>$vo['id']));?>">修改</a>
-                        </td>
-                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-              </tbody>
-          </table>
-        </div>
+        <!-- Validation form -->
+        <form class="form validate" method="post" action="<?php echo U('save');?>">
+            <input type="hidden" name='id' value="<?php echo ($vo["id"]); ?>">
+        	<fieldset>
+                <div class="widget">
+                    <div class="title"><img src="/Public/images//icons/dark/alert.png" alt="" class="titleIcon" /><h6>会员分组表单</h6></div>
+                    <div class="formRow">
+                        <label>分组名称:<span class="req">*</span></label>
+                        <div class="formRight">
+                            <input type="text" class="validate[required]" name="title" id="req" value="<?php echo ($vo["title"]); ?>"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>分组积分:</label>
+                        <div class="formRight">
+                            <input type="text" value="<?php echo ((isset($vo["integral"]) && ($vo["integral"] !== ""))?($vo["integral"]):0); ?>" name='integral' />
+                            <span class="formNote">用户积分超过当前值自动升级为下个等级</span>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>显示图片:</label>
+                        <div class="formRight">
+                            <input type="text" value="<?php echo ((isset($vo["img"]) && ($vo["img"] !== ""))?($vo["img"]):'level1.png'); ?>" name='img' class='img' />
+                            <span class="formNote"><img src="/Public/images//level1.png" id="preview"></span>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>分组排序:</label>
+                        <div class="formRight">
+                            <input type="text" value="<?php echo ((isset($vo["order"]) && ($vo["order"] !== ""))?($vo["order"]):0); ?>" name='order' />
+                            <!-- <span class="formNote">用户会员等级根据此项排序</span> -->
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>等级福利:</label>
+                        <div class="formRight"><textarea rows="8" cols="" id='editor' name="privilege" placeholder="可以为空"><?php echo ($vo["privilege"]); ?></textarea></div><div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>是否开启:<span class="req">*</span></label>
+                        <div class="formRight">
+                            <div class="floatL" style="margin: 2px 0 0 0;">
+
+                            <input type="radio" id="radioReq" name="status" class="validate[required]" data-prompt-position="topRight:102" value='1' checked="checked" /><label for="radioReq">开启</label>
+                            <input type="radio" id="radioReq2" name="status" class="validate[required]" data-prompt-position="topRight:102" value='2' <?php if(($vo["status"]) == "2"): ?>checked='checked'<?php endif; ?> /><label for="radioReq2">关闭</label>
+
+                            </div>
+                        </div><div class="clear"></div>
+                    </div>
+                    
+                    <div class="formSubmit"><input type="submit" value="提交" class="redB" /></div>
+                    <div class="clear"></div>
+                </div>
+                
+            </fieldset>
+        </form>       
     </div>
+    <script type="text/javascript">
+        $(".img").change( function()
+        {
+            var img_path = "/Public/images/";
+            $('#preview').attr('src',img_path+'/'+$(this).val());
+        })
+    </script>
 
     <!-- Footer line -->
     <div id="footer">

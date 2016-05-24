@@ -2,8 +2,8 @@
 namespace Admin\Model;
 
 /**
-* 
-*/
+ * 用户模型
+ */
 class UserModel extends CommonModel
 {
 	protected $_auto = array(

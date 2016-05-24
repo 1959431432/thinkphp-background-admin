@@ -98,8 +98,7 @@ class Page{
         //下一页
         $down_row  = $this->nowPage + 1;
         $down_page = ($down_row <= $this->totalPages) ? '<a class="next" href="' . $this->url($down_row) . '">' . $this->config['next'] . '</a>' : '';
-        /*
-
+        
         //第一页
         $the_first = '';
         if($this->totalPages > $this->rollPage && ($this->nowPage - $now_cool_page) >= 1){
@@ -135,7 +134,41 @@ class Page{
                 }
             }
         }
-        */
+
+        //替换分页内容
+        $page_str = str_replace(
+            array('%HEADER%', '%NOW_PAGE%', '%UP_PAGE%', '%DOWN_PAGE%', '%FIRST%', '%LINK_PAGE%', '%END%', '%TOTAL_ROW%', '%TOTAL_PAGE%'),
+            array($this->config['header'], $this->nowPage, $up_page, $down_page, $the_first, $link_page, $the_end, $this->totalRows, $this->totalPages),
+            $this->config['theme']);
+        return "<div>{$page_str}</div>";
+    }
+
+    public function show2()
+    {
+        if(0 == $this->totalRows) return '';
+        
+        // 生成URL
+        $this->parameter[$this->p] = '[PAGE]';
+        $this->url = U(ACTION_NAME, $this->parameter);
+        //计算分页信息
+        $this->totalPages = ceil($this->totalRows / $this->listRows); //总页数
+        if(!empty($this->totalPages) && $this->nowPage > $this->totalPages) {
+            $this->nowPage = $this->totalPages;
+        }
+
+        // 计算分页临时变量 
+        $now_cool_page      = $this->rollPage/2;
+        $now_cool_page_ceil = ceil($now_cool_page);
+        $this->lastSuffix && $this->config['last'] = $this->totalPages;
+
+        //上一页
+        $up_row  = $this->nowPage - 1;
+        $up_page = $up_row > 0 ? '<a class="prev" href="' . $this->url($up_row) . '">' . $this->config['prev'] . '</a>' : '';
+
+        //下一页
+        $down_row  = $this->nowPage + 1;
+        $down_page = ($down_row <= $this->totalPages) ? '<a class="next" href="' . $this->url($down_row) . '">' . $this->config['next'] . '</a>' : '';
+
         // 自定义显示
         for( $i = 1; $i<=$this->totalPages; $i ++ ){
             if( $i == $this->nowPage ){

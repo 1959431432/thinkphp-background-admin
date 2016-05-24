@@ -1,8 +1,8 @@
 <?php 
 namespace Admin\Controller;
 /**
-* 
-*/
+ * 活动控制器 
+ */
 class ActivityController extends CommonController
 {
 	public function _before_add()

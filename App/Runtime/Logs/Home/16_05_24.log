@@ -1,0 +1,655 @@
+[ 2016-05-24T10:38:31+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000516s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000536s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000580s ]
+
+[ 2016-05-24T10:38:31+08:00 ] ::1 /index.php/public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000181s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000235s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000264s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000055s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000092s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007414s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007444s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000325s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000354s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000673s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000742s ]
+
+[ 2016-05-24T10:38:38+08:00 ] ::1 /index.php/public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000353s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000400s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000446s ]
+SQL: SHOW COLUMNS FROM `e_user` [ RunTime:0.0119s ]
+SQL: SELECT * FROM `e_user` WHERE `username` = 'qq1234' AND `password` = '0781274fe1873cb9b1565b7213b24217' LIMIT 1   [ RunTime:0.0036s ]
+SQL: UPDATE `e_user` SET `level`='1002',`username`='qq1234',`password`='0781274fe1873cb9b1565b7213b24217',`name`='123',`id_number`='',`phone`='',`other_phone`='',`email`='',`days`='0',`birth`='1463414400',`address`='',`rank`='0',`addtime`=NULL,`lastlogin`='1464057518',`lastip`='0.0.0.0',`lastarea`='IANA',`status`='1' WHERE `id` = 6 [ RunTime:0.0020s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /Users/minghuang/www/exe/App/Home/Model/UserModel.class.php 第 81 行.
+
+[ 2016-05-24T10:38:41+08:00 ] ::1 /index.php/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000352s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000486s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000539s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=1002 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 1001 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000439s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000505s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022531s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022565s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000118s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000142s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000407s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000441s ]
+
+[ 2016-05-24T10:39:00+08:00 ] ::1 /index.php/Group/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000190s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000256s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000286s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=1002 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 1001 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_group` LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `e_group` LIMIT 20   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: link_page /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 142 行.
+NOTIC: [8] Undefined variable: the_first /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 159 行.
+NOTIC: [8] Undefined variable: the_end /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 159 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000085s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000128s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010591s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010648s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000163s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000221s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000407s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000449s ]
+
+[ 2016-05-24T10:39:35+08:00 ] ::1 /index.php/Activity/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000172s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000224s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000250s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=1002 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 1001 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT `id`,`title` FROM `e_group` WHERE `status` = 1 ORDER BY integral asc  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000084s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000117s ]
+SQL: SHOW COLUMNS FROM `e_activity` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `e_activity` WHERE `integral` = 1 ORDER BY `order` desc  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `e_activity` WHERE `integral` = 2 ORDER BY `order` desc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `e_activity` WHERE `integral` = 3 ORDER BY `order` desc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `e_activity` WHERE `integral` = 4 ORDER BY `order` desc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `e_activity` WHERE `integral` = 5 ORDER BY `order` desc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `e_activity` WHERE `integral` = 6 ORDER BY `order` desc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `e_activity` WHERE `integral` = 7 ORDER BY `order` desc  [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015317s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015350s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000236s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000277s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000584s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000635s ]
+
+[ 2016-05-24T10:39:49+08:00 ] ::1 /index.php/Setting/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000169s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000218s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000244s ]
+NOTIC: [2048] Declaration of Home\Controller\SettingController::getModel() should be compatible with Common\Controller\BaseController::getModel($name = NULL) /Users/minghuang/www/exe/App/Home/Controller/SettingController.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=1002 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 1001 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000085s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000119s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011535s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011566s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000104s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000125s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000529s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000679s ]
+
+[ 2016-05-24T10:39:54+08:00 ] ::1 /index.php/Link/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000241s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000324s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000382s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=1002 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 1001 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000077s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000111s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008549s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008582s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000120s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000142s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000309s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000362s ]
+
+[ 2016-05-24T10:40:04+08:00 ] ::1 /index.php/Message/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000183s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000228s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000253s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=1002 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 1001 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_message` [ RunTime:0.0013s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_message` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `e_message` LIMIT 20   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: link_page /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 142 行.
+NOTIC: [8] Undefined variable: the_first /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 159 行.
+NOTIC: [8] Undefined variable: the_end /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 159 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000084s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000117s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010551s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010583s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000108s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000129s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000333s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000389s ]
+
+[ 2016-05-24T10:40:18+08:00 ] ::1 /index.php/setting/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000300s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000246s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000274s ]
+NOTIC: [2048] Declaration of Home\Controller\SettingController::getModel() should be compatible with Common\Controller\BaseController::getModel($name = NULL) /Users/minghuang/www/exe/App/Home/Controller/SettingController.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=1002 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 1001 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000085s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000118s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010302s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010352s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000105s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000125s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000338s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000373s ]
+
+[ 2016-05-24T10:41:21+08:00 ] ::1 /index.php/Days/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000180s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000256s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000287s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=1002 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 1001 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_days` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `e_days` WHERE `uid` = 6  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000077s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000109s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010314s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010359s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000161s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000193s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000510s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000568s ]
+
+[ 2016-05-24T10:41:24+08:00 ] ::1 /index.php/Days/sign.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000176s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000304s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000336s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=1002 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 1001 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_days` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `e_days` WHERE `addtime` = 1464019201 AND `uid` = 6 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `e_days` (`addtime`,`uid`) VALUES ('1464019201','6') [ RunTime:0.0002s ]
+
+[ 2016-05-24T10:41:27+08:00 ] ::1 /index.php/Days/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000259s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000337s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000375s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=1002 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 1001 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_days` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_days` WHERE `uid` = 6  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000078s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000112s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009611s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009670s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000135s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000157s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000369s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000437s ]
+
+[ 2016-05-24T10:41:38+08:00 ] ::1 /index.php/Days/sign.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000206s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000243s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000268s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=1002 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 1001 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_days` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_days` WHERE `addtime` = 1464019201 AND `uid` = 6 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-24T10:41:47+08:00 ] ::1 /index.php/Message/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000176s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000225s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000250s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=1002 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 1001 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_message` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_message` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `e_message` LIMIT 20   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: link_page /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 142 行.
+NOTIC: [8] Undefined variable: the_first /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 159 行.
+NOTIC: [8] Undefined variable: the_end /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 159 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000082s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000117s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009278s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009308s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000101s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000121s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000311s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000342s ]
+
+[ 2016-05-24T10:41:49+08:00 ] ::1 /index.php/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000172s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000221s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000246s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=1002 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 1001 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000150s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000184s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019074s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019107s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000110s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000131s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000343s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000389s ]
+
+[ 2016-05-24T10:42:40+08:00 ] ::1 /index.php/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000173s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000223s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000251s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000045s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000072s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004094s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004124s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000108s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000294s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000329s ]
+
+[ 2016-05-24T10:42:47+08:00 ] ::1 /index.php/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000342s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000674s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000734s ]
+SQL: SHOW COLUMNS FROM `e_user` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `e_user` WHERE `username` = 'qq1234' AND `password` = '0781274fe1873cb9b1565b7213b24217' LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `e_user` SET `level`='1002',`username`='qq1234',`password`='0781274fe1873cb9b1565b7213b24217',`name`='123',`id_number`='',`phone`='',`other_phone`='',`email`='',`days`='0',`birth`='1463414400',`address`='',`rank`='0',`addtime`=NULL,`lastlogin`='1464057767',`lastip`='0.0.0.0',`lastarea`='IANA',`status`='1' WHERE `id` = 6 [ RunTime:0.0004s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /Users/minghuang/www/exe/App/Home/Model/UserModel.class.php 第 81 行.
+
+[ 2016-05-24T10:42:50+08:00 ] ::1 /index.php/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000337s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000353s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000392s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=1002 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 1001 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000152s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000186s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019293s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019323s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000104s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000125s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000352s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000388s ]
+
+[ 2016-05-24T10:43:16+08:00 ] ::1 /index.php/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000176s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000218s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000244s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=1002 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 1001 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000282s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000342s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021308s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021348s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000133s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000165s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000434s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000481s ]
+
+[ 2016-05-24T10:44:58+08:00 ] ::1 /index.php/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000189s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000237s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000265s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=1002 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 1001 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000147s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000180s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018234s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018263s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000114s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000134s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000353s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000413s ]
+
+[ 2016-05-24T10:45:23+08:00 ] ::1 /index.php/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000174s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000218s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000244s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=1002 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 1001 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000150s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000184s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020434s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020465s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000102s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000122s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000291s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000321s ]
+
+[ 2016-05-24T10:46:48+08:00 ] ::1 /index.php/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000171s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000220s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000247s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=1002 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 1001 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000219s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000282s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020326s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020377s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000120s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000142s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000395s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000438s ]
+
+[ 2016-05-24T10:58:14+08:00 ] ::1 /index.php/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000173s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000228s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000255s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=1002 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 1001 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000152s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000187s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017963s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017993s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000106s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000127s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000294s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000323s ]
+
+[ 2016-05-24T11:06:09+08:00 ] ::1 /index.php/Public/logout.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000184s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000234s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000260s ]
+
+[ 2016-05-24T11:06:09+08:00 ] ::1 /index.php/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000173s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000222s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000247s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000052s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000089s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004288s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004314s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000096s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000117s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000305s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000334s ]
+
+[ 2016-05-24T11:06:11+08:00 ] ::1 /index.php/Public/register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000166s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000217s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000242s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000052s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000091s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004597s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004623s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000097s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000115s ]
+
+[ 2016-05-24T11:06:21+08:00 ] ::1 /index.php/Public/register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000297s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000278s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000310s ]
+SQL: SHOW COLUMNS FROM `e_user` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `e_user` WHERE `username` = 'demo' LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] strtotime() expects at least 1 parameter, 0 given /Users/minghuang/www/exe/Core/Library/Think/Model.class.php 第 1149 行.
+SQL: INSERT INTO `e_user` (`username`,`password`,`addtime`) VALUES ('demo','fe01ce2a7fbac8fafaed7c982a04e229','1464059181') [ RunTime:0.0002s ]
+SQL: SELECT * FROM `e_user` WHERE `username` = 'demo' AND `password` = 'fe01ce2a7fbac8fafaed7c982a04e229' LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `e_user` SET `level`='1',`username`='demo',`password`='fe01ce2a7fbac8fafaed7c982a04e229',`name`=NULL,`id_number`=NULL,`phone`=NULL,`other_phone`=NULL,`email`=NULL,`days`='0',`birth`=NULL,`address`=NULL,`rank`='0',`addtime`='1464059181',`lastlogin`='1464059181',`lastip`='0.0.0.0',`lastarea`='IANA',`status`='1' WHERE `id` = 8 [ RunTime:0.0003s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /Users/minghuang/www/exe/App/Home/Model/UserModel.class.php 第 81 行.
+
+[ 2016-05-24T11:06:24+08:00 ] ::1 /index.php/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000183s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000232s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000258s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=1 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 0 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000191s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000239s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020658s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020730s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000166s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000202s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000453s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000503s ]
+
+[ 2016-05-24T11:15:30+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000167s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000217s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000242s ]
+
+[ 2016-05-24T11:15:30+08:00 ] ::1 /index.php/public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000170s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000220s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000246s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000048s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000079s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003850s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003876s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000087s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000105s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000287s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000312s ]
+

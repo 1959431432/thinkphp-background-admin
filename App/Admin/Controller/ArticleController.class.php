@@ -2,8 +2,8 @@
 namespace Admin\Controller;
 
 /**
-* 
-*/
+ * 文章控制器
+ */
 class ArticleController extends CommonController
 {
 	public function _before_add()

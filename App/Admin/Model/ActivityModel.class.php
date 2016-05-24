@@ -2,8 +2,8 @@
 namespace Admin\Model;
 
 /**
-* 
-*/
+ * 活动模型
+ */
 class ActivityModel extends CommonModel
 {
 	protected $_auto = array(
