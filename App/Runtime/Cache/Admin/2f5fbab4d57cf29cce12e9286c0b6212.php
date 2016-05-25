@@ -140,74 +140,42 @@
     </div>
     
     
-
-	<div class="wrapper">
-	<div class="bc">
-	    <ul id="breadcrumbs" class="breadcrumbs">
-	         <li class="">
-	              <a href="<?php echo U('Index/index');?>">控制中心</a>
-	         </li>
-	         <li class="current"><a href="#">会员列表</a></li>
-	    </ul>
-	    <div class="clear"></div>
-	</div>
-	  <div class="widget">
+    
+    <div class="wrapper">
+      <div class="bc">
+          <ul id="breadcrumbs" class="breadcrumbs">
+               <li class=""> <a href="<?php echo U('Index/index');?>">控制中心</a> </li>
+               <li class="current"><a href="#">网站配置</a></li>
+          </ul>
+          <div class="clear"></div>
+      </div>
+      <div class="widget">
         <div class="title">
-		  <h6>会员列表</h6>
-		  <h6 class='fr'>
-		  	<a class='' href="<?php echo U('add');?>">＋添加</a>
-		  </h6>
-		  <h6 class="fr">
-		  	<form class='form'> 
-                <select name='groupid'>
-                    <option value="">会员等级</option> 
-                    <?php if(is_array($groups)): $i = 0; $__LIST__ = $groups;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$group): $mod = ($i % 2 );++$i; if(($group["id"]) == $_GET['groupid']): ?><option value="<?php echo ($group["id"]); ?>" selected="selected"><?php echo ($group["title"]); ?></option> 
-                        <?php else: ?>
-                           <option value="<?php echo ($group["id"]); ?>"><?php echo ($group["title"]); ?></option><?php endif; endforeach; endif; else: echo "" ;endif; ?>
-                </select>
-		  		<input type="text" class='searchInput' name="username" placeholder="请输入会员名称" value="<?php echo ($_GET['username']); ?>" /> 
-		  		<input type='submit' class='redB searchButton' value='搜索'>
-		  	</form>
-		  </h6>
+          <h6>网站配置</h6>
         </div>
-          <table cellpadding="0" cellspacing="0" width="100%" class="sTable withCheck display myTable">
+          <table cellpadding="0" cellspacing="0" width="100%" class="sTable withCheck display dTable">
               <thead>
                   <tr>
-                    <th>会员名称</th>
-		            <th>会员等级</th>
-		            <th>会员姓名</th>
-		            <th>会员积分</th>
-		            <th>注册时间</th>
-		            <th>最后登录时间</th>
-		            <th>会员状态</th>
-		            <th>操作</th>
+                    <th>选项Key</th>
+                    <th>选项值</th>
+                    <th>选项说明</th>
+                    <th>操作</th>
                   </tr>
               </thead>
               <tbody>
-	        	<?php if(is_array($lists)): $i = 0; $__LIST__ = $lists;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="gradeA">
-		       			<td class="center searchContent"><?php echo ($vo["username"]); ?></td>
-		       			<td class="center"><?php echo (getUserGroupTitle($vo["level"])); ?></td>
-		       			<td class="center"><?php echo ((isset($vo["name"]) && ($vo["name"] !== ""))?($vo["name"]):'未填写'); ?></td>
-		       			<td class="center"><?php echo ($vo["rank"]); ?></td>
-		       			<td class="center"><?php echo (date('Y-m-d H:i',$vo["addtime"])); ?></td>
-		       			<td class="center"><?php echo (date('Y-m-d H:i',$vo["lastlogin"])); ?></td>
-		       			<td class="center"><?php echo (statusTitle($vo["status"])); ?></td>
-		       			<td class="center">
-		       				<a class='confirm ajax' href="<?php echo U('del',array('id'=>$vo['id']));?>">删除</a> &nbsp;&nbsp;
-		       				<a href="<?php echo U('add',array('id'=>$vo['id']));?>">修改</a> &nbsp;&nbsp;
-		       			</td>
-			        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+                <?php if(is_array($lists)): $i = 0; $__LIST__ = $lists;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="gradeA">
+                        <td class="center"><?php echo ($vo["option_name"]); ?></td>
+                        <td class="center"><?php echo (mb_substr($vo["option_value"],0,20,'utf-8')); ?></td>
+                        <td class="center"><?php echo (mb_substr($vo["option_note"],0,20,'utf-8')); ?></td>
+                        <td class="center">
+                            <a class='confirm ajax' href="<?php echo U('del',array('id'=>$vo['id']));?>">删除</a> &nbsp;&nbsp;
+                            <a href="<?php echo U('add',array('id'=>$vo['id']));?>">修改</a>
+                        </td>
+                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
               </tbody>
-              <tfoot>
-              	<tr>
-              		<td colspan="10" class='pagination'>
-              			<?php echo ($showPage); ?>
-              		</td>
-              	</tr>
-              </tfoot>
           </table>
         </div>
-	</div>
+    </div>
 
     <!-- Footer line -->
     <div id="footer">

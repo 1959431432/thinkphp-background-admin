@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
-<title>Crown - premium responsive admin template for backend systems</title>
+<title>网站后台管理系统</title>
 <link href="__CSS__/main.css" rel="stylesheet" type="text/css" />
 <link href="__CSS__/style.css" rel="stylesheet" type="text/css" />
 
@@ -44,7 +44,7 @@
             <div class="welcome"><a href="#" title=""><img src="__IMG__/userPic.png" alt="" /></a><span>Howdy, Eugene!</span></div>
             <div class="userNav">
                 <ul>
-                    <li><a href="#" title=""><img src="__IMG__/icons/topnav/profile.png" alt="" /><span>个人资料</span><span class="numberTop">？</span></a></li>
+                    <!-- <li><a href="#" title=""><img src="__IMG__/icons/topnav/profile.png" alt="" /><span>个人资料</span><span class="numberTop">？</span></a></li> -->
                     <li><a href="#" title=""><img src="__IMG__/icons/topnav/settings.png" alt="" /><span>设置</span></a></li>
                     <li><a href="{:U('Public/logout')}" title="退出客户端"><img src="__IMG__/icons/topnav/logout.png" alt="" /><span>退出</span></a></li>
                 </ul>
@@ -139,7 +139,11 @@
                         alert(e);  
                     }  
                 }); 
-            });  
+            }); 
+
+            var t = $('title').html();
+            var z = $("#breadcrumbs .current a").html();
+            $('title').html( z+'_'+t );
         });  
     </script>
 </body>

@@ -96,4 +96,9 @@ class BaseController extends Controller {
             }
         // }
     }
+
+    public function _empty()
+    {
+        tourl('index');
+    }
 }

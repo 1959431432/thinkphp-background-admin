@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
-<title>Crown - premium responsive admin template for backend systems</title>
+<title>admin for backend systems</title>
 <link href="__CSS__/main.css" rel="stylesheet" type="text/css" />
 <link href="__CSS__/style.css" rel="stylesheet" type="text/css" />
 
@@ -13,12 +13,13 @@
 
 <!-- Left side content -->
 <div id="leftSide">
+
     <div class="logo"><a href="index.html"><img src="__IMG__/logo.png" alt="" /></a></div>
     
     <div class="sidebarSep"></div>
 
     <!-- General balance widget -->
-    <div class="genBalance">
+    <div class="genBalance" style="display: none;">
         <a href="#" title="" class="amount">
             <span> 当前积分:</span>
             <span class="balanceAmount">
@@ -30,11 +31,16 @@
     <div class="nextUpdate">
         <ul>
             <li><img src="__IMG__/{$_userGroup.img}" title='{$_userGroup.title}' title='{$_userGroup.title}'> &nbsp; 下一等级:</li>
-            <li>还需
+            <li>
                 <?php 
                     $progressWidth = $_user['level'] / $_nextGroup['integral'] * 100;
                     $diffIntegral  = $_nextGroup['integral'] - $_user['level'];
-                    echo $diffIntegral;
+                    if( $diffIntegral > 0 ){
+                        echo '还需' . $diffIntegral;
+                    } else {
+                        echo '已是最高等级';
+                        $progressWidth = 100;
+                    }
                 ?></li>
         </ul>
         <div class="pWrapper"><div class="progressG" title="{$progressWidth}%"></div></div>
@@ -70,6 +76,8 @@
             <div class="userNav">
                 <ul>
                     <li><a href="{:U('setting/index')}" title=""><img src="__IMG__/icons/topnav/profile.png" alt="" /><span>个人资料</span></a></li>
+                    <li><a href="{:U('Message/index')}"><img src="__IMG__/icons/topnav/messages.png" alt=""><span>消息中心</span><span class="numberTop">{$_msgNumber}</span></a>
+                    </li>
                     <li><a href="{:U('Public/logout')}" title="退出客户端"><img src="__IMG__/icons/topnav/logout.png" alt="" /><span>退出</span></a></li>
                 </ul>
             </div>

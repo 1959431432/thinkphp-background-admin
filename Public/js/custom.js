@@ -730,6 +730,23 @@ $(function() {
 	});
 
 	new showSearch().run();
+
+	// a标签 添加 .ajax 实现ajax发送请求
+	$('.ajax').on('click',function()
+	{
+		var ii = layer.load(),href = $(this).attr('href');
+		$.get( href, {} ,function( res ){
+			if( res.status == 1 ){
+				layer.msg( res.info , {icon: 6}, function(){
+					window.location = res.url;
+				});
+			} else {
+				layer.msg( res.info , {icon: 5});
+			}
+            layer.close(ii);
+		});
+		return false;
+	});
 });
 
 

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
-<title>Crown - premium responsive admin template for backend systems</title>
+<title>网站后台管理系统</title>
 <link href="/Public/css//main.css" rel="stylesheet" type="text/css" />
 <link href="/Public/css//style.css" rel="stylesheet" type="text/css" />
 
@@ -108,7 +108,7 @@
             <div class="welcome"><a href="#" title=""><img src="/Public/images//userPic.png" alt="" /></a><span>Howdy, Eugene!</span></div>
             <div class="userNav">
                 <ul>
-                    <li><a href="#" title=""><img src="/Public/images//icons/topnav/profile.png" alt="" /><span>个人资料</span><span class="numberTop">？</span></a></li>
+                    <!-- <li><a href="#" title=""><img src="/Public/images//icons/topnav/profile.png" alt="" /><span>个人资料</span><span class="numberTop">？</span></a></li> -->
                     <li><a href="#" title=""><img src="/Public/images//icons/topnav/settings.png" alt="" /><span>设置</span></a></li>
                     <li><a href="<?php echo U('Public/logout');?>" title="退出客户端"><img src="/Public/images//icons/topnav/logout.png" alt="" /><span>退出</span></a></li>
                 </ul>
@@ -183,7 +183,7 @@
 		       			<td class="center"><?php echo ($vo["sort"]); ?></td>
 		       			<td class="center"><?php echo (date('Y-m-d H:i',$vo["add_time"])); ?></td>
 		       			<td class="center">
-		       				<a class='confirm' href="<?php echo U('del',array('id'=>$vo['id']));?>">删除</a> &nbsp;&nbsp;
+		       				<a class='confirm ajax' href="<?php echo U('del',array('id'=>$vo['id']));?>">删除</a> &nbsp;&nbsp;
 		       				<a href="<?php echo U('add',array('id'=>$vo['id']));?>">修改</a>
 		       			</td>
 			        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
@@ -266,7 +266,11 @@
                         alert(e);  
                     }  
                 }); 
-            });  
+            }); 
+
+            var t = $('title').html();
+            var z = $("#breadcrumbs .current a").html();
+            $('title').html( z+'_'+t );
         });  
     </script>
 </body>

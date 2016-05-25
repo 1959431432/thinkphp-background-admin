@@ -1,0 +1,52 @@
+<extend name="Public/base" />
+
+<block name="body">
+
+	 <!-- Main content wrapper -->
+    <div class="wrapper">
+        <div class="bc">
+            <ul id="breadcrumbs" class="breadcrumbs">
+                 <li class=""> <a href="{:U('Index/index')}">控制中心</a> </li>
+                 <li class=""> <a href="{:U('index')}">网站配置</a> </li>
+                 <li class="current"><a href="#">配置管理</a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <!-- Validation form -->
+        <form class="form validate" method="post" action="{:U('save')}">
+            <input type="hidden" name='id' value="{$vo.id}">
+        	<fieldset>
+                <div class="widget">
+                    <div class="title"><img src="__IMG__/icons/dark/alert.png" alt="" class="titleIcon" /><h6>配置管理表单</h6></div>
+                    <div class="formRow">
+                        <label>选项Key:<span class="req">*</span></label>
+                        <div class="formRight">
+                            <input type="text" class="validate[required]" name="option_name" id="req" value="{$vo.option_name}"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>选项值:<span class="req">*</span></label>
+                        <div class="formRight">
+                            <textarea name="option_value" id="option_value" rows='10' class="validate[required]">{$vo.option_value}</textarea>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>选项说明:</label>
+                        <div class="formRight">
+                            <input type="text" class="" name="option_note" id="option_note" value="{$vo.option_note}"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    
+                    <div class="formSubmit"><input type="submit" value="提交" class="redB" /></div>
+                    <div class="clear"></div>
+                </div>
+                
+            </fieldset>
+        </form>       
+    </div>>
+</block>

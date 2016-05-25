@@ -7,6 +7,14 @@ use Think\Controller;
  */
 class PublicController extends Controller
 {
+	public function _initialize()
+	{
+		$web_status = O("web_status");
+		if( 1 != $web_status ){
+			$this->display('web_close');
+			return ;
+		}
+	}
 	public function login()
 	{
 		if( ! IS_POST ){ 
@@ -48,6 +56,20 @@ class PublicController extends Controller
 	{
 		$Verify = new \Think\Verify();
 		$Verify->entry();
+	}
+
+	public function web_close()
+	{
+		$web_status = O("web_status");
+		if( 1 == $web_status ){
+			tourl('Index/index');
+			return ;
+		}
+		$this->display();
+	}
+
+	public function download() {
+		// 下载次数
 	}
 }
 

@@ -8,11 +8,9 @@ class DaysModel extends CommonModel
 {
 	public function sign()
 	{
-		// $data['addtime'] = mktime( 0, 0, 1, date('m',NOW_TIME), date('d',NOW_TIME), date('Y',NOW_TIME ) );
-		$data['addtime'] = mktime( 0, 0, 1, date('m',NOW_TIME), date('d',NOW_TIME) , date('Y',NOW_TIME ) );
-		$data['uid']	 = UID;
-		$vo = $this->where($data)->find();
-		if( ! empty( $vo ) ){
+		$data = $this->condition();
+		$hasSign = $this->hasSign();
+		if( $hasSign ){
 			$this->error = '今日已签到，请勿重复签到';
 			return false;
 		} else {
@@ -23,6 +21,20 @@ class DaysModel extends CommonModel
 				return false;
 			}
 		}
+	}
+
+	public function condition( $where = array() )
+	{
+		$data['addtime'] = mktime( 0, 0, 1, date('m',NOW_TIME), date('d',NOW_TIME) , date('Y',NOW_TIME ) );
+		$data['uid']	 = UID;
+		return array_merge( $where, $data );
+	}
+
+	public function hasSign()
+	{
+		$data = $this->condition();
+		$vo   = $this->where($data)->count();
+		return ! empty( $vo ) ? true : false;
 	}
 }
 

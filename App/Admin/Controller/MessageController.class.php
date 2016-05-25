@@ -23,6 +23,7 @@ class MessageController extends CommonController
 			$where['title'] = array( 'like', '%'.$where['title'].'%');
 		}
 		$where['touid'] = 0;
+		$where['uid']   = array( 0 );
 		return $where;
 	}
 

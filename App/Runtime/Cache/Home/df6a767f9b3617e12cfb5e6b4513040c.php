@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
-<title>Crown - premium responsive admin template for backend systems</title>
+<title>admin for backend systems</title>
 <link href="/Public/css//main.css" rel="stylesheet" type="text/css" />
 <link href="/Public/css//style.css" rel="stylesheet" type="text/css" />
 
@@ -83,12 +83,13 @@
 
 <!-- Left side content -->
 <div id="leftSide">
+
     <div class="logo"><a href="index.html"><img src="/Public/images//logo.png" alt="" /></a></div>
     
     <div class="sidebarSep"></div>
 
     <!-- General balance widget -->
-    <div class="genBalance">
+    <div class="genBalance" style="display: none;">
         <a href="#" title="" class="amount">
             <span> 当前积分:</span>
             <span class="balanceAmount">
@@ -100,8 +101,8 @@
     <div class="nextUpdate">
         <ul>
             <li><img src="/Public/images//<?php echo ($_userGroup["img"]); ?>" title='<?php echo ($_userGroup["title"]); ?>' title='<?php echo ($_userGroup["title"]); ?>'> &nbsp; 下一等级:</li>
-            <li>还需
-                <?php  $progressWidth = $_user['level'] / $_nextGroup['integral'] * 100; $diffIntegral = $_nextGroup['integral'] - $_user['level']; echo $diffIntegral; ?></li>
+            <li>
+                <?php  $progressWidth = $_user['level'] / $_nextGroup['integral'] * 100; $diffIntegral = $_nextGroup['integral'] - $_user['level']; if( $diffIntegral > 0 ){ echo '还需' . $diffIntegral; } else { echo '已是最高等级'; $progressWidth = 100; } ?></li>
         </ul>
         <div class="pWrapper"><div class="progressG" title="<?php echo ($progressWidth); ?>%"></div></div>
     </div>
@@ -130,6 +131,8 @@
             <div class="userNav">
                 <ul>
                     <li><a href="<?php echo U('setting/index');?>" title=""><img src="/Public/images//icons/topnav/profile.png" alt="" /><span>个人资料</span></a></li>
+                    <li><a href="<?php echo U('Message/index');?>"><img src="/Public/images//icons/topnav/messages.png" alt=""><span>消息中心</span><span class="numberTop"><?php echo ($_msgNumber); ?></span></a>
+                    </li>
                     <li><a href="<?php echo U('Public/logout');?>" title="退出客户端"><img src="/Public/images//icons/topnav/logout.png" alt="" /><span>退出</span></a></li>
                 </ul>
             </div>
@@ -233,11 +236,44 @@
       </div>
       <div class="widget">
 			<ul class="tabs">
-				<li class="activeTab"><a href="#tab1">意见反馈</a></li>
-				<li><a href="#tab2">网站消息</a></li>
+				<li class="activeTab"><a href="#tab1">网站消息</a></li>
+				<li><a href="#tab2">意见反馈</a></li>
 			</ul>
 			<div class="tab_container">
-            	<div id="tab1" class="tab_content" style="padding: 20px;">
+                <div id="tab1" class="tab_content">
+                	<table cellpadding="0" cellspacing="0" width="100%" class="sTable withCheck display myTable">
+		              <thead>
+		                  <tr>
+		                    <th>消息标题</th>
+		                    <th>发送时间</th>
+		                    <th>消息类型</th>
+		                    <th>操作</th>
+		                  </tr>
+		              </thead>
+		              <tbody>
+		                <?php if(is_array($lists)): $i = 0; $__LIST__ = $lists;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="gradeA">
+		                        <td class="center searchContent"><?php echo ($vo["title"]); ?></td>
+		                        <td class="center"><?php echo (date('Y-m-d',$vo["addtime"])); ?></td>
+		                        <td class="center">
+		                            <?php if(($vo["type"]) == "1"): ?>提醒
+		                            <?php else: ?>
+		                              紧急<?php endif; ?>
+		                        </td>
+		                        <td class="center">
+		                            <a class='viewMsg' href="<?php echo U('add',array('id'=>$vo['id']));?>">查看</a> &nbsp;&nbsp;
+		                        </td>
+		                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+		              </tbody>
+		              <tfoot>
+		                <tr>
+		                    <td colspan="10" class='pagination'>
+		                        <?php echo ($showPage); ?>
+		                    </td>
+		                </tr>
+		              </tfoot>
+		          </table>
+                </div>
+                <div id="tab2" class="tab_content" style="padding: 20px;">
                 	<form class="form validate" method="post" action="<?php echo U('save');?>">
 			        	<fieldset>
 			                <div class="widget">
@@ -276,19 +312,34 @@
 			                    <div class="formSubmit"><input type="submit" value="提交" class="redB" /></div>
 			                    <div class="clear"></div>
 			                </div>
-			                
 			            </fieldset>
 			        </form>       
                 </div>
-                <div id="tab2" class="tab_content">
-                	
-                </div>
             </div>
-
 			<div class="clear"></div>
 		</div>
     </div>
     </div>
+    <script type="text/javascript">
+    	jQuery( function($){
+    		$('.viewMsg').click( function()
+    		{
+    			var href = $(this).attr('href');
+    			layer.open({
+				  type: 2,
+				  title: false,
+				  area: ['630px', '360px'],
+				  shade: 0.8,
+				  closeBtn: 0,
+				  shadeClose: true,
+				  content: href,
+				});
+				// layer.msg('点击任意处关闭');
+				return false;
+    		});
+    	});
+
+    </script>
 
 
     <!-- Footer line -->

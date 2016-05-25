@@ -7,37 +7,29 @@
       <div class="bc">
           <ul id="breadcrumbs" class="breadcrumbs">
                <li class=""> <a href="{:U('Index/index')}">控制中心</a> </li>
-               <li class="current"><a href="#">会员分组</a></li>
+               <li class="current"><a href="#">网站配置</a></li>
           </ul>
           <div class="clear"></div>
       </div>
       <div class="widget">
         <div class="title">
-          <h6>会员分组</h6>
+          <h6>网站配置</h6>
         </div>
           <table cellpadding="0" cellspacing="0" width="100%" class="sTable withCheck display dTable">
               <thead>
                   <tr>
-                    <th>名称</th>
-                    <th>积分</th>
-                    <th>图片</th>
-                    <th>排序</th>
-                    <th>人数</th>
-                    <th>状态</th>
+                    <th>选项Key</th>
+                    <th>选项值</th>
+                    <th>选项说明</th>
                     <th>操作</th>
                   </tr>
               </thead>
               <tbody>
                 <volist name="lists" id="vo">
                     <tr class="gradeA">
-                        <td class="center">{$vo.title}</td>
-                        <td class="center">{$vo.integral}</td>
-                        <td class="center"><img src="__IMG__/{$vo.img}"></td>
-                        <td class="center">{$vo.order}</td>
-                        <td class="center">{$vo.id|getGroupUserCount}</td>
-                        <td class="center">
-                            {$vo.status|statusTitle}
-                        </td>
+                        <td class="center">{$vo.option_name}</td>
+                        <td class="center">{$vo.option_value|mb_substr=###,0,20,'utf-8'}</td>
+                        <td class="center">{$vo.option_note|mb_substr=###,0,20,'utf-8'}</td>
                         <td class="center">
                             <a class='confirm ajax' href="{:U('del',array('id'=>$vo['id']))}">删除</a> &nbsp;&nbsp;
                             <a href="{:U('add',array('id'=>$vo['id']))}">修改</a>

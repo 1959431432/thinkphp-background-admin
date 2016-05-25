@@ -32,6 +32,14 @@
                         </div>
                         <div class="clear"></div>
                     </div>
+                    
+                    <div class="formRow">
+                        <label>总签到天数:</label>
+                        <div class="formRight">
+                            {$sumDay}天
+                        </div>
+                        <div class="clear"></div>
+                    </div>
 
                     <div class="formRow">
                         <label>我的姓名:</label>
@@ -74,14 +82,6 @@
                     </div>
 
                     <div class="formRow">
-                        <label>总签到天数:</label>
-                        <div class="formRight">
-                        	{$vo.days}
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-
-                    <div class="formRow">
                         <label>生日:</label>
                         <div class="formRight">
                             <input type="date" name="birth" id="birth" value="{$vo.birth|date='Y-m-d',###}"/>
@@ -92,19 +92,20 @@
                     <div class="formRow">
                         <label>详细地址:</label>
                         <div class="formRight">
-                            <input type="text" name="address" id="address" value="{$vo.address}"/>
+                        <textarea name="address" id="address" placeholder="请填写详细地址" rows='10'>{$vo.address}</textarea>
+                            <!-- <input type="text" name="address" id="address" value="{$vo.address}"/> -->
                         </div>
                         <div class="clear"></div>
                     </div>
 
-                    <div class="formRow">
+                    <!-- <div class="formRow">
                         <label>我的积分:</label>
                         <div class="formRight">
                         	{$vo.rank}
                             <span class="formNote">用于兑换商品、游戏筹码</span>
                         </div>
                         <div class="clear"></div>
-                    </div>
+                    </div> -->
 
                     <div class="formRow">
                         <label>注册时间:</label>

@@ -9,7 +9,9 @@ class GroupModel extends Model
 {
 	public function idAndTitle()
 	{
-		return $this->getList( array('status'=>1), 'integral asc', 'id,title' );
+		$where['status'] = 1;
+		// $where['integral']	 = array('lt',session('user.level')) ;
+		return $this->getList( $where, 'integral asc', 'id,title,integral' );
 	}
 
 	public function getList( $where = array() , $order = null, $field )

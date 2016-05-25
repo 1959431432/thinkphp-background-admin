@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
-<title>Crown - premium responsive admin template for backend systems</title>
+<title>admin for backend systems</title>
 <link href="/Public/css//main.css" rel="stylesheet" type="text/css" />
 <link href="/Public/css//style.css" rel="stylesheet" type="text/css" />
 
@@ -83,12 +83,13 @@
 
 <!-- Left side content -->
 <div id="leftSide">
+
     <div class="logo"><a href="index.html"><img src="/Public/images//logo.png" alt="" /></a></div>
     
     <div class="sidebarSep"></div>
 
     <!-- General balance widget -->
-    <div class="genBalance">
+    <div class="genBalance" style="display: none;">
         <a href="#" title="" class="amount">
             <span> 当前积分:</span>
             <span class="balanceAmount">
@@ -100,8 +101,8 @@
     <div class="nextUpdate">
         <ul>
             <li><img src="/Public/images//<?php echo ($_userGroup["img"]); ?>" title='<?php echo ($_userGroup["title"]); ?>' title='<?php echo ($_userGroup["title"]); ?>'> &nbsp; 下一等级:</li>
-            <li>还需
-                <?php  $progressWidth = $_user['level'] / $_nextGroup['integral'] * 100; $diffIntegral = $_nextGroup['integral'] - $_user['level']; echo $diffIntegral; ?></li>
+            <li>
+                <?php  $progressWidth = $_user['level'] / $_nextGroup['integral'] * 100; $diffIntegral = $_nextGroup['integral'] - $_user['level']; if( $diffIntegral > 0 ){ echo '还需' . $diffIntegral; } else { echo '已是最高等级'; $progressWidth = 100; } ?></li>
         </ul>
         <div class="pWrapper"><div class="progressG" title="<?php echo ($progressWidth); ?>%"></div></div>
     </div>
@@ -130,6 +131,8 @@
             <div class="userNav">
                 <ul>
                     <li><a href="<?php echo U('setting/index');?>" title=""><img src="/Public/images//icons/topnav/profile.png" alt="" /><span>个人资料</span></a></li>
+                    <li><a href="<?php echo U('Message/index');?>"><img src="/Public/images//icons/topnav/messages.png" alt=""><span>消息中心</span><span class="numberTop"><?php echo ($_msgNumber); ?></span></a>
+                    </li>
                     <li><a href="<?php echo U('Public/logout');?>" title="退出客户端"><img src="/Public/images//icons/topnav/logout.png" alt="" /><span>退出</span></a></li>
                 </ul>
             </div>
@@ -223,6 +226,10 @@
     -->
 
     
+<style type="text/css">
+	.body { padding: 0 !important; }
+	.body p { padding: 0 !important; }
+</style>
 	<div class="wrapper">
       <div class="bc">
           <ul id="breadcrumbs" class="breadcrumbs">
@@ -238,20 +245,24 @@
 						<li><a href="#tab<?php echo ($group["id"]); ?>"><?php echo ($group["title"]); ?></a></li><?php endif; endforeach; endif; else: echo "" ;endif; ?>
 			</ul>
 			<div class="tab_container">
-				<?php if(is_array($groups)): $i = 0; $__LIST__ = $groups;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$group): $mod = ($i % 2 );++$i; $activitys = getActivityByIntegral( $group['id'] );?>
-					<?php if(!empty($activitys)): ?><div id="tab<?php echo ($group["id"]); ?>" class="tab_content">
-		                	<?php if(is_array($activitys)): $i = 0; $__LIST__ = $activitys;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$activity): $mod = ($i % 2 );++$i;?><div class="toggle" style="margin: 0;">
-				                    <div class="title closed normal">
-				                    	<?php if(!empty($activity["img"])): ?><img src="<?php echo (getImg($activity["img"])); ?>">
-				                    	<?php else: ?>
-					                    	<h6><?php echo ($activity["title"]); ?></h6><?php endif; ?>
-				                    </div>
-				                    <div class="body"><?php echo (htmlspecialchars_decode($activity["content"])); ?></div>
-				                </div><?php endforeach; endif; else: echo "" ;endif; ?>
-		                </div>
-	                <?php else: ?>
-	                	<div id="tab<?php echo ($group["id"]); ?>" class="tab_content">
-		                	<p style="padding: 20px;">暂无活动</p>
+				<?php if(is_array($groups)): $i = 0; $__LIST__ = $groups;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$group): $mod = ($i % 2 );++$i; if(($group["integral"]) < $_nextGroup["integral"]): $activitys = getActivityByIntegral( $group['id'] );?>
+						<?php if(!empty($activitys)): ?><div id="tab<?php echo ($group["id"]); ?>" class="tab_content">
+			                	<?php if(is_array($activitys)): $i = 0; $__LIST__ = $activitys;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$activity): $mod = ($i % 2 );++$i;?><div class="toggle" style="margin: 0;">
+					                    <div class="title closed normal">
+					                    	<?php if(!empty($activity["img"])): ?><img src="<?php echo (getImg($activity["img"])); ?>">
+					                    	<?php else: ?>
+						                    	<h6><?php echo ($activity["title"]); ?></h6><?php endif; ?>
+					                    </div>
+					                    <div class="body"><?php echo (htmlspecialchars_decode($activity["content"])); ?></div>
+					                </div><?php endforeach; endif; else: echo "" ;endif; ?>
+			                </div>
+		                <?php else: ?>
+		                	<div id="tab<?php echo ($group["id"]); ?>" class="tab_content">
+			                	<p style="padding: 20px;">暂无活动</p>
+			                </div><?php endif; ?>
+					<?php else: ?>
+						<div id="tab<?php echo ($group["id"]); ?>" class="tab_content">
+		                	<p style="padding: 20px;">暂无权限查看</p>
 		                </div><?php endif; endforeach; endif; else: echo "" ;endif; ?>
             </div>
 

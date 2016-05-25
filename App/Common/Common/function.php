@@ -5,7 +5,6 @@ function tourl( $url ){
 	return redirect( U( $url ) );
 }
 
-
 // status 返回文字
 function statusTitle( $integral, $group = ''){
 	switch ( $group ) {
@@ -58,7 +57,7 @@ function getGroupTitle( $id )
 // 获取对应分组下的活动
 function getActivityByIntegral( $integral )
 {
-	return M('activity')->where(array( 'integral'=>$integral ) )->order('`order` desc')->select();
+	return D('Activity')->getActivityByIntegral( $integral );
 }
 
 // 获取图片
@@ -70,23 +69,10 @@ function getImg( $img )
 // 获取分组下的用户人数
 function getGroupUserCount( $groupid )
 {
-	$where = getGroupUserCondition( $groupid );
-	return M('User')->where( $where )->count();
+	return D('User')->getGroupUserCount( $groupid );
 }
 
-// 获取分组下的会员条件
-function getGroupUserCondition( $groupid )
-{
-	$group = M('group')->field('integral')->find($groupid);
-	$nextGroup = D('group')->where('integral > ' . $group['integral'])->field('integral')->find();
-	if( ! empty( $nextGroup ) ){
-		$where['level'] = array( 'between', array( $group['integral'], $nextGroup['integral']-1 ) );
-	} else {
-		$where['level'] = array('gt',$group['integral']);
-	}
-	return $where;
-}
-
+// 调试
 function dd( $prem ) {
 	dump( $prem );
 	exit();
@@ -96,4 +82,17 @@ function gbk2utf8($string){
 	return iconv('gb2312', 'utf-8', $string );
 }
 
+// 调用option
+function O( $option_name )
+{
+	return M('options')->getFieldByOptionName( $option_name, 'option_value');
+}
+
+
+// 用户经验奖励
+function reward( $int = 2 )
+{
+	D("User")->reward( $int, UID );
+}
+ 
  ?>

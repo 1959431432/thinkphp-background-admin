@@ -21,7 +21,7 @@ class UserModel extends CommonModel
 	protected $_validate = array(
 		array( 'username','require','帐号必须存在',0,'',self::MODEL_INSERT),
 		array( 'password','require','密码必须存在',0,'',self::MODEL_INSERT),
-		array( 'username','', '该账号已经被注册，请重新更更换', self::MUST_VALIDATE, 'unique', 1 ),
+		array( 'username','', '该账号已经被注册，请重新更换', self::MUST_VALIDATE, 'unique', 1 ),
 	);
 
 	public function login()
@@ -31,6 +31,9 @@ class UserModel extends CommonModel
 		
 		$user = $this->where( array('username'=>$username,'password'=>$password))->find();
 
+		// 获取最后修改前的用户数据
+		session('before_user',$user);
+		
 		if( empty( $user ) ){
 			$this->error = '帐号或密码错误';
 			return false;
@@ -39,6 +42,7 @@ class UserModel extends CommonModel
 			$this->error = '帐号已经被禁用，请联系客服解冻';
 			return false;
 		}
+
 		// 修改最后登入时间
 		$user['lastlogin'] = NOW_TIME;
 
@@ -80,6 +84,38 @@ class UserModel extends CommonModel
 		$oldUser = session('user');
 		$newUser = array_merge( $oldUser, $data );
 		session('user',$newUser);
+	}
+
+	public function getGroupUserCondition( $groupid )
+	{
+		$group = M('group')->field('integral')->find($groupid);
+		$nextGroup = D('group')->where('integral > ' . $group['integral'])->field('integral')->find();
+		if( ! empty( $nextGroup ) ){
+			$where['level'] = array( 'between', array( $group['integral'], $nextGroup['integral']-1 ) );
+		} else {
+			$where['level'] = array('gt',$group['integral']);
+		}
+		return $where;
+	}
+
+	public function getGroupUserCount( $groupid )
+	{
+		$where = D('User')->getGroupUserCondition( $groupid );
+		return M('User')->where( $where )->count();
+	}
+
+	// 用户奖励
+	public function reward( $int, $uid )
+	{
+		// 必须先取出用户session
+		$user = session('user');
+
+		// 用户经验
+		$this->where( array( 'id'=>$uid ) )->setInc( 'level', $int );
+		// TODO:  用户积分还未处理
+
+		$user['level'] += $int;
+		session('user',$user);
 	}
 }
 

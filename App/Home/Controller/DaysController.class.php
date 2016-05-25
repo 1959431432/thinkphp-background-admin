@@ -19,6 +19,10 @@ class DaysController extends CommonController
 		$daysModel = D('days');
 
 		if( $daysModel->sign() ){
+
+			// 签到增加用户积分
+			reward();
+
 			$this->success('签到成功');
 		} else {
 			$this->error( $daysModel->getError() );

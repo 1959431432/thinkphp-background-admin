@@ -1,6 +1,10 @@
 <extend name="Public/base" />
 
 <block name="body">
+<style type="text/css">
+	.body { padding: 0 !important; }
+	.body p { padding: 0 !important; }
+</style>
 	<div class="wrapper">
       <div class="bc">
           <ul id="breadcrumbs" class="breadcrumbs">
@@ -21,27 +25,33 @@
 			</ul>
 			<div class="tab_container">
 				<volist name="groups" id="group">
-					<?php $activitys = getActivityByIntegral( $group['id'] );?>
-					<notempty name="activitys">
-		                <div id="tab{$group.id}" class="tab_content">
-		                	<volist name="activitys" id="activity">
-			                	<div class="toggle" style="margin: 0;">
-				                    <div class="title closed normal">
-				                    	<notempty name="activity.img">
-				                    		<img src="{$activity.img|getImg}">
-				                    	<else />
-					                    	<h6>{$activity.title}</h6>
-				                    	</notempty>
-				                    </div>
-				                    <div class="body">{$activity.content|htmlspecialchars_decode}</div>
-				                </div>
-		                	</volist>
+					<lt name="group.integral" value="$_nextGroup.integral">
+						<?php $activitys = getActivityByIntegral( $group['id'] );?>
+						<notempty name="activitys">
+			                <div id="tab{$group.id}" class="tab_content">
+			                	<volist name="activitys" id="activity">
+				                	<div class="toggle" style="margin: 0;">
+					                    <div class="title closed normal">
+					                    	<notempty name="activity.img">
+					                    		<img src="{$activity.img|getImg}">
+					                    	<else />
+						                    	<h6>{$activity.title}</h6>
+					                    	</notempty>
+					                    </div>
+					                    <div class="body">{$activity.content|htmlspecialchars_decode}</div>
+					                </div>
+			                	</volist>
+			                </div>
+		                <else />
+		                	<div id="tab{$group.id}" class="tab_content">
+			                	<p style="padding: 20px;">暂无活动</p>
+			                </div>
+		                </notempty>
+					<else />
+						<div id="tab{$group.id}" class="tab_content">
+		                	<p style="padding: 20px;">暂无权限查看</p>
 		                </div>
-	                <else />
-	                	<div id="tab{$group.id}" class="tab_content">
-		                	<p style="padding: 20px;">暂无活动</p>
-		                </div>
-	                </notempty>
+					</lt>
                 </volist>
             </div>
 

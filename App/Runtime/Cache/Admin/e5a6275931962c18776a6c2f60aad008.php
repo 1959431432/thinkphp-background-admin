@@ -141,73 +141,111 @@
     
     
 
-	<div class="wrapper">
-	<div class="bc">
-	    <ul id="breadcrumbs" class="breadcrumbs">
-	         <li class="">
-	              <a href="<?php echo U('Index/index');?>">控制中心</a>
-	         </li>
-	         <li class="current"><a href="#">会员列表</a></li>
-	    </ul>
-	    <div class="clear"></div>
-	</div>
-	  <div class="widget">
-        <div class="title">
-		  <h6>会员列表</h6>
-		  <h6 class='fr'>
-		  	<a class='' href="<?php echo U('add');?>">＋添加</a>
-		  </h6>
-		  <h6 class="fr">
-		  	<form class='form'> 
-                <select name='groupid'>
-                    <option value="">会员等级</option> 
-                    <?php if(is_array($groups)): $i = 0; $__LIST__ = $groups;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$group): $mod = ($i % 2 );++$i; if(($group["id"]) == $_GET['groupid']): ?><option value="<?php echo ($group["id"]); ?>" selected="selected"><?php echo ($group["title"]); ?></option> 
-                        <?php else: ?>
-                           <option value="<?php echo ($group["id"]); ?>"><?php echo ($group["title"]); ?></option><?php endif; endforeach; endif; else: echo "" ;endif; ?>
-                </select>
-		  		<input type="text" class='searchInput' name="username" placeholder="请输入会员名称" value="<?php echo ($_GET['username']); ?>" /> 
-		  		<input type='submit' class='redB searchButton' value='搜索'>
-		  	</form>
-		  </h6>
+	 <!-- Main content wrapper -->
+    <div class="wrapper">
+        <div class="bc">
+            <ul id="breadcrumbs" class="breadcrumbs">
+                 <li class=""> <a href="<?php echo U('Index/index');?>">控制中心</a> </li>
+                 <li class=""> <a href="<?php echo U('index');?>">活动列表</a> </li>
+                 <li class="current"><a href="#">活动管理</a></li>
+            </ul>
+            <div class="clear"></div>
         </div>
-          <table cellpadding="0" cellspacing="0" width="100%" class="sTable withCheck display myTable">
-              <thead>
-                  <tr>
-                    <th>会员名称</th>
-		            <th>会员等级</th>
-		            <th>会员姓名</th>
-		            <th>会员积分</th>
-		            <th>注册时间</th>
-		            <th>最后登录时间</th>
-		            <th>会员状态</th>
-		            <th>操作</th>
-                  </tr>
-              </thead>
-              <tbody>
-	        	<?php if(is_array($lists)): $i = 0; $__LIST__ = $lists;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="gradeA">
-		       			<td class="center searchContent"><?php echo ($vo["username"]); ?></td>
-		       			<td class="center"><?php echo (getUserGroupTitle($vo["level"])); ?></td>
-		       			<td class="center"><?php echo ((isset($vo["name"]) && ($vo["name"] !== ""))?($vo["name"]):'未填写'); ?></td>
-		       			<td class="center"><?php echo ($vo["rank"]); ?></td>
-		       			<td class="center"><?php echo (date('Y-m-d H:i',$vo["addtime"])); ?></td>
-		       			<td class="center"><?php echo (date('Y-m-d H:i',$vo["lastlogin"])); ?></td>
-		       			<td class="center"><?php echo (statusTitle($vo["status"])); ?></td>
-		       			<td class="center">
-		       				<a class='confirm ajax' href="<?php echo U('del',array('id'=>$vo['id']));?>">删除</a> &nbsp;&nbsp;
-		       				<a href="<?php echo U('add',array('id'=>$vo['id']));?>">修改</a> &nbsp;&nbsp;
-		       			</td>
-			        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-              </tbody>
-              <tfoot>
-              	<tr>
-              		<td colspan="10" class='pagination'>
-              			<?php echo ($showPage); ?>
-              		</td>
-              	</tr>
-              </tfoot>
-          </table>
-        </div>
-	</div>
+        <!-- Validation form -->
+        <form class="form validate" method="post" action="<?php echo U('save');?>" enctype="multipart/form-data">
+            <input type="hidden" name='id' value="<?php echo ($vo["id"]); ?>">
+        	<fieldset>
+                <div class="widget">
+                    <div class="title"><img src="/Public/images//icons/dark/alert.png" alt="" class="titleIcon" /><h6>活动表单</h6></div>
+
+                    <div class="formRow">
+                        <label>活动标题:<span class="req">*</span></label>
+                        <div class="formRight">
+                            <input type="text" class="validate[required]" name="title" id="title" value="<?php echo ($vo["title"]); ?>"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>显示图片:</label>
+                        <div class="formRight">
+                            <input type="hidden" id="hidden_inputFile" name="img" value="<?php echo ($vo["img"]); ?>" />
+                            <p><input type="file" id="fileToUpload" name="fileToUpload" /><a id="upload" class='uploadfilebtn' href="javascript:;">开始上传</a></p>
+                            <span class="formNote">＊不重新上传请勿选择</span>
+                            <img alt="图片预览" src="/<?php echo C('UPLOAD_CONFIG.rootPath'); echo ($vo["img"]); ?>" id="showImg" width="80px" height="80px">
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>开始时间:<span class="req">*</span></label>
+                        <div class="formRight">
+                            <input type="date" class="validate[required]" name="starttime" id="starttime" value="<?php echo (date('Y-m-d',(isset($vo["starttime"]) && ($vo["starttime"] !== ""))?($vo["starttime"]):NOW_TIME)); ?>"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+
+                    <div class="formRow">
+                        <label>结束时间:<span class="req">*</span></label>
+                        <div class="formRight">
+                            <input type="date" class="validate[required]" name="endtime" id="endtime" value="<?php echo (date('Y-m-d',(isset($vo["endtime"]) && ($vo["endtime"] !== ""))?($vo["endtime"]):NOW_TIME)); ?>"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+
+                    <div class="formRow">
+                        <label>活动分组:</label>
+                        <div class="formRight">
+                            <div class="selector">
+                                <select name="integral">
+                                    <?php if(is_array($groups)): $i = 0; $__LIST__ = $groups;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$group): $mod = ($i % 2 );++$i; if(($group["id"]) == $vo["integral"]): ?><option value="<?php echo ($group["id"]); ?>" selected="selected"><?php echo ($group["title"]); ?></option>
+                                        <?php else: ?>
+                                            <option value="<?php echo ($group["id"]); ?>"><?php echo ($group["title"]); ?></option><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+
+                    <div class="formRow">
+                        <label>活动排序:</label>
+                        <div class="formRight">
+                            <input type="number" class="validate[required]" name="order" id="order" value="<?php echo ((isset($vo["order"]) && ($vo["order"] !== ""))?($vo["order"]):0); ?>"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+
+                    <div class="formRow">
+                        <label>文章内容:</label>
+                        <div class="formRight"><textarea rows="8" cols="" id='editor' name="content" placeholder="可以为空"><?php echo ($vo["content"]); ?></textarea></div><div class="clear"></div>
+                    </div>
+
+
+
+                    <div class="formRow">
+                        <label>活动状态:<span class="req">*</span></label>
+                        <div class="formRight">
+                            <div class="floatL" style="margin: 2px 0 0 0;">
+
+                            <input type="radio" id="radioReq" name="status" class="validate[required]" data-prompt-position="topRight:102" value='1' checked="checked" /><label for="radioReq">开启</label>
+                            <input type="radio" id="radioReq" name="status" class="validate[required]" data-prompt-position="topRight:102" value='2' <?php if(($vo["status"]) == "2"): ?>checked='checked'<?php endif; ?> /><label for="radioReq">关闭</label>
+
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    
+                    <div class="formSubmit"><input type="submit" value="提交" class="redB" /></div>
+                    <div class="clear"></div>
+                </div>
+                
+            </fieldset>
+        </form>       
+    </div>
 
     <!-- Footer line -->
     <div id="footer">

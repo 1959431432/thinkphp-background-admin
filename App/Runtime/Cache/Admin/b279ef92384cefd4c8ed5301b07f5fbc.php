@@ -186,8 +186,8 @@
                         <label>消息类型:<span class="req">*</span></label>
                         <div class="formRight">
                             <div class="floatL" style="margin: 2px 0 0 0;">
-                            <input type="radio" id="radioReq" name="type" class="validate[required]" data-prompt-position="topRight:102" value='1' checked="checked" /><label for="radioReq">警告</label>
-                            <input type="radio" id="radioReq2" name="type" class="validate[required]" data-prompt-position="topRight:102" value='2' <?php if(($vo["type"]) == "2"): ?>checked='checked'<?php endif; ?> /><label for="radioReq2">提醒</label>
+                            <input type="radio" id="radioReq" name="type" class="validate[required]" data-prompt-position="topRight:102" value='1' checked="checked" /><label for="radioReq">提醒</label>
+                            <input type="radio" id="radioReq2" name="type" class="validate[required]" data-prompt-position="topRight:102" value='2' <?php if(($vo["type"]) == "2"): ?>checked='checked'<?php endif; ?> /><label for="radioReq2">警告</label>
 
                             </div>
                         </div><div class="clear"></div>

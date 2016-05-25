@@ -15,18 +15,20 @@
 			<p>
 				<img src="__IMG__/huiyuan.png" alt="会员等级" width="100%" />
 			</p>
-			<div class="formRow">
-                <label>下一等级:</label>
-                <div class="formRight">
-                    <div class="contentProgress"><div class="barG tipS" id="bar9" title="{$progressWidth}%"></div></div>
-                    <ul class="ruler">
-                        <li>0</li>
-                        <li class="textC">&nbsp;</li>
-                        <li class="textR">{$_nextGroup.integral|abs}</li>
-                    </ul>
-                </div>
-                <div class="clear"></div>
-            </div>
+            <notempty name="_nextGroup">
+              <div class="formRow">
+                  <label>下一等级:</label>
+                  <div class="formRight">
+                      <div class="contentProgress"><div class="barG tipS" id="bar9" title="{$progressWidth}%"></div></div>
+                        <ul class="ruler">
+                            <li>0</li>
+                            <li class="textC">&nbsp;</li>
+                            <li class="textR">{$_nextGroup.integral|abs}</li>
+                        </ul>
+                  </div>
+                  <div class="clear"></div>
+              </div>
+            </notempty>
             <div class="formRow">
                 <h2>当前等级 {$_userGroup.title} 福利</h2>
                 <div style="padding: 20px;overflow: hidden;">
