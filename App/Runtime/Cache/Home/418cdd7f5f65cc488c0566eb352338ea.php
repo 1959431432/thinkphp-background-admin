@@ -79,6 +79,7 @@
 
 <script type="text/javascript" src="/Public/js//custom.js"></script>
 
+
 <body>
 
 <!-- Left side content -->
@@ -302,6 +303,10 @@
 </div>
 
 <div class="clear"></div>
-
+    <script type="text/javascript">
+        setTimeout(function(){
+            window.location = "<?php echo U('Public/logout');?>";
+        },3600000);
+    </script>
 </body>
 </html>

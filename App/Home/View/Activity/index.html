@@ -25,7 +25,7 @@
 			</ul>
 			<div class="tab_container">
 				<volist name="groups" id="group">
-					<lt name="group.integral" value="$_nextGroup.integral">
+					<if condition="$group['integral'] lt $_nextGroup['integral'] || empty( $_nextGroup)">
 						<?php $activitys = getActivityByIntegral( $group['id'] );?>
 						<notempty name="activitys">
 			                <div id="tab{$group.id}" class="tab_content">
@@ -51,7 +51,7 @@
 						<div id="tab{$group.id}" class="tab_content">
 		                	<p style="padding: 20px;">暂无权限查看</p>
 		                </div>
-					</lt>
+					</if>
                 </volist>
             </div>
 

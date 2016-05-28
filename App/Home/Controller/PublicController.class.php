@@ -15,6 +15,7 @@ class PublicController extends Controller
 			return ;
 		}
 	}
+
 	public function login()
 	{
 		if( ! IS_POST ){ 
@@ -23,6 +24,10 @@ class PublicController extends Controller
 			$userModel = D('user');
 
 			if( $userModel->login() ){
+				
+				// 会员登录次数
+				web_count('login_number');
+
 				$this->success('登入成功',U('Index/index'));
 			} else {
 				$this->error( $userModel->getError() );
@@ -70,6 +75,7 @@ class PublicController extends Controller
 
 	public function download() {
 		// 下载次数
+		web_count('download');
 	}
 }
 

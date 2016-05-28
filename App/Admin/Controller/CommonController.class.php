@@ -9,6 +9,11 @@ class CommonController extends BaseController {
 	
     public function _initialize()
     {
+    	$admin_user = session('admin_user');
+    	if( ! $admin_user ){
+    		tourl('Public/login');
+    	}
+
     	parent::_initialize();
     }
 }

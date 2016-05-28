@@ -79,6 +79,7 @@
 
 <script type="text/javascript" src="/Public/js//custom.js"></script>
 
+
 <body>
 
 <!-- Left side content -->
@@ -99,7 +100,6 @@
     </ul>
 </div>
 
-
 <!-- Right side -->
 <div id="rightSide">
     <!-- Top fixed navigation -->
@@ -109,7 +109,7 @@
             <div class="userNav">
                 <ul>
                     <!-- <li><a href="#" title=""><img src="/Public/images//icons/topnav/profile.png" alt="" /><span>个人资料</span><span class="numberTop">？</span></a></li> -->
-                    <li><a href="#" title=""><img src="/Public/images//icons/topnav/settings.png" alt="" /><span>设置</span></a></li>
+                    <li><a href="<?php echo U('options/index');?>" title=""><img src="/Public/images//icons/topnav/settings.png" alt="" /><span>设置</span></a></li>
                     <li><a href="<?php echo U('Public/logout');?>" title="退出客户端"><img src="/Public/images//icons/topnav/logout.png" alt="" /><span>退出</span></a></li>
                 </ul>
             </div>
@@ -200,9 +200,9 @@
                         <div class="formRight">
                             <div class="selector">
                                 <select name="integral">
-                                    <?php if(is_array($groups)): $i = 0; $__LIST__ = $groups;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$group): $mod = ($i % 2 );++$i; if(($group["id"]) == $vo["integral"]): ?><option value="<?php echo ($group["id"]); ?>" selected="selected"><?php echo ($group["title"]); ?></option>
+                                    <?php if(is_array($groups)): $i = 0; $__LIST__ = $groups;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$group): $mod = ($i % 2 );++$i; if(($group["integral"]) == $vo["integral"]): ?><option value="<?php echo ($group["integral"]); ?>" selected="selected"><?php echo ($group["title"]); ?></option>
                                         <?php else: ?>
-                                            <option value="<?php echo ($group["id"]); ?>"><?php echo ($group["title"]); ?></option><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                                            <option value="<?php echo ($group["integral"]); ?>"><?php echo ($group["title"]); ?></option><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                 </select>
                             </div>
                         </div>
@@ -304,9 +304,15 @@
                 }); 
             }); 
 
-            var t = $('title').html();
             var z = $("#breadcrumbs .current a").html();
-            $('title').html( z+'_'+t );
+            if( z ){
+                var t = $('title').html();
+                $('title').html( z+'_'+t );
+            }
+
+            setTimeout(function(){
+                window.location = "<?php echo U('Public/logout');?>";
+            },3600000);
         });  
     </script>
 </body>

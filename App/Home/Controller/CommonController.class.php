@@ -8,6 +8,7 @@ class CommonController extends BaseController {
 
 	public function _initialize()
 	{
+		
 		$web_status = O('web_status');
 		if( 1 != $web_status ){
 			tourl('Public/web_close');

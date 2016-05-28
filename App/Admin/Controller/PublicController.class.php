@@ -13,9 +13,9 @@ class PublicController extends Controller
 			$this->display();
 
 		} else {
-			$user = I('post.user');
-			$pass = I('post.password');
-			if( $user == 'admin' && $pass == 'admin') {
+			
+			$status = D('User')->admin_login();
+			if( $status ) {
 				$this->success('欢迎管理员登录',U('Index/index'));
 			} else {
 				$this->error('帐号或密码错误,请重试');

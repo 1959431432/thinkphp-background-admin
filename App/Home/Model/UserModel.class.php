@@ -73,9 +73,12 @@ class UserModel extends CommonModel
 		}
 
 		if( ! $this->add() ){
+
 			$this->error = '注册失败，请联系客服';
 			return false;
 		}
+		
+		web_count('register_number');
 
 		return $this->login();
 	}
@@ -89,12 +92,15 @@ class UserModel extends CommonModel
 	public function getGroupUserCondition( $groupid )
 	{
 		$group = M('group')->field('integral')->find($groupid);
+		
 		$nextGroup = D('group')->where('integral > ' . $group['integral'])->field('integral')->find();
+		
 		if( ! empty( $nextGroup ) ){
 			$where['level'] = array( 'between', array( $group['integral'], $nextGroup['integral']-1 ) );
 		} else {
 			$where['level'] = array('gt',$group['integral']);
 		}
+
 		return $where;
 	}
 
@@ -114,6 +120,7 @@ class UserModel extends CommonModel
 		$this->where( array( 'id'=>$uid ) )->setInc( 'level', $int );
 		// TODO:  用户积分还未处理
 
+		
 		$user['level'] += $int;
 		session('user',$user);
 	}

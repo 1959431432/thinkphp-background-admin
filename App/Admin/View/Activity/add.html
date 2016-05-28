@@ -62,10 +62,10 @@
                             <div class="selector">
                                 <select name="integral">
                                     <volist name="groups" id="group">
-                                        <eq name="group.id" value="$vo.integral">
-                                            <option value="{$group.id}" selected="selected">{$group.title}</option>
+                                        <eq name="group.integral" value="$vo.integral">
+                                            <option value="{$group.integral}" selected="selected">{$group.title}</option>
                                         <else />
-                                            <option value="{$group.id}">{$group.title}</option>
+                                            <option value="{$group.integral}">{$group.title}</option>
                                         </eq>
                                     </volist>
                                 </select>

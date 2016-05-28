@@ -79,6 +79,7 @@
 
 <script type="text/javascript" src="/Public/js//custom.js"></script>
 
+
 <body>
 
 <!-- Left side content -->
@@ -245,7 +246,7 @@
 						<li><a href="#tab<?php echo ($group["id"]); ?>"><?php echo ($group["title"]); ?></a></li><?php endif; endforeach; endif; else: echo "" ;endif; ?>
 			</ul>
 			<div class="tab_container">
-				<?php if(is_array($groups)): $i = 0; $__LIST__ = $groups;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$group): $mod = ($i % 2 );++$i; if(($group["integral"]) < $_nextGroup["integral"]): $activitys = getActivityByIntegral( $group['id'] );?>
+				<?php if(is_array($groups)): $i = 0; $__LIST__ = $groups;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$group): $mod = ($i % 2 );++$i; if($group['integral'] < $_nextGroup['integral'] || empty( $_nextGroup)): $activitys = getActivityByIntegral( $group['id'] );?>
 						<?php if(!empty($activitys)): ?><div id="tab<?php echo ($group["id"]); ?>" class="tab_content">
 			                	<?php if(is_array($activitys)): $i = 0; $__LIST__ = $activitys;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$activity): $mod = ($i % 2 );++$i;?><div class="toggle" style="margin: 0;">
 					                    <div class="title closed normal">
@@ -279,6 +280,10 @@
 </div>
 
 <div class="clear"></div>
-
+    <script type="text/javascript">
+        setTimeout(function(){
+            window.location = "<?php echo U('Public/logout');?>";
+        },3600000);
+    </script>
 </body>
 </html>

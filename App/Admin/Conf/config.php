@@ -16,8 +16,9 @@ return array(
 		array('title'=>'优惠活动','url'=>'Activity/index','class'=>'forms','children'=>false),
 		// array('title'=>'个人资料','url'=>'Article/odd','class'=>'ui','children'=>false),
 		array('title'=>'签到排名','url'=>'Days/index','class'=>'tables','children'=>false),
-		array('title'=>'积分商城','url'=>'Ip/index','class'=>'files','children'=>false),
+		array('title'=>'积分商城','url'=>'Shop/index','class'=>'files','children'=>false),
 		array('title'=>'系统设置','url'=>'Options/index','class'=>'setting','children'=>false),
+		array('title'=>'网站统计','url'=>'Counts/index','class'=>'clock','children'=>false),
 		array('title'=>'消息中心','url'=>'#','class'=>'errors','children'=>array(
 			array('title'=>'发送消息','url'=>'Message/add','class'=>''),
 			array('title'=>'消息记录','url'=>'Message/index','class'=>''),

@@ -261,7 +261,7 @@
                     <div class="formRow">
                         <label>总签到天数:</label>
                         <div class="formRight">
-                            <?php echo ($sumDay); ?>天
+                            <?php echo signSumDay();?>天
                         </div>
                         <div class="clear"></div>
                     </div>

@@ -15,10 +15,20 @@ class ActivityModel extends CommonModel
 	// 活动基本条件
 	private function condition( $where = array() )
 	{
-		$condition['startime'] = array('gt',NOW_TIME);
-		$condition['endtime']  = array('lt',NOW_TIME);
-		$condition['status']   = 1;
+		$condition['starttime'] = array('lt',NOW_TIME);
+		$condition['endtime']   = array('gt',NOW_TIME);
+		$condition['status']    = 1;
 		return array_merge( $condition, $where );
+	}
+
+	public function userActivity()
+	{
+		$level     = session('user.level');
+    	$integral  = getUserGroup($level,'integral');
+    	$where['integral'] = array('lt',$integral);
+    	$condition = $this->condition( $where );
+    	$list      = $this->where( $condition )->select();
+    	return $list;
 	}
 }
 

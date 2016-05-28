@@ -42,7 +42,7 @@
 	        	<volist name="lists" id="vo">
 	                <tr class="gradeA">
 		       			<td class="center searchContent">{$vo.title}</td>
-		       			<td class="center">{$vo.integral|getGroupTitle}</td>
+		       			<td class="center">{$vo.integral|getGroupTitleByIntegral}</td>
 		       			<td class="center">{$vo.starttime|date='Y-m-d',###}</td>
 		       			<td class="center">{$vo.endtime|date='Y-m-d',###}</td>
 		       			<td class="center">{$vo.order}</td>

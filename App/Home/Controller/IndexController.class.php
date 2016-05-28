@@ -5,12 +5,16 @@ namespace Home\Controller;
  */
 class IndexController extends CommonController {
     public function index(){
+
 		$messages = D('message')->indexMsg();
 		$this->assign( 'messages', $messages );
 
 		$hasSign = D('days')->hasSign();
     	$this->assign( 'hasSign', $hasSign );
-		
+
+    	$activitys = D('Activity')->userActivity();
+    	$this->assign('activitys',$activitys);
+
 		$this->display();
     }
 }

@@ -250,9 +250,11 @@
                 }); 
             }); 
 
-            var t = $('title').html();
             var z = $("#breadcrumbs .current a").html();
-            $('title').html( z+'_'+t );
+            if( z ){
+                var t = $('title').html();
+                $('title').html( z+'_'+t );
+            }
         });  
     </script>
 </body>

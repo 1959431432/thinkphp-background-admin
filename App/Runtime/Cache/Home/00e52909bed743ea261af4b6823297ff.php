@@ -79,6 +79,7 @@
 
 <script type="text/javascript" src="/Public/js//custom.js"></script>
 
+
 <body>
 
 <!-- Left side content -->
@@ -294,7 +295,7 @@
                         签到天数：
                     </td>
                     <td>
-                        32天
+                        <?php echo signSumDay();?>天
                     </td>
                     <td>
                         今日签到：
@@ -313,20 +314,22 @@
         </div>
         <div class="widget">
             <div class="title"><h6>最新优惠活动</h6></div>
-            <table cellpadding="0" cellspacing="0" width="100%" class="sTable withCheck display">
+            <table cellpadding="0" cellspacing="0" width="100%" class="sTable withCheck display myTable">
               <thead>
                   <tr>
                     <th>活动标题</th>
+                    <th>所需等级</th>
                     <th>开始时间</th>
                     <th>结束时间</th>
                   </tr>
               </thead>
               <tbody>
-                <tr class="gradeA">
-                    <td class="center">暂无</td>
-                    <td class="center">0</td>
-                    <td class="center">2016-05-18 15:58</td>
-                </tr>              
+                <?php if(is_array($activitys)): $i = 0; $__LIST__ = $activitys;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$activity): $mod = ($i % 2 );++$i;?><tr class="gradeA">
+                        <td class="center"><?php echo ($activity["title"]); ?></td>
+                        <td class="center"><?php echo (getGroupTitleByIntegral($activity["integral"])); ?></td>
+                        <td class="center"><?php echo (date("Y-m-d",$activity["starttime"])); ?></td>
+                        <td class="center"><?php echo (date("Y-m-d",$activity["endtime"])); ?></td>
+                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>         
               </tbody>
           </table>
         </div>
@@ -341,6 +344,10 @@
 </div>
 
 <div class="clear"></div>
-
+    <script type="text/javascript">
+        setTimeout(function(){
+            window.location = "<?php echo U('Public/logout');?>";
+        },3600000);
+    </script>
 </body>
 </html>

@@ -79,6 +79,7 @@
 
 <script type="text/javascript" src="/Public/js//custom.js"></script>
 
+
 <body>
 
 <!-- Left side content -->
@@ -99,7 +100,6 @@
     </ul>
 </div>
 
-
 <!-- Right side -->
 <div id="rightSide">
     <!-- Top fixed navigation -->
@@ -109,7 +109,7 @@
             <div class="userNav">
                 <ul>
                     <!-- <li><a href="#" title=""><img src="/Public/images//icons/topnav/profile.png" alt="" /><span>个人资料</span><span class="numberTop">？</span></a></li> -->
-                    <li><a href="#" title=""><img src="/Public/images//icons/topnav/settings.png" alt="" /><span>设置</span></a></li>
+                    <li><a href="<?php echo U('options/index');?>" title=""><img src="/Public/images//icons/topnav/settings.png" alt="" /><span>设置</span></a></li>
                     <li><a href="<?php echo U('Public/logout');?>" title="退出客户端"><img src="/Public/images//icons/topnav/logout.png" alt="" /><span>退出</span></a></li>
                 </ul>
             </div>
@@ -268,9 +268,15 @@
                 }); 
             }); 
 
-            var t = $('title').html();
             var z = $("#breadcrumbs .current a").html();
-            $('title').html( z+'_'+t );
+            if( z ){
+                var t = $('title').html();
+                $('title').html( z+'_'+t );
+            }
+
+            setTimeout(function(){
+                window.location = "<?php echo U('Public/logout');?>";
+            },3600000);
         });  
     </script>
 </body>
