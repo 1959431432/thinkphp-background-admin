@@ -6,9 +6,12 @@ namespace Admin\Controller;
  */
 class ShopController extends CommonController
 {
-	public function index()
-	{
-		$this->error('待开发中');
+	protected function condition(){
+		$where = parent::condition();
+		if( '' != $where['title'] ){
+			$where['title'] = array( 'like', '%'.$where['title'].'%');
+		}
+		return $where;
 	}
 }
 

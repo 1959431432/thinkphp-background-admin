@@ -1,34 +1,46 @@
 <extend name="Public/base" />
 
 <block name="body">
-
-	 <!-- Main content wrapper -->
+	
+    <!-- Main content wrapper -->
     <div class="wrapper">
         <div class="bc">
             <ul id="breadcrumbs" class="breadcrumbs">
                  <li class=""> <a href="{:U('Index/index')}">控制中心</a> </li>
-                 <li class=""> <a href="{:U('index')}">活动列表</a> </li>
-                 <li class="current"><a href="#">活动管理</a></li>
+                 <li class=""> <a href="{:U('index')}">积分商城</a> </li>
+                 <li class="current"><a href="#">商品管理</a></li>
             </ul>
             <div class="clear"></div>
         </div>
+
         <!-- Validation form -->
-        <form class="form validate" method="post" action="{:U('save')}" enctype="multipart/form-data">
+        <form class="form validate" method="post" action="{:U('save')}">
             <input type="hidden" name='id' value="{$vo.id}">
         	<fieldset>
                 <div class="widget">
-                    <div class="title"><img src="__IMG__/icons/dark/alert.png" alt="" class="titleIcon" /><h6>活动表单</h6></div>
-
+                    <div class="title"><img src="__IMG__/icons/dark/alert.png" alt="" class="titleIcon" /><h6>文章表单</h6></div>
                     <div class="formRow">
-                        <label>活动标题:<span class="req">*</span></label>
-                        <div class="formRight">
-                            <input type="text" class="validate[required]" name="title" id="title" value="{$vo.title}"/>
-                        </div>
-                        <div class="clear"></div>
+                        <label>商品标题:<span class="req">*</span></label>
+                        <div class="formRight"><input type="text" class="validate[required]" name="title" id="req" value="{$vo.title}"/></div><div class="clear"></div>
                     </div>
 
+                    <!-- <div class="formRow">
+                        <label>商品栏目:<span class="req">*</span></label>
+                        <div class="formRight">
+                        <select name="cid" id="cid" data-placeholder="请选择文章栏目" class="validate[required]]">
+                                <option value="">请选择文章栏目</option> 
+                                <volist name="categorys" id="category">
+                                    <option value="{$category.id}" <eq name="vo.cid" value="$category.id">selected='selected'</eq>>
+                                        {$category.title}
+                                    </option> 
+                                </volist>
+                            </select>
+                        </div>
+                        <div class="clear"></div>
+                    </div> -->
+
                     <div class="formRow">
-                        <label>显示图片:</label>
+                        <label>封面图片:</label>
                         <div class="formRight">
                             <input type="hidden" id="hidden_inputFile" name="img" value="{$vo.img}" />
                             <p><input type="file" id="fileToUpload" name="fileToUpload" /><a id="upload" class='uploadfilebtn' href="javascript:;">开始上传</a></p>
@@ -55,60 +67,49 @@
                         <div class="clear"></div>
                     </div>
 
-
                     <div class="formRow">
-                        <label>活动分组:</label>
-                        <div class="formRight">
-                            <div class="selector">
-                                <select name="integral">
-                                    <volist name="groups" id="group">
-                                        <eq name="group.integral" value="$vo.integral">
-                                            <option value="{$group.integral}" selected="selected">{$group.title}</option>
-                                        <else />
-                                            <option value="{$group.integral}">{$group.title}</option>
-                                        </eq>
-                                    </volist>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="clear"></div>
+                        <label>市场价格:</label>
+                        <div class="formRight"><input type="number" value="{$vo.price|default=0}" name='price' /></div><div class="clear"></div>
                     </div>
 
-
                     <div class="formRow">
-                        <label>活动排序:</label>
-                        <div class="formRight">
-                            <input type="number" class="validate[required]" name="order" id="order" value="{$vo.order|default=0}"/>
-                        </div>
-                        <div class="clear"></div>
+                        <label>所需积分:</label>
+                        <div class="formRight"><input type="number" value="{$vo.integral|default=0}" name='integral' /></div><div class="clear"></div>
                     </div>
 
+                    <div class="formRow">
+                        <label>兑换人数:</label>
+                        <div class="formRight"><input type="number" value="{$vo.people|default=0}" name='people' /></div><div class="clear"></div>
+                    </div>
 
                     <div class="formRow">
-                        <label>文章内容:</label>
+                        <label>商品内容:</label>
                         <div class="formRight"><textarea rows="8" cols="" id='editor' name="content" placeholder="可以为空">{$vo.content}</textarea></div><div class="clear"></div>
                     </div>
 
-
-
                     <div class="formRow">
-                        <label>活动状态:<span class="req">*</span></label>
+                        <label>商品排序:</label>
+                        <div class="formRight"><input type="number" value="{$vo.order|default=0}" name='order' /></div><div class="clear"></div>
+                    </div>
+                    
+                    <div class="formRow">
+                        <label>是否开启:<span class="req">*</span></label>
                         <div class="formRight">
                             <div class="floatL" style="margin: 2px 0 0 0;">
 
                             <input type="radio" id="radioReq" name="status" class="validate[required]" data-prompt-position="topRight:102" value='1' checked="checked" /><label for="radioReq">开启</label>
-                            <input type="radio" id="radioReq" name="status" class="validate[required]" data-prompt-position="topRight:102" value='2' <eq name="vo.status" value='2'> checked='checked'</eq> /><label for="radioReq">关闭</label>
+                            <input type="radio" id="radioReq2" name="status" class="validate[required]" data-prompt-position="topRight:102" value='2' <eq name="vo.status" value='2'> checked='checked'</eq> /><label for="radioReq2">关闭</label>
 
                             </div>
-                        </div>
-                        <div class="clear"></div>
+                        </div><div class="clear"></div>
                     </div>
                     
-                    <div class="formSubmit"><input type="submit" value="提交" class="redB" /></div>
+                    <div class="formSubmit"><input type="submit" value="submit" class="redB" /></div>
                     <div class="clear"></div>
                 </div>
                 
             </fieldset>
         </form>       
     </div>
-</block>   
+
+</block>
