@@ -1,0 +1,855 @@
+[ 2016-05-31T00:02:21+08:00 ] ::1 /index.php/Shop/add/id/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000172s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000229s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000257s ]
+NOTIC: [2048] Declaration of Home\Controller\CommonController::save() should be compatible with Common\Controller\BaseController::save($modelName = NULL) /Users/minghuang/www/exe/App/Home/Controller/CommonController.class.php 第 7 行.
+NOTIC: [2048] Declaration of Home\Controller\ShopController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Home/Controller/ShopController.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `e_options` [ RunTime:0.0003s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'web_status' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=500028 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 28000 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `e_message` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `e_read` [ RunTime:0.0005s ]
+SQL: SELECT `mid` FROM `e_read` WHERE `uid` = 8  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_message` WHERE `uid` = 0 AND ( `touid` = 0 OR `touid` = '8' ) AND `id` NOT IN ('6','11','9') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `e_shop` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `e_shop` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000086s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000125s ]
+NOTIC: [2] Division by zero /Users/minghuang/www/exe/App/Runtime/Cache/Home/771cfa305a778451f32d6e60666bd602.php 第 106 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009467s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009507s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000212s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000236s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000497s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000565s ]
+
+[ 2016-05-31T00:02:22+08:00 ] ::1 /index.php/Shop/buy/id/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000216s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000452s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000512s ]
+NOTIC: [2048] Declaration of Home\Controller\CommonController::save() should be compatible with Common\Controller\BaseController::save($modelName = NULL) /Users/minghuang/www/exe/App/Home/Controller/CommonController.class.php 第 7 行.
+NOTIC: [2048] Declaration of Home\Controller\ShopController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Home/Controller/ShopController.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `e_options` [ RunTime:0.0005s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'web_status' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=500028 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 28000 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `e_message` [ RunTime:0.0056s ]
+SQL: SHOW COLUMNS FROM `e_read` [ RunTime:0.0019s ]
+SQL: SELECT `mid` FROM `e_read` WHERE `uid` = 8  [ RunTime:0.0014s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_message` WHERE `uid` = 0 AND ( `touid` = 0 OR `touid` = '8' ) AND `id` NOT IN ('6','11','9') LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000181s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006430s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006489s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000138s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000169s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000407s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000451s ]
+
+[ 2016-05-31T00:02:33+08:00 ] ::1 /index.php/Shop/buySave.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000516s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000789s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000900s ]
+NOTIC: [2048] Declaration of Home\Controller\CommonController::save() should be compatible with Common\Controller\BaseController::save($modelName = NULL) /Users/minghuang/www/exe/App/Home/Controller/CommonController.class.php 第 7 行.
+NOTIC: [2048] Declaration of Home\Controller\ShopController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Home/Controller/ShopController.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `e_options` [ RunTime:0.0004s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'web_status' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=500028 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 28000 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_message` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `e_read` [ RunTime:0.0004s ]
+SQL: SELECT `mid` FROM `e_read` WHERE `uid` = 8  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_message` WHERE `uid` = 0 AND ( `touid` = 0 OR `touid` = '8' ) AND `id` NOT IN ('6','11','9') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `e_shop` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `e_shop` WHERE `starttime` < 1464624153 AND `endtime` > 1464624153 AND `status` = 1 AND `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `e_order` [ RunTime:0.0006s ]
+SQL: INSERT INTO `e_order` (`sid`,`name`,`phone`,`address`,`integral`,`uid`,`addtime`) VALUES ('2','测试名字','13012341234','地址地址地址','20000','8','1464624153') [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `e_user` [ RunTime:0.0007s ]
+SQL: UPDATE `e_user` SET `level`='500028',`username`='demo',`password`='fe01ce2a7fbac8fafaed7c982a04e229',`name`='测试名字',`id_number`='',`phone`='',`other_phone`='',`email`='',`days`='0',`birth`=NULL,`address`='',`rank`='10000',`addtime`='1464059181',`lastlogin`='1464617720',`lastip`='0.0.0.0',`lastarea`='IANA',`status`='1' WHERE `id` = 8 [ RunTime:0.0021s ]
+
+[ 2016-05-31T00:02:37+08:00 ] ::1 /index.php/Shop/add/id/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000196s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000236s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000264s ]
+NOTIC: [2048] Declaration of Home\Controller\CommonController::save() should be compatible with Common\Controller\BaseController::save($modelName = NULL) /Users/minghuang/www/exe/App/Home/Controller/CommonController.class.php 第 7 行.
+NOTIC: [2048] Declaration of Home\Controller\ShopController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Home/Controller/ShopController.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `e_options` [ RunTime:0.0003s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'web_status' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=500028 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 28000 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `e_message` [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `e_read` [ RunTime:0.0003s ]
+SQL: SELECT `mid` FROM `e_read` WHERE `uid` = 8  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_message` WHERE `uid` = 0 AND ( `touid` = 0 OR `touid` = '8' ) AND `id` NOT IN ('6','11','9') LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_shop` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_shop` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000077s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000107s ]
+NOTIC: [2] Division by zero /Users/minghuang/www/exe/App/Runtime/Cache/Home/771cfa305a778451f32d6e60666bd602.php 第 106 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009449s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009479s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000106s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000127s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000394s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000445s ]
+
+[ 2016-05-31T00:03:34+08:00 ] ::1 /index.php/Shop/add/id/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000268s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000292s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000326s ]
+NOTIC: [2048] Declaration of Home\Controller\CommonController::save() should be compatible with Common\Controller\BaseController::save($modelName = NULL) /Users/minghuang/www/exe/App/Home/Controller/CommonController.class.php 第 7 行.
+NOTIC: [2048] Declaration of Home\Controller\ShopController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Home/Controller/ShopController.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `e_options` [ RunTime:0.0003s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'web_status' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=500028 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 28000 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_message` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `e_read` [ RunTime:0.0007s ]
+SQL: SELECT `mid` FROM `e_read` WHERE `uid` = 8  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_message` WHERE `uid` = 0 AND ( `touid` = 0 OR `touid` = '8' ) AND `id` NOT IN ('6','11','9') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `e_shop` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_shop` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000079s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000114s ]
+NOTIC: [2] Division by zero /Users/minghuang/www/exe/App/Runtime/Cache/Home/771cfa305a778451f32d6e60666bd602.php 第 106 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009354s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009383s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000105s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000126s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000320s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000349s ]
+
+[ 2016-05-31T00:03:55+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000171s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000219s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000245s ]
+NOTIC: [2048] Declaration of Home\Controller\CommonController::save() should be compatible with Common\Controller\BaseController::save($modelName = NULL) /Users/minghuang/www/exe/App/Home/Controller/CommonController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `e_options` [ RunTime:0.0003s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'web_status' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=500028 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 28000 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_message` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `e_read` [ RunTime:0.0003s ]
+SQL: SELECT `mid` FROM `e_read` WHERE `uid` = 8  [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_message` WHERE `uid` = 0 AND ( `touid` = 0 OR `touid` = '8' ) AND `id` NOT IN ('6','11','9') LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `mid` FROM `e_read` WHERE `uid` = 8  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `e_message` WHERE `uid` = 0 AND ( `touid` = 0 OR `touid` = '8' ) AND `id` NOT IN ('6','11','9')  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_days` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_days` WHERE `addtime` = 1464624001 AND `uid` = 8 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `e_activity` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=500028 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `e_activity` WHERE `starttime` < 1464624235 AND `endtime` > 1464624235 AND `status` = 1 AND `integral` < '28000'  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000110s ]
+NOTIC: [2] Division by zero /Users/minghuang/www/exe/App/Runtime/Cache/Home/00e52909bed743ea261af4b6823297ff.php 第 106 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `e_days` WHERE `uid` = 8 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `title` FROM `e_group` WHERE `integral` = 0 LIMIT 1   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010419s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010443s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000137s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000158s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000292s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000319s ]
+
+[ 2016-05-31T00:04:00+08:00 ] ::1 /index.php/Group/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000174s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000223s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000248s ]
+NOTIC: [2048] Declaration of Home\Controller\CommonController::save() should be compatible with Common\Controller\BaseController::save($modelName = NULL) /Users/minghuang/www/exe/App/Home/Controller/CommonController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `e_options` [ RunTime:0.0003s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'web_status' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=500028 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 28000 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_message` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `e_read` [ RunTime:0.0003s ]
+SQL: SELECT `mid` FROM `e_read` WHERE `uid` = 8  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_message` WHERE `uid` = 0 AND ( `touid` = 0 OR `touid` = '8' ) AND `id` NOT IN ('6','11','9') LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_group` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `e_group` LIMIT 20   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: link_page /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 175 行.
+NOTIC: [8] Undefined variable: the_first /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 192 行.
+NOTIC: [8] Undefined variable: the_end /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 192 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000119s ]
+NOTIC: [2] Division by zero /Users/minghuang/www/exe/App/Runtime/Cache/Home/f9a61c17bccad53e77248426a61bfcb5.php 第 106 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008964s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008993s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000112s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000134s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000329s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000369s ]
+
+[ 2016-05-31T10:09:08+08:00 ] ::1 /index.php/Shop/add/id/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000177s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000225s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000251s ]
+NOTIC: [2048] Declaration of Home\Controller\CommonController::save() should be compatible with Common\Controller\BaseController::save($modelName = NULL) /Users/minghuang/www/exe/App/Home/Controller/CommonController.class.php 第 7 行.
+NOTIC: [2048] Declaration of Home\Controller\ShopController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Home/Controller/ShopController.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `e_options` [ RunTime:0.0003s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'web_status' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=500028 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 28000 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_message` [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `e_read` [ RunTime:0.0003s ]
+SQL: SELECT `mid` FROM `e_read` WHERE `uid` = 8  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_message` WHERE `uid` = 0 AND ( `touid` = 0 OR `touid` = '8' ) AND `id` NOT IN ('6','11','9') LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_shop` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_shop` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000108s ]
+NOTIC: [2] Division by zero /Users/minghuang/www/exe/App/Runtime/Cache/Home/771cfa305a778451f32d6e60666bd602.php 第 106 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009579s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009612s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000218s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000260s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000481s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000520s ]
+
+[ 2016-05-31T10:09:20+08:00 ] ::1 /index.php/Shop/add/id/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000193s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000266s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000300s ]
+NOTIC: [2048] Declaration of Home\Controller\CommonController::save() should be compatible with Common\Controller\BaseController::save($modelName = NULL) /Users/minghuang/www/exe/App/Home/Controller/CommonController.class.php 第 7 行.
+NOTIC: [2048] Declaration of Home\Controller\ShopController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Home/Controller/ShopController.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `e_options` [ RunTime:0.0004s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'web_status' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=500028 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 28000 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_message` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `e_read` [ RunTime:0.0003s ]
+SQL: SELECT `mid` FROM `e_read` WHERE `uid` = 8  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_message` WHERE `uid` = 0 AND ( `touid` = 0 OR `touid` = '8' ) AND `id` NOT IN ('6','11','9') LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_shop` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_shop` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000105s ]
+NOTIC: [2] Division by zero /Users/minghuang/www/exe/App/Runtime/Cache/Home/771cfa305a778451f32d6e60666bd602.php 第 106 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008947s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008980s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000108s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000347s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000386s ]
+
+[ 2016-05-31T10:09:25+08:00 ] ::1 /index.php/Shop/add/id/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000183s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000228s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000256s ]
+NOTIC: [2048] Declaration of Home\Controller\CommonController::save() should be compatible with Common\Controller\BaseController::save($modelName = NULL) /Users/minghuang/www/exe/App/Home/Controller/CommonController.class.php 第 7 行.
+NOTIC: [2048] Declaration of Home\Controller\ShopController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Home/Controller/ShopController.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `e_options` [ RunTime:0.0003s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'web_status' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=500028 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 28000 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_message` [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `e_read` [ RunTime:0.0003s ]
+SQL: SELECT `mid` FROM `e_read` WHERE `uid` = 8  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_message` WHERE `uid` = 0 AND ( `touid` = 0 OR `touid` = '8' ) AND `id` NOT IN ('6','11','9') LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_shop` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_shop` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000104s ]
+NOTIC: [2] Division by zero /Users/minghuang/www/exe/App/Runtime/Cache/Home/771cfa305a778451f32d6e60666bd602.php 第 106 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008502s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008529s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000101s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000121s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000288s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000316s ]
+
+[ 2016-05-31T10:09:45+08:00 ] ::1 /index.php/Shop/add/id/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000167s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000218s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000243s ]
+NOTIC: [2048] Declaration of Home\Controller\CommonController::save() should be compatible with Common\Controller\BaseController::save($modelName = NULL) /Users/minghuang/www/exe/App/Home/Controller/CommonController.class.php 第 7 行.
+NOTIC: [2048] Declaration of Home\Controller\ShopController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Home/Controller/ShopController.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `e_options` [ RunTime:0.0003s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'web_status' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=500028 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 28000 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `e_message` [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `e_read` [ RunTime:0.0003s ]
+SQL: SELECT `mid` FROM `e_read` WHERE `uid` = 8  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_message` WHERE `uid` = 0 AND ( `touid` = 0 OR `touid` = '8' ) AND `id` NOT IN ('6','11','9') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `e_shop` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_shop` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000116s ]
+NOTIC: [2] Division by zero /Users/minghuang/www/exe/App/Runtime/Cache/Home/771cfa305a778451f32d6e60666bd602.php 第 106 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009239s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009315s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000193s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000232s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000899s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000956s ]
+
+[ 2016-05-31T10:10:03+08:00 ] ::1 /index.php/Shop/add/id/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000176s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000222s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000246s ]
+NOTIC: [2048] Declaration of Home\Controller\CommonController::save() should be compatible with Common\Controller\BaseController::save($modelName = NULL) /Users/minghuang/www/exe/App/Home/Controller/CommonController.class.php 第 7 行.
+NOTIC: [2048] Declaration of Home\Controller\ShopController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Home/Controller/ShopController.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `e_options` [ RunTime:0.0008s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'web_status' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=500028 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 28000 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `e_message` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `e_read` [ RunTime:0.0003s ]
+SQL: SELECT `mid` FROM `e_read` WHERE `uid` = 8  [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_message` WHERE `uid` = 0 AND ( `touid` = 0 OR `touid` = '8' ) AND `id` NOT IN ('6','11','9') LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_shop` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_shop` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000083s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000120s ]
+NOTIC: [2] Division by zero /Users/minghuang/www/exe/App/Runtime/Cache/Home/771cfa305a778451f32d6e60666bd602.php 第 106 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009583s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009611s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000107s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000128s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000339s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000381s ]
+
+[ 2016-05-31T10:19:39+08:00 ] ::1 /index.php/Shop/add/id/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000175s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000223s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000249s ]
+NOTIC: [2048] Declaration of Home\Controller\CommonController::save() should be compatible with Common\Controller\BaseController::save($modelName = NULL) /Users/minghuang/www/exe/App/Home/Controller/CommonController.class.php 第 7 行.
+NOTIC: [2048] Declaration of Home\Controller\ShopController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Home/Controller/ShopController.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `e_options` [ RunTime:0.0003s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'web_status' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=500028 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 28000 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `e_message` [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `e_read` [ RunTime:0.0003s ]
+SQL: SELECT `mid` FROM `e_read` WHERE `uid` = 8  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_message` WHERE `uid` = 0 AND ( `touid` = 0 OR `touid` = '8' ) AND `id` NOT IN ('6','11','9') LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_shop` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_shop` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000077s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000109s ]
+NOTIC: [2] Division by zero /Users/minghuang/www/exe/App/Runtime/Cache/Home/771cfa305a778451f32d6e60666bd602.php 第 106 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010091s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010122s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000136s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000161s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000313s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000363s ]
+
+[ 2016-05-31T10:19:40+08:00 ] ::1 /index.php/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000199s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000245s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000273s ]
+NOTIC: [2048] Declaration of Home\Controller\CommonController::save() should be compatible with Common\Controller\BaseController::save($modelName = NULL) /Users/minghuang/www/exe/App/Home/Controller/CommonController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `e_options` [ RunTime:0.0007s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'web_status' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=500028 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 28000 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_message` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `e_read` [ RunTime:0.0006s ]
+SQL: SELECT `mid` FROM `e_read` WHERE `uid` = 8  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_message` WHERE `uid` = 0 AND ( `touid` = 0 OR `touid` = '8' ) AND `id` NOT IN ('6','11','9') LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `mid` FROM `e_read` WHERE `uid` = 8  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `e_message` WHERE `uid` = 0 AND ( `touid` = 0 OR `touid` = '8' ) AND `id` NOT IN ('6','11','9')  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `e_days` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_days` WHERE `addtime` = 1464624001 AND `uid` = 8 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_activity` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=500028 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `e_activity` WHERE `starttime` < 1464661180 AND `endtime` > 1464661180 AND `status` = 1 AND `integral` < '28000'  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000084s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000118s ]
+NOTIC: [2] Division by zero /Users/minghuang/www/exe/App/Runtime/Cache/Home/00e52909bed743ea261af4b6823297ff.php 第 106 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `e_days` WHERE `uid` = 8 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `title` FROM `e_group` WHERE `integral` = 0 LIMIT 1   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012473s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012497s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000136s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000155s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000303s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000329s ]
+
+[ 2016-05-31T10:20:12+08:00 ] ::1 /index.php/Days/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000168s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000218s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000244s ]
+NOTIC: [2048] Declaration of Home\Controller\CommonController::save() should be compatible with Common\Controller\BaseController::save($modelName = NULL) /Users/minghuang/www/exe/App/Home/Controller/CommonController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `e_options` [ RunTime:0.0003s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'web_status' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=500028 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 28000 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `e_message` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `e_read` [ RunTime:0.0003s ]
+SQL: SELECT `mid` FROM `e_read` WHERE `uid` = 8  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_message` WHERE `uid` = 0 AND ( `touid` = 0 OR `touid` = '8' ) AND `id` NOT IN ('6','11','9') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `e_days` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_days` WHERE `uid` = 8  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000127s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000175s ]
+NOTIC: [2] Division by zero /Users/minghuang/www/exe/App/Runtime/Cache/Home/418cdd7f5f65cc488c0566eb352338ea.php 第 106 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008195s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008226s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000115s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000135s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000309s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000343s ]
+
+[ 2016-05-31T10:20:13+08:00 ] ::1 /index.php/Days/sign.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000179s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000436s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000491s ]
+NOTIC: [2048] Declaration of Home\Controller\CommonController::save() should be compatible with Common\Controller\BaseController::save($modelName = NULL) /Users/minghuang/www/exe/App/Home/Controller/CommonController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `e_options` [ RunTime:0.0005s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'web_status' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=500028 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 28000 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_message` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `e_read` [ RunTime:0.0004s ]
+SQL: SELECT `mid` FROM `e_read` WHERE `uid` = 8  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_message` WHERE `uid` = 0 AND ( `touid` = 0 OR `touid` = '8' ) AND `id` NOT IN ('6','11','9') LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_days` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_days` WHERE `addtime` = 1464624001 AND `uid` = 8 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `e_days` (`addtime`,`uid`) VALUES ('1464624001','8') [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `e_user` [ RunTime:0.0005s ]
+SQL: UPDATE `e_user` SET `level`=level+2 WHERE `id` = 8 [ RunTime:0.0004s ]
+
+[ 2016-05-31T10:20:18+08:00 ] ::1 /index.php/Days/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000178s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000225s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000252s ]
+NOTIC: [2048] Declaration of Home\Controller\CommonController::save() should be compatible with Common\Controller\BaseController::save($modelName = NULL) /Users/minghuang/www/exe/App/Home/Controller/CommonController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `e_options` [ RunTime:0.0003s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'web_status' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=500030 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 28000 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `e_message` [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `e_read` [ RunTime:0.0003s ]
+SQL: SELECT `mid` FROM `e_read` WHERE `uid` = 8  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_message` WHERE `uid` = 0 AND ( `touid` = 0 OR `touid` = '8' ) AND `id` NOT IN ('6','11','9') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `e_days` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `e_days` WHERE `uid` = 8  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000121s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000207s ]
+NOTIC: [2] Division by zero /Users/minghuang/www/exe/App/Runtime/Cache/Home/418cdd7f5f65cc488c0566eb352338ea.php 第 106 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010096s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010155s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000234s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000283s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000432s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000496s ]
+
+[ 2016-05-31T10:20:32+08:00 ] ::1 /index.php/Public/logout.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000179s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000223s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000249s ]
+SQL: SHOW COLUMNS FROM `e_options` [ RunTime:0.0003s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'web_status' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-05-31T10:20:32+08:00 ] ::1 /index.php/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000172s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000220s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000246s ]
+SQL: SHOW COLUMNS FROM `e_options` [ RunTime:0.0005s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'web_status' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000051s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000132s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004103s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004139s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000135s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000158s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000302s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000333s ]
+
+[ 2016-05-31T10:20:38+08:00 ] ::1 /index.php/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000239s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000280s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000315s ]
+SQL: SHOW COLUMNS FROM `e_options` [ RunTime:0.0006s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'web_status' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `e_user` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `e_user` WHERE `username` = 'demo' AND `password` = 'fe01ce2a7fbac8fafaed7c982a04e229' LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `e_user` SET `level`='500030',`username`='demo',`password`='fe01ce2a7fbac8fafaed7c982a04e229',`name`='测试名字',`id_number`='',`phone`='',`other_phone`='',`email`='',`days`='0',`birth`=NULL,`address`='',`rank`='10000',`addtime`='1464059181',`lastlogin`='1464661238',`lastip`='0.0.0.0',`lastarea`='IANA',`status`='1' WHERE `id` = 8 [ RunTime:0.0003s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /Users/minghuang/www/exe/App/Home/Model/UserModel.class.php 第 88 行.
+SQL: SHOW COLUMNS FROM `e_counts` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_counts` WHERE `id` = 1464624001 LIMIT 1   [ RunTime:0.0004s ]
+SQL: INSERT INTO `e_counts` (`id`) VALUES ('1464624001') [ RunTime:0.0004s ]
+
+[ 2016-05-31T10:20:41+08:00 ] ::1 /index.php/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000169s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000220s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000246s ]
+NOTIC: [2048] Declaration of Home\Controller\CommonController::save() should be compatible with Common\Controller\BaseController::save($modelName = NULL) /Users/minghuang/www/exe/App/Home/Controller/CommonController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `e_options` [ RunTime:0.0003s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'web_status' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=500030 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 28000 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_message` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `e_read` [ RunTime:0.0005s ]
+SQL: SELECT `mid` FROM `e_read` WHERE `uid` = 8  [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_message` WHERE `uid` = 0 AND ( `touid` = 0 OR `touid` = '8' ) AND `id` NOT IN ('6','11','9') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `mid` FROM `e_read` WHERE `uid` = 8  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `e_message` WHERE `uid` = 0 AND ( `touid` = 0 OR `touid` = '8' ) AND `id` NOT IN ('6','11','9')  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `e_days` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_days` WHERE `addtime` = 1464624001 AND `uid` = 8 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_activity` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=500030 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_activity` WHERE `starttime` < 1464661241 AND `endtime` > 1464661241 AND `status` = 1 AND `integral` < '28000'  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000100s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000187s ]
+NOTIC: [2] Division by zero /Users/minghuang/www/exe/App/Runtime/Cache/Home/00e52909bed743ea261af4b6823297ff.php 第 106 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `e_days` WHERE `uid` = 8 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `title` FROM `e_group` WHERE `integral` = 0 LIMIT 1   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012859s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012885s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000138s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000159s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000315s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000345s ]
+
+[ 2016-05-31T10:23:46+08:00 ] ::1 /index.php/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000175s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000230s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000257s ]
+NOTIC: [2048] Declaration of Home\Controller\CommonController::save() should be compatible with Common\Controller\BaseController::save($modelName = NULL) /Users/minghuang/www/exe/App/Home/Controller/CommonController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `e_options` [ RunTime:0.0003s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'web_status' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=500030 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 28000 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_message` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `e_read` [ RunTime:0.0003s ]
+SQL: SELECT `mid` FROM `e_read` WHERE `uid` = 8  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_message` WHERE `uid` = 0 AND ( `touid` = 0 OR `touid` = '8' ) AND `id` NOT IN ('6','11','9') LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `mid` FROM `e_read` WHERE `uid` = 8  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `e_message` WHERE `uid` = 0 AND ( `touid` = 0 OR `touid` = '8' ) AND `id` NOT IN ('6','11','9')  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_days` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_days` WHERE `addtime` = 1464624001 AND `uid` = 8 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_activity` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=500030 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `e_activity` WHERE `starttime` < 1464661426 AND `endtime` > 1464661426 AND `status` = 1 AND `integral` < '28000'  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000111s ]
+NOTIC: [2] Division by zero /Users/minghuang/www/exe/App/Runtime/Cache/Home/00e52909bed743ea261af4b6823297ff.php 第 106 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `e_days` WHERE `uid` = 8 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `title` FROM `e_group` WHERE `integral` = 0 LIMIT 1   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010399s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010423s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000131s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000151s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000300s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000330s ]
+
+[ 2016-05-31T10:23:50+08:00 ] ::1 /index.php/order/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000193s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000242s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000271s ]
+
+[ 2016-05-31T10:23:50+08:00 ] ::1 /index.php/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000166s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000218s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000244s ]
+NOTIC: [2048] Declaration of Home\Controller\CommonController::save() should be compatible with Common\Controller\BaseController::save($modelName = NULL) /Users/minghuang/www/exe/App/Home/Controller/CommonController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `e_options` [ RunTime:0.0003s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'web_status' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=500030 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 28000 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_message` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `e_read` [ RunTime:0.0003s ]
+SQL: SELECT `mid` FROM `e_read` WHERE `uid` = 8  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_message` WHERE `uid` = 0 AND ( `touid` = 0 OR `touid` = '8' ) AND `id` NOT IN ('6','11','9') LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `mid` FROM `e_read` WHERE `uid` = 8  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `e_message` WHERE `uid` = 0 AND ( `touid` = 0 OR `touid` = '8' ) AND `id` NOT IN ('6','11','9')  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_days` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_days` WHERE `addtime` = 1464624001 AND `uid` = 8 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_activity` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=500030 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `e_activity` WHERE `starttime` < 1464661430 AND `endtime` > 1464661430 AND `status` = 1 AND `integral` < '28000'  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000084s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000121s ]
+NOTIC: [2] Division by zero /Users/minghuang/www/exe/App/Runtime/Cache/Home/00e52909bed743ea261af4b6823297ff.php 第 106 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `e_days` WHERE `uid` = 8 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `title` FROM `e_group` WHERE `integral` = 0 LIMIT 1   [ RunTime:0.0003s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011309s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011337s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000149s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000176s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000340s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000374s ]
+
+[ 2016-05-31T10:26:16+08:00 ] ::1 /index.php/Public/logout.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000242s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000300s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000330s ]
+SQL: SHOW COLUMNS FROM `e_options` [ RunTime:0.0003s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'web_status' LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2016-05-31T10:26:16+08:00 ] ::1 /index.php/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000177s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000222s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000248s ]
+SQL: SHOW COLUMNS FROM `e_options` [ RunTime:0.0003s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'web_status' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000048s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000077s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003627s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003654s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000086s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000105s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000353s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000383s ]
+
+[ 2016-05-31T10:26:19+08:00 ] ::1 /index.php/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000282s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000286s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000320s ]
+SQL: SHOW COLUMNS FROM `e_options` [ RunTime:0.0007s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'web_status' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `e_user` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `e_user` WHERE `username` = 'demo' AND `password` = 'fe01ce2a7fbac8fafaed7c982a04e229' LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `e_user` SET `level`='500030',`username`='demo',`password`='fe01ce2a7fbac8fafaed7c982a04e229',`name`='测试名字',`id_number`='',`phone`='',`other_phone`='',`email`='',`days`='0',`birth`=NULL,`address`='',`rank`='10000',`addtime`='1464059181',`lastlogin`='1464661579',`lastip`='0.0.0.0',`lastarea`='IANA',`status`='1' WHERE `id` = 8 [ RunTime:0.0003s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /Users/minghuang/www/exe/App/Home/Model/UserModel.class.php 第 88 行.
+SQL: SHOW COLUMNS FROM `e_counts` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `e_counts` WHERE `id` = 1464624001 LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `e_counts` SET `download`='0',`open_web`='0',`login_number`='1',`register_number`='0',`link_number`='0' WHERE `id` = 1464624001 [ RunTime:0.0005s ]
+
+[ 2016-05-31T10:26:22+08:00 ] ::1 /index.php/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000167s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000220s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000246s ]
+NOTIC: [2048] Declaration of Home\Controller\CommonController::save() should be compatible with Common\Controller\BaseController::save($modelName = NULL) /Users/minghuang/www/exe/App/Home/Controller/CommonController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `e_options` [ RunTime:0.0003s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'web_status' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=500030 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral > 28000 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `e_message` [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `e_read` [ RunTime:0.0003s ]
+SQL: SELECT `mid` FROM `e_read` WHERE `uid` = 8  [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_message` WHERE `uid` = 0 AND ( `touid` = 0 OR `touid` = '8' ) AND `id` NOT IN ('6','11','9') LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `mid` FROM `e_read` WHERE `uid` = 8  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `e_message` WHERE `uid` = 0 AND ( `touid` = 0 OR `touid` = '8' ) AND `id` NOT IN ('6','11','9')  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_days` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_days` WHERE `addtime` = 1464624001 AND `uid` = 8 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_activity` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=500030 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `e_activity` WHERE `starttime` < 1464661582 AND `endtime` > 1464661582 AND `status` = 1 AND `integral` < '28000'  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000086s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000119s ]
+NOTIC: [2] Division by zero /Users/minghuang/www/exe/App/Runtime/Cache/Home/00e52909bed743ea261af4b6823297ff.php 第 106 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `e_days` WHERE `uid` = 8 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `title` FROM `e_group` WHERE `integral` = 0 LIMIT 1   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011502s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011527s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000131s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000156s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000284s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000328s ]
+

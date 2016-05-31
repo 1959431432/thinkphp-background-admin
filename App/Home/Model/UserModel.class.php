@@ -43,6 +43,13 @@ class UserModel extends CommonModel
 			return false;
 		}
 
+		$today = date('Ymd',NOW_TIME);
+		$lastLogin = date('Ymd',$user['lastlogin']);
+		if( $today != $lastlogin ){
+			// 会员登录次数
+			web_count('login_number');
+		}
+
 		// 修改最后登入时间
 		$user['lastlogin'] = NOW_TIME;
 
@@ -89,26 +96,6 @@ class UserModel extends CommonModel
 		session('user',$newUser);
 	}
 
-	public function getGroupUserCondition( $groupid )
-	{
-		$group = M('group')->field('integral')->find($groupid);
-		
-		$nextGroup = D('group')->where('integral > ' . $group['integral'])->field('integral')->find();
-		
-		if( ! empty( $nextGroup ) ){
-			$where['level'] = array( 'between', array( $group['integral'], $nextGroup['integral']-1 ) );
-		} else {
-			$where['level'] = array('gt',$group['integral']);
-		}
-
-		return $where;
-	}
-
-	public function getGroupUserCount( $groupid )
-	{
-		$where = D('User')->getGroupUserCondition( $groupid );
-		return M('User')->where( $where )->count();
-	}
 
 	// 用户奖励
 	public function reward( $int, $uid )
@@ -120,7 +107,6 @@ class UserModel extends CommonModel
 		$this->where( array( 'id'=>$uid ) )->setInc( 'level', $int );
 		// TODO:  用户积分还未处理
 
-		
 		$user['level'] += $int;
 		session('user',$user);
 	}

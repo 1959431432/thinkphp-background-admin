@@ -169,102 +169,57 @@
 
     
 	<div class="wrapper">
-      <div class="bc">
+	  <div class="bc">
           <ul id="breadcrumbs" class="breadcrumbs">
                <li class=""> <a href="<?php echo U('Index/index');?>">个人中心</a> </li>
-               <li class="current"><a href="#">消息中心</a></li>
+               <li class="current"><a href="#">积分商城</a></li>
           </ul>
           <div class="clear"></div>
       </div>
-      <div class="widget">
-			<ul class="tabs">
-				<li class="activeTab"><a href="#tab1">网站消息</a></li>
-				<li><a href="#tab2">意见反馈</a></li>
-			</ul>
-			<div class="tab_container">
-                <div id="tab1" class="tab_content">
-                	<table cellpadding="0" cellspacing="0" width="100%" class="sTable withCheck display myTable">
-		              <thead>
-		                  <tr>
-		                    <th>消息标题</th>
-		                    <th>发送时间</th>
-		                    <th>消息类型</th>
-		                    <th>操作</th>
-		                  </tr>
-		              </thead>
-		              <tbody>
-		                <?php if(is_array($lists)): $i = 0; $__LIST__ = $lists;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="gradeA">
-		                        <td class="center searchContent"><?php echo ($vo["title"]); ?></td>
-		                        <td class="center"><?php echo (date('Y-m-d',$vo["addtime"])); ?></td>
-		                        <td class="center">
-		                            <?php if(($vo["type"]) == "1"): ?>提醒
-		                            <?php else: ?>
-		                              紧急<?php endif; ?>
-		                        </td>
-		                        <td class="center">
-		                            <a class='layer_iframe' href="<?php echo U('add',array('id'=>$vo['id']));?>">查看</a> &nbsp;&nbsp;
-		                        </td>
-		                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-		              </tbody>
-		              <tfoot>
-		                <tr>
-		                    <td colspan="10" class='pagination'>
-		                        <?php echo ($showPage); ?>
-		                    </td>
-		                </tr>
-		              </tfoot>
-		          </table>
-                </div>
-                <div id="tab2" class="tab_content" style="padding: 20px;">
-                	<form class="form validate" method="post" action="<?php echo U('save');?>">
-			        	<fieldset>
-			                <div class="widget">
-			                    <div class="title"><img src="/Public/images//icons/dark/alert.png" alt="" class="titleIcon" /><h6>意见反馈</h6></div>
-
-			                    <div class="formRow">
-			                        <label>反馈标题:<span class='req'>*</span></label>
-			                        <div class="formRight">
-			                            <input type="text" class="validate[required]" value="" name='title' id="title" />
-			                            <!-- <span class="formNote">用户会员等级根据此项排序</span> -->
-			                        </div>
-			                        <div class="clear"></div>
-			                    </div>
-
-			                    <div class="formRow">
-			                        <label>反馈内容:</label>
-			                        <div class="formRight"><textarea rows="8" cols="" name="content" placeholder="请填写您宝贵的意见"></textarea></div><div class="clear"></div>
-			                    </div>
-
-			                    <!-- <div class="formRow">
-			                        <label>验证码:</label>
-			                        <div class="formRight">
-			                        	<span class="oneTwo">
-			                        		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="20px">
-			                        			<rect width="50" height="20" style="fill:rgb(0,0,255);stroke-width:1;stroke:rgb(0,0,0)" />
-											  <text x="0" y="15" fill="red">I love SVG</text>
-											</svg>
-			                        	</span>
-			                        	<span class='oneTwo'>
-			                            	<input type="text" value="" name='title' />
-			                        	</span>
-			                        </div>
-			                        <div class="clear"></div>
-			                    </div> -->
-			                    
-			                    <div class="formSubmit"><input type="submit" value="提交" class="redB" /></div>
-			                    <div class="clear"></div>
-			                </div>
-			            </fieldset>
-			        </form>       
-                </div>
-            </div>
-			<div class="clear"></div>
+      <div style="margin-top:30px;">
+      	<h2>您当前共有：<?php echo session('user.rank');?>分</h2>
+      </div>
+    	<div class="widgets">
+    		<?php if(is_array($lists)): $i = 0; $__LIST__ = $lists;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div class="oneFour">
+	            	<div class="widget">
+	                	<div class="thumbnail">
+		                  <img alt="<?php echo ($vo["title"]); ?>" src="<?php echo (getImg($vo["img"])); ?>">
+		                  <div class="caption">
+		                    <h3>
+	                	  		<a href="<?php echo U('add',array('id'=>$vo['id']));?>">
+		                    		<?php echo ($vo["title"]); ?>
+		                    	</a>
+		                    </h3>
+		                    <p>
+			                	<ul>
+			                		<li>
+			                			兑换人数：<?php echo ($vo["people"]); ?>
+			                		</li>
+			                		<li>
+			                			市场价格：<span style="text-decoration:line-through;">¥<?php echo ($vo["price"]); ?></span>
+			                		</li>
+			                		<li>
+			                			所需积分：<?php echo ($vo["integral"]); ?>
+			                		</li>
+			                		<li style="margin-top:10px;">
+			                			<a href="<?php echo U('add',array('id'=>$vo['id']));?>" title="" class="button greenB">
+			                				<span>查看详情</span>
+			                			</a>
+			                			<a href="<?php echo U('buy',array('id'=>$vo['id']));?>" title="" class="button redB layer_iframe">
+			                				<span>立即购买</span>
+			                			</a>
+			                		</li>
+			                	</ul>
+		                    </p>
+		                  </div>
+		                </div>
+	                </div>
+	            </div><?php endforeach; endif; else: echo "" ;endif; ?>
+        </div>
+        <div class="pagination" style="clear:both;">
+			<?php echo ($showPage); ?>
 		</div>
-    </div>
-    </div>
-    <script type="text/javascript">
-    	
-    </script>
+	</div>
 
 
     <!-- Footer line -->

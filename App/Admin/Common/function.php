@@ -12,5 +12,27 @@ function backend_statistics( $number ){
 	}
 }
 
+// 后台统计数据
+function counts_default_number( $today, $yesterday )
+{
+	$sum = intval($today) - intval($yesterday);
+	if( empty( $yesterday ) ){
+		$yesterday = 1;
+	}
+	return ($sum / $yesterday * 100);
+}
+
+
+/*==========================================
+ －－－－－－－－－－－分组－－－－－－－－－－－－
+ ==========================================*/
+
+
+// 获取分组下的用户人数
+function getGroupUserCount( $groupid )
+{
+	return D('User')->getGroupUserCount( $groupid );
+}
+
 
  ?>

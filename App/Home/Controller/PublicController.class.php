@@ -25,9 +25,6 @@ class PublicController extends Controller
 
 			if( $userModel->login() ){
 				
-				// 会员登录次数
-				web_count('login_number');
-
 				$this->success('登入成功',U('Index/index'));
 			} else {
 				$this->error( $userModel->getError() );
@@ -37,7 +34,7 @@ class PublicController extends Controller
 
 	public function logout()
 	{
-		session_destroy();
+		session('user',null);
 		tourl('login');
 	}
 

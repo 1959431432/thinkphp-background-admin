@@ -66,8 +66,34 @@ class UserModel extends CommonModel
 		} else {
 			return false;
 		}
+	}
 
-		
+	public function getGroupUserCondition( $groupid )
+	{
+		$groupModel = D('Group');
+		$group = $groupModel->find( $groupid );
+
+		if( empty( $group ) ){
+			throw new Exception("没有该分组", 1);
+		}
+		$nextCondition = array(
+			'integral' => array( 'gt', $group['integral'] )
+		);
+		$nextGroup = $groupModel->where( $nextCondition )->find();
+		if( empty( $nextGroup ) ){
+			$where['level'] = array( 'gt', $group['integral'] );
+		} else {
+			$where['level'] = array(
+				'between', array( $group['integral'], $nextGroup['integral'] - 1 )
+			);
+		}
+		return $where;
+	}
+
+	public function getGroupUserCount( $groupid )
+	{
+		$where = D('User')->getGroupUserCondition( $groupid );
+		return M('User')->where( $where )->count();
 	}
 }
 

@@ -1,0 +1,111 @@
+<extend name="Public/base" />
+
+<block name="body">
+	<div class="wrapper">
+	  <div class="bc">
+          <ul id="breadcrumbs" class="breadcrumbs">
+               <li class=""> <a href="{:U('Index/index')}">个人中心</a> </li>
+               <li class=""> <a href="{:U('index')}">积分商城</a> </li>
+               <li class="current"><a href="#">{$vo.title}</a></li>
+          </ul>
+          <div class="clear"></div>
+      </div>
+      <div style="margin-top:30px;">
+        <?php
+          $rank = session('user.rank');
+        ?>
+        <h2>您当前共有：{$rank}分</h2>
+      </div>
+      <div class="widgets">
+          <div class="oneTwo">
+              <div class="widget">
+                <div class="title">
+                  <h6>
+                    商品图片
+                  </h6>
+                </div>
+                <div class="body">
+                   <img src="{$vo.img|getImg}" alt="{$vo.title}" width="430px;" height="430px">
+                </div>
+              </div>
+          </div>
+          <div class="oneTwo">
+              <div class="widget">
+                <div class="title">
+                  <h6>
+                    商品信息
+                  </h6>
+                </div>
+                <style>
+                  .shopInfo {
+                    font-size: 30px;
+                  }
+                  .shopInfo tr {
+                    height: 50px;
+                  }
+                </style>
+                <div class="body shopInfo">
+                    <table>
+                      <tr>
+                        <th>
+                          商品标题：
+                        </th>
+                        <td>
+                          {$vo.title}
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>
+                          兑换人数：
+                        </th>
+                        <td>
+                          {$vo.people}
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>
+                          市场价格：
+                        </th>
+                        <td>
+                          <span style="text-decoration:line-through;">
+                            ¥{$vo.price}
+                          </span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>
+                          所需积分：
+                        </th>
+                        <td>
+                            {$vo.integral}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">
+                          <gt name="vo.integral" value="$rank">
+                            <a href="#" title="" class="button greyishB">
+                              <span>积分不足</span>
+                            </a>
+                          <else />
+                            <a href="{:U('buy',array('id'=>$vo['id']))}" title="" class="wButton redwB layer_iframe">
+                              <span>立即购买</span>
+                            </a>
+                          </gt>
+                        </td>
+                      </tr>
+                    </table>
+                </div>
+              </div>
+          </div>
+      </div>
+      <div class="clear"></div>
+      <div class="widget"> 
+        <div class="title">
+          <h6>商品详情</h6>
+        </div>
+        <div class="body">
+          {$vo.content|htmlspecialchars_decode}
+        </div>
+      </div>
+	</div>
+</block>

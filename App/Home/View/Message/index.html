@@ -38,7 +38,7 @@
 		                            </eq>
 		                        </td>
 		                        <td class="center">
-		                            <a class='viewMsg' href="{:U('add',array('id'=>$vo['id']))}">查看</a> &nbsp;&nbsp;
+		                            <a class='layer_iframe' href="{:U('add',array('id'=>$vo['id']))}">查看</a> &nbsp;&nbsp;
 		                        </td>
 		                    </tr>
 		                </volist>
@@ -100,23 +100,6 @@
     </div>
     </div>
     <script type="text/javascript">
-    	jQuery( function($){
-    		$('.viewMsg').click( function()
-    		{
-    			var href = $(this).attr('href');
-    			layer.open({
-				  type: 2,
-				  title: false,
-				  area: ['630px', '360px'],
-				  shade: 0.8,
-				  closeBtn: 0,
-				  shadeClose: true,
-				  content: href,
-				});
-				// layer.msg('点击任意处关闭');
-				return false;
-    		});
-    	});
-
+    	
     </script>
 </block>

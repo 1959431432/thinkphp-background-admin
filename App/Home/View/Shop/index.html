@@ -2,6 +2,57 @@
 
 <block name="body">
 	<div class="wrapper">
-    
-  </div>
+	  <div class="bc">
+          <ul id="breadcrumbs" class="breadcrumbs">
+               <li class=""> <a href="{:U('Index/index')}">个人中心</a> </li>
+               <li class="current"><a href="#">积分商城</a></li>
+          </ul>
+          <div class="clear"></div>
+      </div>
+      <div style="margin-top:30px;">
+      	<h2>您当前共有：{:session('user.rank')}分</h2>
+      </div>
+    	<div class="widgets">
+    		<volist name="lists" id="vo">
+	        	<div class="oneFour">
+	            	<div class="widget">
+	                	<div class="thumbnail">
+		                  <img alt="{$vo.title}" src="{$vo.img|getImg}">
+		                  <div class="caption">
+		                    <h3>
+	                	  		<a href="{:U('add',array('id'=>$vo['id']))}">
+		                    		{$vo.title}
+		                    	</a>
+		                    </h3>
+		                    <p>
+			                	<ul>
+			                		<li>
+			                			兑换人数：{$vo.people}
+			                		</li>
+			                		<li>
+			                			市场价格：<span style="text-decoration:line-through;">¥{$vo.price}</span>
+			                		</li>
+			                		<li>
+			                			所需积分：{$vo.integral}
+			                		</li>
+			                		<li style="margin-top:10px;">
+			                			<a href="{:U('add',array('id'=>$vo['id']))}" title="" class="button greenB">
+			                				<span>查看详情</span>
+			                			</a>
+			                			<a href="{:U('buy',array('id'=>$vo['id']))}" title="" class="button redB layer_iframe">
+			                				<span>立即购买</span>
+			                			</a>
+			                		</li>
+			                	</ul>
+		                    </p>
+		                  </div>
+		                </div>
+	                </div>
+	            </div>
+            </volist>
+        </div>
+        <div class="pagination" style="clear:both;">
+			{$showPage}
+		</div>
+	</div>
 </block>

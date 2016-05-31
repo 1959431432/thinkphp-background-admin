@@ -105,7 +105,7 @@
     <!-- Top fixed navigation -->
     <div class="topNav">
         <div class="wrapper">
-            <div class="welcome"><a href="#" title=""><img src="/Public/images//userPic.png" alt="" /></a><span>Howdy, Eugene!</span></div>
+            <div class="welcome"><a href="#" title=""><img src="/Public/images//userPic.png" alt="" /></a><span>您好，管理员</span></div>
             <div class="userNav">
                 <ul>
                     <!-- <li><a href="#" title=""><img src="/Public/images//icons/topnav/profile.png" alt="" /><span>个人资料</span><span class="numberTop">？</span></a></li> -->

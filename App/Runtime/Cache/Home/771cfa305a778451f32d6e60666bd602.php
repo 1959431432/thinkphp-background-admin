@@ -169,102 +169,109 @@
 
     
 	<div class="wrapper">
-      <div class="bc">
+	  <div class="bc">
           <ul id="breadcrumbs" class="breadcrumbs">
                <li class=""> <a href="<?php echo U('Index/index');?>">个人中心</a> </li>
-               <li class="current"><a href="#">消息中心</a></li>
+               <li class=""> <a href="<?php echo U('index');?>">积分商城</a> </li>
+               <li class="current"><a href="#"><?php echo ($vo["title"]); ?></a></li>
           </ul>
           <div class="clear"></div>
       </div>
-      <div class="widget">
-			<ul class="tabs">
-				<li class="activeTab"><a href="#tab1">网站消息</a></li>
-				<li><a href="#tab2">意见反馈</a></li>
-			</ul>
-			<div class="tab_container">
-                <div id="tab1" class="tab_content">
-                	<table cellpadding="0" cellspacing="0" width="100%" class="sTable withCheck display myTable">
-		              <thead>
-		                  <tr>
-		                    <th>消息标题</th>
-		                    <th>发送时间</th>
-		                    <th>消息类型</th>
-		                    <th>操作</th>
-		                  </tr>
-		              </thead>
-		              <tbody>
-		                <?php if(is_array($lists)): $i = 0; $__LIST__ = $lists;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="gradeA">
-		                        <td class="center searchContent"><?php echo ($vo["title"]); ?></td>
-		                        <td class="center"><?php echo (date('Y-m-d',$vo["addtime"])); ?></td>
-		                        <td class="center">
-		                            <?php if(($vo["type"]) == "1"): ?>提醒
-		                            <?php else: ?>
-		                              紧急<?php endif; ?>
-		                        </td>
-		                        <td class="center">
-		                            <a class='layer_iframe' href="<?php echo U('add',array('id'=>$vo['id']));?>">查看</a> &nbsp;&nbsp;
-		                        </td>
-		                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-		              </tbody>
-		              <tfoot>
-		                <tr>
-		                    <td colspan="10" class='pagination'>
-		                        <?php echo ($showPage); ?>
-		                    </td>
-		                </tr>
-		              </tfoot>
-		          </table>
+      <div style="margin-top:30px;">
+        <?php
+ $rank = session('user.rank'); ?>
+        <h2>您当前共有：<?php echo ($rank); ?>分</h2>
+      </div>
+      <div class="widgets">
+          <div class="oneTwo">
+              <div class="widget">
+                <div class="title">
+                  <h6>
+                    商品图片
+                  </h6>
                 </div>
-                <div id="tab2" class="tab_content" style="padding: 20px;">
-                	<form class="form validate" method="post" action="<?php echo U('save');?>">
-			        	<fieldset>
-			                <div class="widget">
-			                    <div class="title"><img src="/Public/images//icons/dark/alert.png" alt="" class="titleIcon" /><h6>意见反馈</h6></div>
-
-			                    <div class="formRow">
-			                        <label>反馈标题:<span class='req'>*</span></label>
-			                        <div class="formRight">
-			                            <input type="text" class="validate[required]" value="" name='title' id="title" />
-			                            <!-- <span class="formNote">用户会员等级根据此项排序</span> -->
-			                        </div>
-			                        <div class="clear"></div>
-			                    </div>
-
-			                    <div class="formRow">
-			                        <label>反馈内容:</label>
-			                        <div class="formRight"><textarea rows="8" cols="" name="content" placeholder="请填写您宝贵的意见"></textarea></div><div class="clear"></div>
-			                    </div>
-
-			                    <!-- <div class="formRow">
-			                        <label>验证码:</label>
-			                        <div class="formRight">
-			                        	<span class="oneTwo">
-			                        		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="20px">
-			                        			<rect width="50" height="20" style="fill:rgb(0,0,255);stroke-width:1;stroke:rgb(0,0,0)" />
-											  <text x="0" y="15" fill="red">I love SVG</text>
-											</svg>
-			                        	</span>
-			                        	<span class='oneTwo'>
-			                            	<input type="text" value="" name='title' />
-			                        	</span>
-			                        </div>
-			                        <div class="clear"></div>
-			                    </div> -->
-			                    
-			                    <div class="formSubmit"><input type="submit" value="提交" class="redB" /></div>
-			                    <div class="clear"></div>
-			                </div>
-			            </fieldset>
-			        </form>       
+                <div class="body">
+                   <img src="<?php echo (getImg($vo["img"])); ?>" alt="<?php echo ($vo["title"]); ?>" width="430px;" height="430px">
                 </div>
-            </div>
-			<div class="clear"></div>
-		</div>
-    </div>
-    </div>
-    <script type="text/javascript">
-    	
-    </script>
+              </div>
+          </div>
+          <div class="oneTwo">
+              <div class="widget">
+                <div class="title">
+                  <h6>
+                    商品信息
+                  </h6>
+                </div>
+                <style>
+                  .shopInfo {
+                    font-size: 30px;
+                  }
+                  .shopInfo tr {
+                    height: 50px;
+                  }
+                </style>
+                <div class="body shopInfo">
+                    <table>
+                      <tr>
+                        <th>
+                          商品标题：
+                        </th>
+                        <td>
+                          <?php echo ($vo["title"]); ?>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>
+                          兑换人数：
+                        </th>
+                        <td>
+                          <?php echo ($vo["people"]); ?>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>
+                          市场价格：
+                        </th>
+                        <td>
+                          <span style="text-decoration:line-through;">
+                            ¥<?php echo ($vo["price"]); ?>
+                          </span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>
+                          所需积分：
+                        </th>
+                        <td>
+                            <?php echo ($vo["integral"]); ?>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">
+                          <?php if(($vo["integral"]) > $rank): ?><a href="#" title="" class="button greyishB">
+                              <span>积分不足</span>
+                            </a>
+                          <?php else: ?>
+                            <a href="<?php echo U('buy',array('id'=>$vo['id']));?>" title="" class="wButton redwB layer_iframe">
+                              <span>立即购买</span>
+                            </a><?php endif; ?>
+                        </td>
+                      </tr>
+                    </table>
+                </div>
+              </div>
+          </div>
+      </div>
+      <div class="clear"></div>
+      <div class="widget"> 
+        <div class="title">
+          <h6>商品详情</h6>
+        </div>
+        <div class="body">
+          <?php echo (htmlspecialchars_decode($vo["content"])); ?>
+        </div>
+      </div>
+	</div>
 
 
     <!-- Footer line -->

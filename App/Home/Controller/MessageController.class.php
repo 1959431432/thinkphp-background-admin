@@ -9,6 +9,7 @@ class MessageController extends CommonController
 	public function condition()
 	{
 		$condition = $this->getModel()->condition();
+		unset($condition['id']);
 		return $condition;
 	}
 

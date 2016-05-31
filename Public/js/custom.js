@@ -4,73 +4,6 @@ $(function() {
 /* Form related plugins
 ================================================== */
 
-	// //===== Usual validation engine=====//
-
-	// $("#usualValidate").validate({
-	// 	rules: {
-	// 		firstname: "required",
-	// 		minChars: {
-	// 			required: true,
-	// 			minlength: 3
-	// 		},
-	// 		maxChars: {
-	// 			required: true,
-	// 			maxlength: 6
-	// 		},
-	// 		mini: {
-	// 			required: true,
-	// 			min: 3
-	// 		},
-	// 		maxi: {
-	// 			required: true,
-	// 			max: 6
-	// 		},
-	// 		range: {
-	// 			required: true,
-	// 			range: [6, 16]
-	// 		},
-	// 		emailField: {
-	// 			required: true,
-	// 			email: true
-	// 		},
-	// 		urlField: {
-	// 			required: true,
-	// 			url: true
-	// 		},
-	// 		dateField: {
-	// 			required: true,
-	// 			date: true
-	// 		},
-	// 		digitsOnly: {
-	// 			required: true,
-	// 			digits: true
-	// 		},
-	// 		enterPass: {
-	// 			required: true,
-	// 			minlength: 5
-	// 		},
-	// 		repeatPass: {
-	// 			required: true,
-	// 			minlength: 5,
-	// 			equalTo: "#enterPass"
-	// 		},
-	// 		customMessage: "required",
-			
-	
-	// 		topic: {
-	// 			required: "#newsletter:checked",
-	// 			minlength: 2
-	// 		},
-	// 		agree: "required"
-	// 	},
-	// 	messages: {
-	// 		customMessage: {
-	// 			required: "Bazinga! This message is editable",
-	// 		},
-	// 		agree: "Please accept our policy"
-	// 	}
-	// });
-
 
 	// 百度编辑器
 	//===== WYSIWYG editor =====//
@@ -421,11 +354,7 @@ $(function() {
 		numberOfMonths: 1
 	});	
 
-
 	
-
-
-
 
 
 
@@ -624,16 +553,6 @@ $(function() {
 		}
 	};
 	
-	// for (var n in opts)
-	// 	$("#"+n).spinner(opts[n]);
-	
-	// $("button").click(function(e){
-	// 	var ns = $(this).attr('id').match(/(s\d)\-(\w+)$/);
-	// 	if (ns != null)
-	// 		$('#'+ns[1]).spinner( (ns[2] == 'create') ? opts[ns[1]] : ns[2]);
-	// });
-	
-	
 	
 	//===== UI dialog =====//
 	
@@ -744,6 +663,21 @@ $(function() {
 				layer.msg( res.info , {icon: 5});
 			}
             layer.close(ii);
+		});
+		return false;
+	});
+
+	$('.layer_iframe').click( function()
+	{
+		var href = $(this).attr('href');
+		var layer_iframe = layer.open({
+		  type: 2,
+		  title: false,
+		  area: ['80%', '100%'],
+		  shade: 0.8,
+		  closeBtn: 0,
+		  shadeClose: true,
+		  content: href,
 		});
 		return false;
 	});

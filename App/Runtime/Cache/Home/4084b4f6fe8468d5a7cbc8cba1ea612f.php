@@ -90,11 +90,11 @@
     <div class="sidebarSep"></div>
 
     <!-- General balance widget -->
-    <div class="genBalance" style="display: none;">
+    <div class="genBalance">
         <a href="#" title="" class="amount">
             <span> 当前积分:</span>
             <span class="balanceAmount">
-                <?php echo session('user.level');?>
+                <?php echo session('user.rank');?>
             </span>
         </a>
     </div>
@@ -164,67 +164,8 @@
     </div>
 
 
-    <!-- Title area -->
-   <!--  <div class="titleArea">
-        <div class="wrapper">
-            <div class="pageTitle">
-                <h5>Dashboard</h5>
-                <span>Do your layouts deserve better than Lorem Ipsum.</span>
-            </div>
-            <div class="middleNav">
-                <ul>
-                    <li class="mUser">
-                        <a title="会员等级排名" class="tipN"><span class="users"></span></a>
-                    </li>
-                    <li class="mMessages">
-                        <a title="网站消息" class='tipN'>
-                            <span class="messages"></span>
-                            <span class="numberMiddle">8</span>
-
-                        </a>
-                    </li>
-                    <li class="mFiles">
-                        <a href="#" title="优惠活动" class="tipN">
-                            <span class="files"></span>
-                        </a>
-                    </li>
-                    <li class="mOrders">
-                        <a title="积分商品" class="tipN">
-                            <span class="orders"></span>
-                            <span class="numberMiddle">8</span>
-                        </a>
-                    </li>
-                </ul>
-                <div class="clear"></div>
-            </div>
-            <div class="clear"></div>
-        </div>
-    </div>
-     -->
     <div class="line"></div>
 
-
-    <!-- 管理员显示
-        
-    <div class="statsRow">
-        <div class="wrapper">
-            <div class="controlB">
-                <ul>
-                    <li><a href="#" title=""><img src="/Public/images//icons/control/32/plus.png" alt="" /><span>Add new session</span></a></li>
-                    <li><a href="#" title=""><img src="/Public/images//icons/control/32/database.png" alt="" /><span>New DB entry</span></a></li>
-                    <li><a href="#" title=""><img src="/Public/images//icons/control/32/hire-me.png" alt="" /><span>Add new user</span></a></li>
-                    <li><a href="#" title=""><img src="/Public/images//icons/control/32/statistics.png" alt="" /><span>Check statistics</span></a></li>
-                    <li><a href="#" title=""><img src="/Public/images//icons/control/32/comment.png" alt="" /><span>Review comments</span></a></li>
-                    <li><a href="#" title=""><img src="/Public/images//icons/control/32/order-149.png" alt="" /><span>Check orders</span></a></li>
-                </ul>
-                <div class="clear"></div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="line"></div>
-
-    -->
 
     
 <style type="text/css">

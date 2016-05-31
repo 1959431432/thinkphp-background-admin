@@ -3,7 +3,6 @@
 /*==========================================
  －－－－－－－－－－－用户－－－－－－－－－－－－
  ==========================================*/
-
 // 获取用户等级标题
 function getUserGroupTitle( $level ){
 	return getUserGroup( $level, 'title' );
@@ -38,19 +37,13 @@ function signSumDay( $uid = null )
 	if( ! $uid ){
 		$uid = UID;
 	}
-	return D('days')->where( array('uid'=>UID) )->count();
+	return D('days')->where( array('uid'=>$uid) )->count();
 }
 
 /*==========================================
  －－－－－－－－－－－分组－－－－－－－－－－－－
  ==========================================*/
 
-
-// 获取分组下的用户人数
-function getGroupUserCount( $groupid )
-{
-	return D('User')->getGroupUserCount( $groupid );
-}
 
 // 获取分组名称
 function getGroupTitle( $id )
@@ -71,26 +64,6 @@ function getActivityByIntegral( $integral )
 }
 
 
-// 调用option
-function O( $option_name, $option_value = null, $option_note = '')
-{
-	$optionModel = M('options');
-	if( $option_value == null ){
-		return $optionModel->getFieldByOptionName( $option_name, 'option_value');
-	} else {
-		$newOption = array(
-			'option_name'  => $option_name,
-			'option_value' => $option_value,
-			'option_note'  => $option_note,
-		);
-		$option = $optionModel->where( array( 'option_name'=>$option_name ) )->count();
-		if( empty( $option ) ){
-			$optionModel->add( $newOption );
-		} else {
-			$optionModel->where( array('option_name'=>$option_name) )->save( array('option_value'=>$option_value ) );
-		}
-	}
-}
 
 
 /*==========================================
@@ -133,4 +106,29 @@ function dd( $prem ) {
 function gbk2utf8($string){
 	return iconv('gb2312', 'utf-8', $string );
 }
+
+
+// 调用option
+function O( $option_name, $option_value = null, $option_note = '')
+{
+	$optionModel = M('options');
+	if( $option_value == null ){
+		return $optionModel->getFieldByOptionName( $option_name, 'option_value');
+	} else {
+		$newOption = array(
+			'option_name'  => $option_name,
+			'option_value' => $option_value,
+			'option_note'  => $option_note,
+		);
+		$option = $optionModel->where( array( 'option_name'=>$option_name ) )->count();
+		if( empty( $option ) ){
+			$optionModel->add( $newOption );
+		} else {
+			$optionModel->where( array('option_name'=>$option_name) )->save( array('option_value'=>$option_value ) );
+		}
+
+		return $option_value;
+	}
+}
+
  ?>

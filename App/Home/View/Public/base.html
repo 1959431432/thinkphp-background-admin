@@ -19,11 +19,11 @@
     <div class="sidebarSep"></div>
 
     <!-- General balance widget -->
-    <div class="genBalance" style="display: none;">
+    <div class="genBalance">
         <a href="#" title="" class="amount">
             <span> 当前积分:</span>
             <span class="balanceAmount">
-                {:session('user.level')}
+                {:session('user.rank')}
             </span>
         </a>
     </div>
@@ -76,6 +76,7 @@
             <div class="userNav">
                 <ul>
                     <li><a href="{:U('setting/index')}" title=""><img src="__IMG__/icons/topnav/profile.png" alt="" /><span>个人资料</span></a></li>
+                    <li><a href="{:U('order/index')}" title=""><img src="__IMG__/icons/dark/cart.png" alt="" /><span>我的订单</span></a></li>
                     <li><a href="{:U('Message/index')}"><img src="__IMG__/icons/topnav/messages.png" alt=""><span>消息中心</span><span class="numberTop">{$_msgNumber}</span></a>
                     </li>
                     <li><a href="{:U('Public/logout')}" title="退出客户端"><img src="__IMG__/icons/topnav/logout.png" alt="" /><span>退出</span></a></li>
@@ -114,67 +115,8 @@
     </div>
 
 
-    <!-- Title area -->
-   <!--  <div class="titleArea">
-        <div class="wrapper">
-            <div class="pageTitle">
-                <h5>Dashboard</h5>
-                <span>Do your layouts deserve better than Lorem Ipsum.</span>
-            </div>
-            <div class="middleNav">
-                <ul>
-                    <li class="mUser">
-                        <a title="会员等级排名" class="tipN"><span class="users"></span></a>
-                    </li>
-                    <li class="mMessages">
-                        <a title="网站消息" class='tipN'>
-                            <span class="messages"></span>
-                            <span class="numberMiddle">8</span>
-
-                        </a>
-                    </li>
-                    <li class="mFiles">
-                        <a href="#" title="优惠活动" class="tipN">
-                            <span class="files"></span>
-                        </a>
-                    </li>
-                    <li class="mOrders">
-                        <a title="积分商品" class="tipN">
-                            <span class="orders"></span>
-                            <span class="numberMiddle">8</span>
-                        </a>
-                    </li>
-                </ul>
-                <div class="clear"></div>
-            </div>
-            <div class="clear"></div>
-        </div>
-    </div>
-     -->
     <div class="line"></div>
 
-
-    <!-- 管理员显示
-        
-    <div class="statsRow">
-        <div class="wrapper">
-            <div class="controlB">
-                <ul>
-                    <li><a href="#" title=""><img src="__IMG__/icons/control/32/plus.png" alt="" /><span>Add new session</span></a></li>
-                    <li><a href="#" title=""><img src="__IMG__/icons/control/32/database.png" alt="" /><span>New DB entry</span></a></li>
-                    <li><a href="#" title=""><img src="__IMG__/icons/control/32/hire-me.png" alt="" /><span>Add new user</span></a></li>
-                    <li><a href="#" title=""><img src="__IMG__/icons/control/32/statistics.png" alt="" /><span>Check statistics</span></a></li>
-                    <li><a href="#" title=""><img src="__IMG__/icons/control/32/comment.png" alt="" /><span>Review comments</span></a></li>
-                    <li><a href="#" title=""><img src="__IMG__/icons/control/32/order-149.png" alt="" /><span>Check orders</span></a></li>
-                </ul>
-                <div class="clear"></div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="line"></div>
-
-    -->
 
     <block name="body">
 
