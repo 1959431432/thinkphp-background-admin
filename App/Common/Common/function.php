@@ -44,7 +44,6 @@ function signSumDay( $uid = null )
  －－－－－－－－－－－分组－－－－－－－－－－－－
  ==========================================*/
 
-
 // 获取分组名称
 function getGroupTitle( $id )
 {
@@ -65,6 +64,15 @@ function getActivityByIntegral( $integral )
 
 
 
+/*==========================================
+ －－－－－－－－－－－商品－－－－－－－－－－－－
+ ==========================================*/
+function getShopTitle( $id )
+{
+	return M('Shop')->getFieldById( $id, 'title' );
+}
+
+
 
 /*==========================================
  －－－－－－－－－－－工具－－－－－－－－－－－－
@@ -79,11 +87,14 @@ function tourl( $url ){
 // status 返回文字
 function statusTitle( $integral, $group = ''){
 	switch ( $group ) {
-		/*
-		case '':
-			return 1 == $integral ? '开启' : '禁用';
+		case 'shop':
+			if( 1 == $integral ) {
+				return '未发货';
+			} else if( 2 == $integral ){
+				return '已发货';
+			}
+			return '非常抱歉，该商品没有库存';
 			break;
-		*/
 		default:
 			return 1 == $integral ? '开启' : '关闭';
 			break;

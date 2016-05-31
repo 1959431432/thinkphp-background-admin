@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
-<title>网站后台管理系统</title>
+<title>admin for backend systems</title>
 <link href="/Public/css//main.css" rel="stylesheet" type="text/css" />
 <link href="/Public/css//style.css" rel="stylesheet" type="text/css" />
 
@@ -84,13 +84,35 @@
 
 <!-- Left side content -->
 <div id="leftSide">
-    <div class="logo"><a href="index.html"><img src="/Public/images//logo.png" alt="" /></a></div>
 
+    <div class="logo"><a href="index.html"><img src="/Public/images//logo.png" alt="" /></a></div>
+    
+    <div class="sidebarSep"></div>
+
+    <!-- General balance widget -->
+    <div class="genBalance">
+        <a href="#" title="" class="amount">
+            <span> 当前积分:</span>
+            <span class="balanceAmount">
+                <?php echo session('user.rank');?>
+            </span>
+        </a>
+    </div>
+    <!-- Next update progress widget -->
+    <div class="nextUpdate">
+        <ul>
+            <li><img src="/Public/images//<?php echo ($_userGroup["img"]); ?>" title='<?php echo ($_userGroup["title"]); ?>' title='<?php echo ($_userGroup["title"]); ?>'> &nbsp; 下一等级:</li>
+            <li>
+                <?php  $progressWidth = $_user['level'] / $_nextGroup['integral'] * 100; $diffIntegral = $_nextGroup['integral'] - $_user['level']; if( $diffIntegral > 0 ){ echo '还需' . $diffIntegral; } else { echo '已是最高等级'; $progressWidth = 100; } ?></li>
+        </ul>
+        <div class="pWrapper"><div class="progressG" title="<?php echo ($progressWidth); ?>%"></div></div>
+    </div>
+    
     <div class="sidebarSep"></div>
     
     <!-- Left navigation -->
     <ul id="menu" class="nav">
-        <?php if(is_array($_menu)): $i = 0; $__LIST__ = $_menu;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menus): $mod = ($i % 2 );++$i; if($menus['children'] != false): ?><li class="<?php echo ($menus["class"]); ?>"><a class='exp' href="#" title=""><span><?php echo ($menus["title"]); ?></span></a>
+        <?php if(is_array($_menu)): $i = 0; $__LIST__ = $_menu;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menus): $mod = ($i % 2 );++$i; if($menus['children'] != false): ?><li class="<?php echo ($menus["class"]); ?>"><a class='exp inactive' href="#" title=""><span><?php echo ($menus["title"]); ?></span></a>
                     <ul class="sub">
                         <?php if(is_array($menus['children'])): $i = 0; $__LIST__ = $menus['children'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menu): $mod = ($i % 2 );++$i;?><li><a href="<?php echo U($menu['url']);?>" title=""><?php echo ($menu["title"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
                     </ul>
@@ -100,16 +122,19 @@
     </ul>
 </div>
 
+
 <!-- Right side -->
 <div id="rightSide">
     <!-- Top fixed navigation -->
     <div class="topNav">
         <div class="wrapper">
-            <div class="welcome"><a href="#" title=""><img src="/Public/images//userPic.png" alt="" /></a><span>您好，管理员</span></div>
+            <div class="welcome"><a href="#" title=""><img src="/Public/images//userPic.png" alt="" /></a><span>您好，<?php echo ($_user['username']); ?></span></div>
             <div class="userNav">
                 <ul>
-                    <!-- <li><a href="#" title=""><img src="/Public/images//icons/topnav/profile.png" alt="" /><span>个人资料</span><span class="numberTop">？</span></a></li> -->
-                    <li><a href="<?php echo U('options/index');?>" title=""><img src="/Public/images//icons/topnav/settings.png" alt="" /><span>设置</span></a></li>
+                    <li><a href="<?php echo U('setting/index');?>" title=""><img src="/Public/images//icons/topnav/profile.png" alt="" /><span>个人资料</span></a></li>
+                    <li><a href="<?php echo U('order/index');?>" title=""><img src="/Public/images//icons/dark/cart.png" alt="" /><span>我的订单</span></a></li>
+                    <li><a href="<?php echo U('Message/index');?>"><img src="/Public/images//icons/topnav/messages.png" alt=""><span>消息中心</span><span class="numberTop"><?php echo ($_msgNumber); ?></span></a>
+                    </li>
                     <li><a href="<?php echo U('Public/logout');?>" title="退出客户端"><img src="/Public/images//icons/topnav/logout.png" alt="" /><span>退出</span></a></li>
                 </ul>
             </div>
@@ -138,71 +163,65 @@
         </div>
         <div class="cLine"></div>
     </div>
+
+
+    <div class="line"></div>
+
+
     
-    
-    <div class="wrapper">
-      <div class="bc">
-          <ul id="breadcrumbs" class="breadcrumbs">
-               <li class=""> <a href="<?php echo U('Index/index');?>">控制中心</a> </li>
-               <li class="current"><a href="#">签到排名</a></li>
-          </ul>
-          <div class="clear"></div>
-      </div>
-      <div class="widgets">
-			<div class="oneTwo">
-				<div class="widget">
-	                <div class="title"><img src="/Public/images//icons/dark/stats.png" alt="" class="titleIcon"><h6>今日签到</h6></div>
-	                <div class="updates">
-	                	<?php if(is_array($today)): $i = 0; $__LIST__ = $today;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$day): $mod = ($i % 2 );++$i;?><div class="newUpdate">
-		                        <div class="uDone">
-		                            <a href="<?php echo U('detail',array('uid'=>$day['uid']));?>" title="查看会员签到记录">
-		                            	<i style="padding: 2px 5px;background: #9E9E9E;color: #fff;margin-right: 8px;    vertical-align: bottom;"><?php echo ($i); ?></i>
-		                            	<strong>
-		                            		<img src="/Public/images//<?php echo (getUserImg($day["uid"])); ?>" style="vertical-align: middle;">
-		                            		<?php echo (getUsername($day["uid"])); ?>
-		                            	</strong>
-		                            </a>
-		                        </div>
-		                        <div class="uDate" style="width: 70px;"><span class="uDay" style="font-size: 12px;">第<?php echo ($i); ?>个签到</span></div>
-		                        <div class="clear"></div>
-		                    </div><?php endforeach; endif; else: echo "" ;endif; ?>
-	                    <!-- <div class="newUpdate">
-	                    	<div class="body textC">
-		                        <a href="#" title="" class="button greyishB" id="opener" style="margin: 5px;"><span>查看更多今日签到</span></a>
-		                    </div>
-	                    </div> -->	
-	                </div>
-	            </div>
-			</div>
-			<div class="oneTwo">
-				<div class="widget">
-	                <div class="title"><img src="/Public/images//icons/dark/stats.png" alt="" class="titleIcon"><h6>总签到排名</h6></div>
-	                
-	                <div class="updates">
-	                	<?php if(is_array($sumDay)): $i = 0; $__LIST__ = $sumDay;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$day): $mod = ($i % 2 );++$i;?><div class="newUpdate">
-		                        <div class="uDone">
-		                            <a href="<?php echo U('detail',array('uid'=>$day['uid']));?>" title="查看会员签到记录">
-		                            	<i style="padding: 2px 5px;background: #9E9E9E;color: #fff;margin-right: 8px;    vertical-align: bottom;"><?php echo ($i); ?></i>
-		                            	<strong>
-		                            		<img src="/Public/images//<?php echo (getUserImg($day["uid"])); ?>" style="vertical-align: middle;">
-		                            		<?php echo (getUsername($day["uid"])); ?>
-		                            	</strong>
-		                            </a>
-		                        </div>
-		                        <div class="uDate"><span class="uDay" style="font-size: 14px;">签到<?php echo ($day["total"]); ?>天</span></div>
-		                        <div class="clear"></div>
-		                    </div><?php endforeach; endif; else: echo "" ;endif; ?>
-	                    <!-- <div class="newUpdate">
-	                    	<div class="body textC">
-		                        <a href="#" title="" class="button greyishB" id="opener" style="margin: 5px;"><span>查看更多总签到</span></a>
-		                    </div>
-	                    </div>	 -->
-	                </div>
-	            </div>
-			</div>
-			<div class="clear"></div>
-		</div>
-    </div>
+
+	<div class="wrapper">
+	<div class="bc">
+	    <ul id="breadcrumbs" class="breadcrumbs">
+	         <li class="">
+	              <a href="<?php echo U('Index/index');?>">个人中心</a>
+	         </li>
+	         <li class="current"><a href="#">我的订单</a></li>
+	    </ul>
+	    <div class="clear"></div>
+	</div>
+	  <div class="widget">
+        <div class="title">
+		  <h6>订单列表</h6>
+        </div>
+          <table cellpadding="0" cellspacing="0" width="100%" class="sTable withCheck display myTable">
+              <thead>
+                  <tr>
+                    <th>商品标题</th>
+		            <th>消费积分</th>
+		            <th>收件姓名</th>
+		            <th>收件电话</th>
+		            <th>收件地址</th>
+		            <th>购买时间</th>
+		            <th>订单状态</th>
+		            <!-- <th>操作</th> -->
+                  </tr>
+              </thead>
+              <tbody>
+	        	<?php if(is_array($lists)): $i = 0; $__LIST__ = $lists;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="gradeA">
+		       			<td class="center"><?php echo (getShopTitle($vo["sid"])); ?></td>
+		       			<td class="center"><?php echo ($vo["integral"]); ?></td>
+		       			<td class="center"><?php echo ($vo["name"]); ?></td>
+		       			<td class="center"><?php echo ($vo["phone"]); ?></td>
+		       			<td class="center tipS" original-title="<?php echo ($vo["address"]); ?>"><?php echo (mb_substr($vo["address"],0,10,'utf-8')); ?>...</td>
+		       			<td class="center"><?php echo (date("Y-m-d H:i",$vo["addtime"])); ?></td>
+		       			<td class="center"><?php echo (statusTitle($vo["status"],'shop')); ?></td>
+		       			<!-- <td class="center">
+		       				<a href="<?php echo U('add',array('id'=>$vo['id']));?>">查看</a> &nbsp;&nbsp;
+		       			</td> -->
+			        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+              </tbody>
+              <tfoot>
+              	<tr>
+              		<td colspan="10" class='pagination'>
+              			<?php echo ($showPage); ?>
+              		</td>
+              	</tr>
+              </tfoot>
+          </table>
+        </div>
+	</div>
+
 
     <!-- Footer line -->
     <div id="footer">
@@ -211,66 +230,11 @@
 
 </div>
 
-
-
 <div class="clear"></div>
-    
     <script type="text/javascript">
-        $(function(){
-            oTable = $('.dTable').dataTable({
-                "oLanguage" : { // 汉化
-                    "sProcessing" : "正在加载数据...",
-                    "sLengthMenu": "<span class='itemsPerPage'>每页显示:</span> _MENU_ <a class='add_link' href='<?php echo U('add');?>'>+ 添加</a>",
-                    "sZeroRecords" : "没有您要搜索的内容",
-                    "sInfo" : "从_START_ 到 _END_ 条记录——总记录数为 _TOTAL_ 条",
-                    "sInfoEmpty" : "记录数为0",
-                    "sInfoFiltered" : "(全部记录数 _MAX_  条)",
-                    "sInfoPostFix" : "",
-                    "sSearch" : "搜索",
-                    "sUrl" : "",
-                    "oPaginate" : {
-                        "sFirst" : "第一页",
-                        "sPrevious" : " 上一页 ",
-                        "sNext" : " 下一页 ",
-                        "sLast" : " 最后一页 "
-                    }
-                },
-                "bJQueryUI": true,
-                "sPaginationType": "full_numbers",
-                "sDom": '<""l>t<"F"fp>',
-            });
-            //点击打开文件选择器  
-            $("#upload").on('click', function() {
-                $.ajaxFileUpload({  
-                    url:"<?php echo U('upload');?>",  
-                    secureuri:false,  
-                    fileElementId:'fileToUpload',//file标签的id  
-                    dataType: 'json',//返回数据的类型  
-                    success: function (data, status) {
-                        if( data.status == 1 ){
-                            $('#hidden_inputFile').val( data.fileName );
-                            $("#showImg").attr('src',"/<?php echo C('UPLOAD_CONFIG.rootPath');?>"+data.fileName)
-                            layer.msg( '文件上传成功' , {icon: 6});
-                        } else {
-                            layer.msg( data.error , {icon: 5});
-                        }
-                    },  
-                    error: function (data, status, e) {  
-                        alert(e);  
-                    }  
-                }); 
-            }); 
-
-            var z = $("#breadcrumbs .current a").html();
-            if( z ){
-                var t = $('title').html();
-                $('title').html( z+'_'+t );
-            }
-
-            setTimeout(function(){
-                window.location = "<?php echo U('Public/logout');?>";
-            },3600000);
-        });  
+        setTimeout(function(){
+            window.location = "<?php echo U('Public/logout');?>";
+        },3600000);
     </script>
 </body>
 </html>

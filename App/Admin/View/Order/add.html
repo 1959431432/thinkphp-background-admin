@@ -1,0 +1,99 @@
+<extend name="Public/base" />
+
+<block name="body">
+
+	 <!-- Main content wrapper -->
+    <div class="wrapper">
+        <div class="bc">
+            <ul id="breadcrumbs" class="breadcrumbs">
+                 <li class=""> <a href="{:U('Index/index')}">控制中心</a> </li>
+                 <li class=""> <a href="{:U('index')}">订单列表</a> </li>
+                 <li class="current"><a href="#">订单管理</a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <!-- Validation form -->
+        <form class="form validate" method="post" action="{:U('save')}">
+            <input type="hidden" name='id' value="{$vo.id}">
+            <input type="hidden" name='uid' value="{$vo.uid}">
+            <input type="hidden" name='integral' value="{$vo.integral}">
+        	<fieldset>
+                <div class="widget">
+                    
+                    <div class="title">
+                    	<img src="__IMG__/icons/dark/alert.png" alt="" class="titleIcon" />
+                    	<h6>订单管理表单</h6>
+                    </div>
+
+                    <div class="formRow">
+                        <label>用户名称:</label>
+                        <div class="formRight">
+                            <input type="text" class="" name="" id="" value="{$vo.uid|getUsername}" disabled="disabled" />
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>商品标题:</label>
+                        <div class="formRight">
+                            <input type="text" class="" name="" id="" value="{$vo.sid|getShopTitle}" disabled="disabled"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>消费积分:</label>
+                        <div class="formRight">
+                            <input type="text" class="" name="" id="" value="{$vo.integral}" disabled="disabled"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>收件姓名:</label>
+                        <div class="formRight">
+                            <input type="text" class="" name="name" id="name" value="{$vo.name}"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>收件电话:</label>
+                        <div class="formRight">
+                            <input type="text" class="" name="phone" id="phone" value="{$vo.phone}"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>收件地址:</label>
+                        <div class="formRight">
+							<textarea name="address" id="address" rows='10' class="validate[required]">{$vo.address}</textarea>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>订单状态:<span class="req">*</span></label>
+                        <div class="formRight">
+                            <div class="floatL" style="margin: 2px 0 0 0;">
+
+                            <input type="radio" id="radioReq" name="status" class="validate[required]" data-prompt-position="topRight:102" value='0' checked="checked" /><label for="radioReq">无库存</label>
+
+                            <input type="radio" id="radioReq1" name="status" class="validate[required]" data-prompt-position="topRight:102" value='1' <eq name="vo.status" value='1'> checked='checked'</eq> /><label for="radioReq1">未发货</label>
+
+                            <input type="radio" id="radioReq2" name="status" class="validate[required]" data-prompt-position="topRight:102" value='2' <eq name="vo.status" value='2'> checked='checked'</eq> /><label for="radioReq2">已发货</label>
+
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    
+                    <div class="formSubmit"><input type="submit" value="提交" class="redB" /></div>
+                    <div class="clear"></div>
+                </div>
+                
+            </fieldset>
+        </form>       
+    </div>>
+</block>

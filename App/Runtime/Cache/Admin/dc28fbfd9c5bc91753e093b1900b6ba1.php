@@ -140,69 +140,71 @@
     </div>
     
     
-    <div class="wrapper">
+	<div class="wrapper">
       <div class="bc">
           <ul id="breadcrumbs" class="breadcrumbs">
-               <li class=""> <a href="<?php echo U('Index/index');?>">控制中心</a> </li>
-               <li class="current"><a href="#">签到排名</a></li>
+               <li class=""> <a href="<?php echo U('Index/index');?>">个人中心</a> </li>
+               <li class=""> <a href="<?php echo U('Days/index');?>">签到排名</a> </li>
+               <li class="current"><a href="#">查看会员签到记录</a></li>
           </ul>
+
           <div class="clear"></div>
       </div>
-      <div class="widgets">
-			<div class="oneTwo">
-				<div class="widget">
-	                <div class="title"><img src="/Public/images//icons/dark/stats.png" alt="" class="titleIcon"><h6>今日签到</h6></div>
-	                <div class="updates">
-	                	<?php if(is_array($today)): $i = 0; $__LIST__ = $today;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$day): $mod = ($i % 2 );++$i;?><div class="newUpdate">
-		                        <div class="uDone">
-		                            <a href="<?php echo U('detail',array('uid'=>$day['uid']));?>" title="查看会员签到记录">
-		                            	<i style="padding: 2px 5px;background: #9E9E9E;color: #fff;margin-right: 8px;    vertical-align: bottom;"><?php echo ($i); ?></i>
-		                            	<strong>
-		                            		<img src="/Public/images//<?php echo (getUserImg($day["uid"])); ?>" style="vertical-align: middle;">
-		                            		<?php echo (getUsername($day["uid"])); ?>
-		                            	</strong>
-		                            </a>
-		                        </div>
-		                        <div class="uDate" style="width: 70px;"><span class="uDay" style="font-size: 12px;">第<?php echo ($i); ?>个签到</span></div>
-		                        <div class="clear"></div>
-		                    </div><?php endforeach; endif; else: echo "" ;endif; ?>
-	                    <!-- <div class="newUpdate">
-	                    	<div class="body textC">
-		                        <a href="#" title="" class="button greyishB" id="opener" style="margin: 5px;"><span>查看更多今日签到</span></a>
-		                    </div>
-	                    </div> -->	
-	                </div>
-	            </div>
+	
+		<!-- Events calendar -->
+		<div class="widget">
+			<div class="title">
+				<img src="/Public/images//icons/dark/monthCalendar.png" alt="" class="titleIcon" />
+				<h6>
+					签到记录
+				</h6>
 			</div>
-			<div class="oneTwo">
-				<div class="widget">
-	                <div class="title"><img src="/Public/images//icons/dark/stats.png" alt="" class="titleIcon"><h6>总签到排名</h6></div>
-	                
-	                <div class="updates">
-	                	<?php if(is_array($sumDay)): $i = 0; $__LIST__ = $sumDay;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$day): $mod = ($i % 2 );++$i;?><div class="newUpdate">
-		                        <div class="uDone">
-		                            <a href="<?php echo U('detail',array('uid'=>$day['uid']));?>" title="查看会员签到记录">
-		                            	<i style="padding: 2px 5px;background: #9E9E9E;color: #fff;margin-right: 8px;    vertical-align: bottom;"><?php echo ($i); ?></i>
-		                            	<strong>
-		                            		<img src="/Public/images//<?php echo (getUserImg($day["uid"])); ?>" style="vertical-align: middle;">
-		                            		<?php echo (getUsername($day["uid"])); ?>
-		                            	</strong>
-		                            </a>
-		                        </div>
-		                        <div class="uDate"><span class="uDay" style="font-size: 14px;">签到<?php echo ($day["total"]); ?>天</span></div>
-		                        <div class="clear"></div>
-		                    </div><?php endforeach; endif; else: echo "" ;endif; ?>
-	                    <!-- <div class="newUpdate">
-	                    	<div class="body textC">
-		                        <a href="#" title="" class="button greyishB" id="opener" style="margin: 5px;"><span>查看更多总签到</span></a>
-		                    </div>
-	                    </div>	 -->
-	                </div>
-	            </div>
-			</div>
-			<div class="clear"></div>
+			<div class="calendar"></div>
 		</div>
     </div>
+    <script type="text/javascript">
+    	jQuery( function( $ ){
+    		//===== Calendar =====//
+			$('.calendar').fullCalendar({
+				header: {
+					left: 'prev,next',
+					center: 'title',
+					right: 'month'
+				},
+				monthNames: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+		        monthNamesShort: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+		        dayNames: ["周日", "周一", "周二", "周三", "周四", "周五", "周六"],
+		        dayNamesShort: ["周日", "周一", "周二", "周三", "周四", "周五", "周六"],
+		        today: ["今天"],
+		        firstDay: 1,
+		        buttonText: {
+		            today: '本月',
+		            month: '月',
+		            week: '周',
+		            day: '日'
+		        },
+				editable: false,
+				events: [
+					<?php if(is_array($userSigns)): $i = 0; $__LIST__ = $userSigns;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$sign): $mod = ($i % 2 );++$i;?>{ title: '签到成功', start: "<?php echo ($sign["addtime"]); ?>" },<?php endforeach; endif; else: echo "" ;endif; ?>
+				]
+			});
+
+			$("#daysButton").click( function()
+			{
+				var ii = layer.load();
+				$.get("<?php echo U('sign');?>",{}, function( res ){
+					if( res.status == 1 ){
+						layer.msg( res.info , {icon: 6}, function(){
+							window.location.reload();
+						});
+					} else {
+						layer.msg( res.info , {icon: 5});
+					}
+		            layer.close(ii);					
+				});
+			});
+    	})
+    </script>
 
     <!-- Footer line -->
     <div id="footer">

@@ -56,7 +56,6 @@
     <script>
     	jQuery( function( $ )
     	{
-    		
     		$("#close_layer").click( function()
     		{
     			parent.layer.closeAll();
@@ -74,7 +73,8 @@
     			{
 					if( res.status == 1 ){
 						layer.msg( res.info , {icon: 6}, function(){
-							parent.layer.closeAll();
+							parent.location.reload();
+							// parent.layer.closeAll();
 						});
 					} else {
 						layer.msg( res.info , {icon: 5});

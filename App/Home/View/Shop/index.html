@@ -10,7 +10,10 @@
           <div class="clear"></div>
       </div>
       <div style="margin-top:30px;">
-      	<h2>您当前共有：{:session('user.rank')}分</h2>
+      	<?php
+			$rank = session('user.rank');
+      	?>
+      	<h2>您当前共有：{$rank}分</h2>
       </div>
     	<div class="widgets">
     		<volist name="lists" id="vo">
@@ -39,9 +42,18 @@
 			                			<a href="{:U('add',array('id'=>$vo['id']))}" title="" class="button greenB">
 			                				<span>查看详情</span>
 			                			</a>
-			                			<a href="{:U('buy',array('id'=>$vo['id']))}" title="" class="button redB layer_iframe">
+			                			<!-- <a href="{:U('buy',array('id'=>$vo['id']))}" title="" class="button redB layer_iframe">
 			                				<span>立即购买</span>
-			                			</a>
+			                			</a> -->
+			                			<gt name="vo.integral" value="$rank">
+				                            <a href="#" title="" class="button greyishB">
+				                              <span>积分不足</span>
+				                            </a>
+				                          <else />
+				                            <a href="{:U('buy',array('id'=>$vo['id']))}" title="" class="button redB layer_iframe">
+				                              <span>立即购买</span>
+				                            </a>
+				                          </gt>
 			                		</li>
 			                	</ul>
 		                    </p>

@@ -31,7 +31,7 @@ class BaseController extends Controller {
         $page->setConfig('theme','%FIRST% %UP_PAGE% %LINK_PAGE% %DOWN_PAGE% %END% %HEADER%');
         $page->setConfig('prev','&lt;');
         $page->setConfig('next','&gt;');
-        $lists = $model->where( $where )->limit( $page->listRows, $page->firstRow )->select(); 
+        $lists = $model->where( $where )->limit( $page->listRows, $page->firstRow )->order('`id` desc')->select(); 
         $this->assign('lists',$lists);
         $this->assign('showPage',$page->show2());
     }

@@ -140,69 +140,92 @@
     </div>
     
     
+
+	 <!-- Main content wrapper -->
     <div class="wrapper">
-      <div class="bc">
-          <ul id="breadcrumbs" class="breadcrumbs">
-               <li class=""> <a href="<?php echo U('Index/index');?>">控制中心</a> </li>
-               <li class="current"><a href="#">签到排名</a></li>
-          </ul>
-          <div class="clear"></div>
-      </div>
-      <div class="widgets">
-			<div class="oneTwo">
-				<div class="widget">
-	                <div class="title"><img src="/Public/images//icons/dark/stats.png" alt="" class="titleIcon"><h6>今日签到</h6></div>
-	                <div class="updates">
-	                	<?php if(is_array($today)): $i = 0; $__LIST__ = $today;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$day): $mod = ($i % 2 );++$i;?><div class="newUpdate">
-		                        <div class="uDone">
-		                            <a href="<?php echo U('detail',array('uid'=>$day['uid']));?>" title="查看会员签到记录">
-		                            	<i style="padding: 2px 5px;background: #9E9E9E;color: #fff;margin-right: 8px;    vertical-align: bottom;"><?php echo ($i); ?></i>
-		                            	<strong>
-		                            		<img src="/Public/images//<?php echo (getUserImg($day["uid"])); ?>" style="vertical-align: middle;">
-		                            		<?php echo (getUsername($day["uid"])); ?>
-		                            	</strong>
-		                            </a>
-		                        </div>
-		                        <div class="uDate" style="width: 70px;"><span class="uDay" style="font-size: 12px;">第<?php echo ($i); ?>个签到</span></div>
-		                        <div class="clear"></div>
-		                    </div><?php endforeach; endif; else: echo "" ;endif; ?>
-	                    <!-- <div class="newUpdate">
-	                    	<div class="body textC">
-		                        <a href="#" title="" class="button greyishB" id="opener" style="margin: 5px;"><span>查看更多今日签到</span></a>
-		                    </div>
-	                    </div> -->	
-	                </div>
-	            </div>
-			</div>
-			<div class="oneTwo">
-				<div class="widget">
-	                <div class="title"><img src="/Public/images//icons/dark/stats.png" alt="" class="titleIcon"><h6>总签到排名</h6></div>
-	                
-	                <div class="updates">
-	                	<?php if(is_array($sumDay)): $i = 0; $__LIST__ = $sumDay;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$day): $mod = ($i % 2 );++$i;?><div class="newUpdate">
-		                        <div class="uDone">
-		                            <a href="<?php echo U('detail',array('uid'=>$day['uid']));?>" title="查看会员签到记录">
-		                            	<i style="padding: 2px 5px;background: #9E9E9E;color: #fff;margin-right: 8px;    vertical-align: bottom;"><?php echo ($i); ?></i>
-		                            	<strong>
-		                            		<img src="/Public/images//<?php echo (getUserImg($day["uid"])); ?>" style="vertical-align: middle;">
-		                            		<?php echo (getUsername($day["uid"])); ?>
-		                            	</strong>
-		                            </a>
-		                        </div>
-		                        <div class="uDate"><span class="uDay" style="font-size: 14px;">签到<?php echo ($day["total"]); ?>天</span></div>
-		                        <div class="clear"></div>
-		                    </div><?php endforeach; endif; else: echo "" ;endif; ?>
-	                    <!-- <div class="newUpdate">
-	                    	<div class="body textC">
-		                        <a href="#" title="" class="button greyishB" id="opener" style="margin: 5px;"><span>查看更多总签到</span></a>
-		                    </div>
-	                    </div>	 -->
-	                </div>
-	            </div>
-			</div>
-			<div class="clear"></div>
-		</div>
-    </div>
+        <div class="bc">
+            <ul id="breadcrumbs" class="breadcrumbs">
+                 <li class=""> <a href="<?php echo U('Index/index');?>">控制中心</a> </li>
+                 <li class=""> <a href="<?php echo U('index');?>">订单列表</a> </li>
+                 <li class="current"><a href="#">订单管理</a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <!-- Validation form -->
+        <form class="form validate" method="post" action="<?php echo U('save');?>">
+            <input type="hidden" name='id' value="<?php echo ($vo["id"]); ?>">
+            <input type="hidden" name='uid' value="<?php echo ($vo["uid"]); ?>">
+        	<fieldset>
+                <div class="widget">
+                    
+                    <div class="title">
+                    	<img src="/Public/images//icons/dark/alert.png" alt="" class="titleIcon" />
+                    	<h6>订单管理表单</h6>
+                    </div>
+
+                    <div class="formRow">
+                        <label>用户名称:</label>
+                        <div class="formRight">
+                            <input type="text" class="" name="" id="" value="<?php echo (getUsername($vo["uid"])); ?>" disabled="disabled" />
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>商品标题:</label>
+                        <div class="formRight">
+                            <input type="text" class="" name="" id="" value="<?php echo (getShopTitle($vo["sid"])); ?>" disabled="disabled"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>收件姓名:</label>
+                        <div class="formRight">
+                            <input type="text" class="" name="name" id="name" value="<?php echo ($vo["name"]); ?>"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>收件电话:</label>
+                        <div class="formRight">
+                            <input type="text" class="" name="phone" id="phone" value="<?php echo ($vo["phone"]); ?>"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>收件地址:</label>
+                        <div class="formRight">
+							<textarea name="address" id="address" rows='10' class="validate[required]"><?php echo ($vo["address"]); ?></textarea>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>订单状态:<span class="req">*</span></label>
+                        <div class="formRight">
+                            <div class="floatL" style="margin: 2px 0 0 0;">
+
+                            <input type="radio" id="radioReq" name="status" class="validate[required]" data-prompt-position="topRight:102" value='0' checked="checked" /><label for="radioReq">无库存</label>
+
+                            <input type="radio" id="radioReq1" name="status" class="validate[required]" data-prompt-position="topRight:102" value='1' <?php if(($vo["status"]) == "1"): ?>checked='checked'<?php endif; ?> /><label for="radioReq1">未发货</label>
+
+                            <input type="radio" id="radioReq2" name="status" class="validate[required]" data-prompt-position="topRight:102" value='2' <?php if(($vo["status"]) == "2"): ?>checked='checked'<?php endif; ?> /><label for="radioReq2">已发货</label>
+
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    
+                    <div class="formSubmit"><input type="submit" value="提交" class="redB" /></div>
+                    <div class="clear"></div>
+                </div>
+                
+            </fieldset>
+        </form>       
+    </div>>
 
     <!-- Footer line -->
     <div id="footer">

@@ -140,69 +140,61 @@
     </div>
     
     
-    <div class="wrapper">
-      <div class="bc">
-          <ul id="breadcrumbs" class="breadcrumbs">
-               <li class=""> <a href="<?php echo U('Index/index');?>">控制中心</a> </li>
-               <li class="current"><a href="#">签到排名</a></li>
-          </ul>
-          <div class="clear"></div>
-      </div>
-      <div class="widgets">
-			<div class="oneTwo">
-				<div class="widget">
-	                <div class="title"><img src="/Public/images//icons/dark/stats.png" alt="" class="titleIcon"><h6>今日签到</h6></div>
-	                <div class="updates">
-	                	<?php if(is_array($today)): $i = 0; $__LIST__ = $today;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$day): $mod = ($i % 2 );++$i;?><div class="newUpdate">
-		                        <div class="uDone">
-		                            <a href="<?php echo U('detail',array('uid'=>$day['uid']));?>" title="查看会员签到记录">
-		                            	<i style="padding: 2px 5px;background: #9E9E9E;color: #fff;margin-right: 8px;    vertical-align: bottom;"><?php echo ($i); ?></i>
-		                            	<strong>
-		                            		<img src="/Public/images//<?php echo (getUserImg($day["uid"])); ?>" style="vertical-align: middle;">
-		                            		<?php echo (getUsername($day["uid"])); ?>
-		                            	</strong>
-		                            </a>
-		                        </div>
-		                        <div class="uDate" style="width: 70px;"><span class="uDay" style="font-size: 12px;">第<?php echo ($i); ?>个签到</span></div>
-		                        <div class="clear"></div>
-		                    </div><?php endforeach; endif; else: echo "" ;endif; ?>
-	                    <!-- <div class="newUpdate">
-	                    	<div class="body textC">
-		                        <a href="#" title="" class="button greyishB" id="opener" style="margin: 5px;"><span>查看更多今日签到</span></a>
-		                    </div>
-	                    </div> -->	
-	                </div>
-	            </div>
-			</div>
-			<div class="oneTwo">
-				<div class="widget">
-	                <div class="title"><img src="/Public/images//icons/dark/stats.png" alt="" class="titleIcon"><h6>总签到排名</h6></div>
-	                
-	                <div class="updates">
-	                	<?php if(is_array($sumDay)): $i = 0; $__LIST__ = $sumDay;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$day): $mod = ($i % 2 );++$i;?><div class="newUpdate">
-		                        <div class="uDone">
-		                            <a href="<?php echo U('detail',array('uid'=>$day['uid']));?>" title="查看会员签到记录">
-		                            	<i style="padding: 2px 5px;background: #9E9E9E;color: #fff;margin-right: 8px;    vertical-align: bottom;"><?php echo ($i); ?></i>
-		                            	<strong>
-		                            		<img src="/Public/images//<?php echo (getUserImg($day["uid"])); ?>" style="vertical-align: middle;">
-		                            		<?php echo (getUsername($day["uid"])); ?>
-		                            	</strong>
-		                            </a>
-		                        </div>
-		                        <div class="uDate"><span class="uDay" style="font-size: 14px;">签到<?php echo ($day["total"]); ?>天</span></div>
-		                        <div class="clear"></div>
-		                    </div><?php endforeach; endif; else: echo "" ;endif; ?>
-	                    <!-- <div class="newUpdate">
-	                    	<div class="body textC">
-		                        <a href="#" title="" class="button greyishB" id="opener" style="margin: 5px;"><span>查看更多总签到</span></a>
-		                    </div>
-	                    </div>	 -->
-	                </div>
-	            </div>
-			</div>
-			<div class="clear"></div>
-		</div>
-    </div>
+
+	<div class="wrapper">
+		<div class="bc">
+            <ul id="breadcrumbs" class="breadcrumbs">
+                 <li class=""> <a href="<?php echo U('Index/index');?>">控制中心</a> </li>
+                 <li class="current"><a href="#">订单列表</a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+	  <div class="widget">
+        <div class="title">
+		  <h6>订单列表</h6>
+
+        </div>
+          <table cellpadding="0" cellspacing="0" width="100%" class="sTable withCheck display myTable">
+              <thead>
+                  <tr>
+                    <th>用户名称</th>
+                    <th>商品标题</th>
+                    <th>消费积分</th>
+                    <th>收件姓名</th>
+                    <th>收件电话</th>
+                    <th>收件地址</th>
+                    <th>购买时间</th>
+                    <th>订单状态</th>
+                    <th>操作</th>
+                  </tr>
+              </thead>
+              <tbody>
+            <?php if(is_array($lists)): $i = 0; $__LIST__ = $lists;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="gradeA">
+                <td class="center"><?php echo (getUsername($vo["uid"])); ?></td>
+                <td class="center"><?php echo (getShopTitle($vo["sid"])); ?></td>
+                <td class="center"><?php echo ($vo["integral"]); ?></td>
+                <td class="center"><?php echo ($vo["name"]); ?></td>
+                <td class="center"><?php echo ($vo["phone"]); ?></td>
+                <td class="center tipS" original-title="<?php echo ($vo["address"]); ?>"><?php echo (mb_substr($vo["address"],0,10,'utf-8')); ?>...</td>
+                <td class="center"><?php echo (date("Y-m-d H:i",$vo["addtime"])); ?></td>
+                <td class="center"><?php echo (statusTitle($vo["status"],'shop')); ?></td>
+                  <td class="center">
+                    <a class='confirm ajax' href="<?php echo U('del',array('id'=>$vo['id']));?>">删除</a> &nbsp;&nbsp;
+                    <a href="<?php echo U('add',array('id'=>$vo['id']));?>">修改</a>
+                  </td>
+              </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="10" class='pagination'>
+                    <?php echo ($showPage); ?>
+                  </td>
+                </tr>
+              </tfoot>
+          </table>
+        </div>
+        </div>
+	</div>
 
     <!-- Footer line -->
     <div id="footer">

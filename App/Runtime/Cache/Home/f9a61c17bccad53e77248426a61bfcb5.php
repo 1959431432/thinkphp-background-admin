@@ -132,6 +132,7 @@
             <div class="userNav">
                 <ul>
                     <li><a href="<?php echo U('setting/index');?>" title=""><img src="/Public/images//icons/topnav/profile.png" alt="" /><span>个人资料</span></a></li>
+                    <li><a href="<?php echo U('order/index');?>" title=""><img src="/Public/images//icons/dark/cart.png" alt="" /><span>我的订单</span></a></li>
                     <li><a href="<?php echo U('Message/index');?>"><img src="/Public/images//icons/topnav/messages.png" alt=""><span>消息中心</span><span class="numberTop"><?php echo ($_msgNumber); ?></span></a>
                     </li>
                     <li><a href="<?php echo U('Public/logout');?>" title="退出客户端"><img src="/Public/images//icons/topnav/logout.png" alt="" /><span>退出</span></a></li>

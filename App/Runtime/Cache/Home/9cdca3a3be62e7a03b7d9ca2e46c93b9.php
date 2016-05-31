@@ -132,6 +132,7 @@
             <div class="userNav">
                 <ul>
                     <li><a href="<?php echo U('setting/index');?>" title=""><img src="/Public/images//icons/topnav/profile.png" alt="" /><span>个人资料</span></a></li>
+                    <li><a href="<?php echo U('order/index');?>" title=""><img src="/Public/images//icons/dark/cart.png" alt="" /><span>我的订单</span></a></li>
                     <li><a href="<?php echo U('Message/index');?>"><img src="/Public/images//icons/topnav/messages.png" alt=""><span>消息中心</span><span class="numberTop"><?php echo ($_msgNumber); ?></span></a>
                     </li>
                     <li><a href="<?php echo U('Public/logout');?>" title="退出客户端"><img src="/Public/images//icons/topnav/logout.png" alt="" /><span>退出</span></a></li>
@@ -177,7 +178,9 @@
           <div class="clear"></div>
       </div>
       <div style="margin-top:30px;">
-      	<h2>您当前共有：<?php echo session('user.rank');?>分</h2>
+      	<?php
+ $rank = session('user.rank'); ?>
+      	<h2>您当前共有：<?php echo ($rank); ?>分</h2>
       </div>
     	<div class="widgets">
     		<?php if(is_array($lists)): $i = 0; $__LIST__ = $lists;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div class="oneFour">
@@ -205,9 +208,16 @@
 			                			<a href="<?php echo U('add',array('id'=>$vo['id']));?>" title="" class="button greenB">
 			                				<span>查看详情</span>
 			                			</a>
-			                			<a href="<?php echo U('buy',array('id'=>$vo['id']));?>" title="" class="button redB layer_iframe">
+			                			<!-- <a href="<?php echo U('buy',array('id'=>$vo['id']));?>" title="" class="button redB layer_iframe">
 			                				<span>立即购买</span>
-			                			</a>
+			                			</a> -->
+			                			<?php if(($vo["integral"]) > $rank): ?><a href="#" title="" class="button greyishB">
+				                              <span>积分不足</span>
+				                            </a>
+				                          <?php else: ?>
+				                            <a href="<?php echo U('buy',array('id'=>$vo['id']));?>" title="" class="button redB layer_iframe">
+				                              <span>立即购买</span>
+				                            </a><?php endif; ?>
 			                		</li>
 			                	</ul>
 		                    </p>
