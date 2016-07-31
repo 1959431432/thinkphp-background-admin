@@ -18,7 +18,6 @@ class CommonController extends BaseController {
 
 		$user = session('user');
 
-
 		if( empty( $user ) ){
 			tourl('public/login');
 		}
@@ -40,11 +39,6 @@ class CommonController extends BaseController {
 	}
 
 	public function del()
-	{
-		$this->error('非法操作');
-	}
-
-	public function save()
 	{
 		$this->error('非法操作');
 	}

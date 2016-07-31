@@ -20,6 +20,7 @@ return array(
 			array('title'=>'商品列表','url'=>'Shop/index','class'=>''),
 			array('title'=>'订单列表','url'=>'Order/index','class'=>''),
 		)),
+		array('title'=>'线路检测','url'=>'Link/index','class'=>'widgets','children'=>false),
 		array('title'=>'系统设置','url'=>'Options/index','class'=>'setting','children'=>false),
 		array('title'=>'网站统计','url'=>'Counts/index','class'=>'clock','children'=>false),
 		array('title'=>'消息中心','url'=>'#','class'=>'errors','children'=>array(
@@ -29,4 +30,12 @@ return array(
 		)),
 		array('title'=>'退出','url'=>'Public/logout','class'=>'typo','children'=>false),
 	),
+
+	//'配置项'=>'配置值'
+    'tmpl_parse_string' => array(
+        '__PUBLIC__' => __ROOT__ . '/Public/Admin/',
+        '__CSS__' => __ROOT__ . '/Public/Admin/css/',
+        '__JS__'  => __ROOT__ . '/Public/Admin/js/',
+        '__IMG__' => __ROOT__ . '/Public/Admin/images/',
+    ),
 );

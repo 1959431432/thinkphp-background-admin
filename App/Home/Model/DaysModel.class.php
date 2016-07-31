@@ -6,6 +6,8 @@ namespace Home\Model;
  */
 class DaysModel extends CommonModel
 {
+
+
 	public function sign()
 	{
 		$data = $this->condition();

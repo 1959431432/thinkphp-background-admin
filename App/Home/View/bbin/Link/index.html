@@ -1,0 +1,33 @@
+<extend name="public/base" />
+
+<block name="body">
+
+<div class="main fl yxwz">
+	<img src="__IMG__/yxwzhead.png">
+	<div class="yxwzfoot">
+		<div class="lists">
+			<volist name="result" id="vo">
+				<div class="one">
+					<div class="box ms">
+					<?php
+						$rand = mt_rand(1,30);
+						if( $rand <= 10 ){
+							echo "<span style='color:green;'>流畅</span>";
+						} else if( $rand > 10 && $rand <= 20 ){
+							echo '<span style="color:#CCBB2B;">拥挤</span>';
+						} else {
+							echo '爆满';
+						}
+					?>
+					</div>
+					<div class="box url"> {$vo.url} </div>
+					<div class="box button">
+						<a href="//{$vo.url}"> 打开链接 </a>
+						<a class='layer_iframe' href="{:U('Message/send',array('title'=>$vo['url'].'该链接错误'))}" title="问题反馈" > 报错 </a>
+					</div>
+				</div>
+			</volist>
+		</div>
+	</div>
+</div>
+</block>

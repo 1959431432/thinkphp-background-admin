@@ -1,0 +1,1076 @@
+[ 2016-07-04T10:03:46+08:00 ] ::1 /admin.php/public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000186s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000394s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000447s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000049s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000084s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004314s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004350s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000096s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000117s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000299s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000353s ]
+
+[ 2016-07-04T10:26:30+08:00 ] ::1 /admin.php/public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000202s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000255s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000287s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000052s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000090s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004433s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004512s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000222s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000257s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000394s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000440s ]
+
+[ 2016-07-04T10:26:33+08:00 ] ::1 /admin.php/public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000320s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000452s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000512s ]
+SQL: SHOW COLUMNS FROM `e_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `e_options` [ RunTime:0.0007s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'admin_user' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'admin_pass' LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2016-07-04T14:43:45+08:00 ] ::1 /admin.php/Activity/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000181s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000234s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000262s ]
+NOTIC: [2048] Declaration of Admin\Controller\ActivityController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 7 行.
+
+[ 2016-07-04T14:43:45+08:00 ] ::1 /admin.php/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000180s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000233s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000261s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000053s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000101s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004645s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004695s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000116s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000136s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000351s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000389s ]
+
+[ 2016-07-04T14:43:48+08:00 ] ::1 /admin.php/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000205s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000298s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000336s ]
+SQL: SHOW COLUMNS FROM `e_user` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `e_options` [ RunTime:0.0008s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'admin_user' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'admin_pass' LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-07-04T14:43:52+08:00 ] ::1 /admin.php/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000222s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000262s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000296s ]
+SQL: SHOW COLUMNS FROM `e_user` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_user` LIMIT 100   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_counts` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_counts` WHERE `id` = 1467561601 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `e_counts` WHERE `id` = 1467475201 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000083s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000120s ]
+SQL: SHOW COLUMNS FROM `e_options` [ RunTime:0.0004s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'admin_user' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'admin_pass' LIMIT 1   [ RunTime:0.0001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012064s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012090s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000149s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000171s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000334s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000361s ]
+
+[ 2016-07-04T14:43:56+08:00 ] ::1 /admin.php/Activity/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000168s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000218s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000245s ]
+NOTIC: [2048] Declaration of Admin\Controller\ActivityController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 7 行.
+NOTIC: [8] Undefined index: title /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `e_activity` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_activity` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `e_activity` ORDER BY `id` desc LIMIT 20   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: link_page /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 175 行.
+NOTIC: [8] Undefined variable: the_first /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 192 行.
+NOTIC: [8] Undefined variable: the_end /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 192 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000078s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000116s ]
+NOTIC: [8] Undefined index: title /Users/minghuang/www/exe/App/Runtime/Cache/Admin/40364c1d9e67faec4d35fbfb16f408f2.php 第 162 行.
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0004s ]
+SQL: SELECT `title` FROM `e_group` WHERE `integral` = 3001 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `title` FROM `e_group` WHERE `integral` = 12001 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `title` FROM `e_group` WHERE `integral` = 0 LIMIT 1   [ RunTime:0.0001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011011s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011036s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000148s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000170s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000315s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000352s ]
+
+[ 2016-07-04T14:44:00+08:00 ] ::1 /admin.php/Activity/del/id/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000191s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000286s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000319s ]
+NOTIC: [2048] Declaration of Admin\Controller\ActivityController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `e_activity` [ RunTime:0.0006s ]
+SQL: DELETE FROM `e_activity` WHERE `id` = 3 [ RunTime:0.0006s ]
+
+[ 2016-07-04T14:44:02+08:00 ] ::1 /admin.php/Activity/del/id/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000463s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000379s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000437s ]
+NOTIC: [2048] Declaration of Admin\Controller\ActivityController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `e_activity` [ RunTime:0.0004s ]
+SQL: DELETE FROM `e_activity` WHERE `id` = 3 [ RunTime:0.0002s ]
+
+[ 2016-07-04T14:44:02+08:00 ] ::1 /admin.php/Activity/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000222s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000290s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000331s ]
+NOTIC: [2048] Declaration of Admin\Controller\ActivityController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 7 行.
+NOTIC: [8] Undefined index: title /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `e_activity` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_activity` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `e_activity` ORDER BY `id` desc LIMIT 20   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: link_page /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 175 行.
+NOTIC: [8] Undefined variable: the_first /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 192 行.
+NOTIC: [8] Undefined variable: the_end /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 192 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000081s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000124s ]
+NOTIC: [8] Undefined index: title /Users/minghuang/www/exe/App/Runtime/Cache/Admin/40364c1d9e67faec4d35fbfb16f408f2.php 第 162 行.
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0005s ]
+SQL: SELECT `title` FROM `e_group` WHERE `integral` = 12001 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `title` FROM `e_group` WHERE `integral` = 0 LIMIT 1   [ RunTime:0.0003s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016302s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016348s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000267s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000312s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000512s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000577s ]
+
+[ 2016-07-04T14:44:03+08:00 ] ::1 /admin.php/Activity/del/id/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000289s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000830s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000895s ]
+NOTIC: [2048] Declaration of Admin\Controller\ActivityController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `e_activity` [ RunTime:0.0003s ]
+SQL: DELETE FROM `e_activity` WHERE `id` = 2 [ RunTime:0.0002s ]
+
+[ 2016-07-04T14:44:06+08:00 ] ::1 /admin.php/Activity/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000241s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000274s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000310s ]
+NOTIC: [2048] Declaration of Admin\Controller\ActivityController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 7 行.
+NOTIC: [8] Undefined index: title /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `e_activity` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_activity` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `e_activity` ORDER BY `id` desc LIMIT 20   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: link_page /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 175 行.
+NOTIC: [8] Undefined variable: the_first /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 192 行.
+NOTIC: [8] Undefined variable: the_end /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 192 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000083s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000120s ]
+NOTIC: [8] Undefined index: title /Users/minghuang/www/exe/App/Runtime/Cache/Admin/40364c1d9e67faec4d35fbfb16f408f2.php 第 162 行.
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0004s ]
+SQL: SELECT `title` FROM `e_group` WHERE `integral` = 0 LIMIT 1   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011367s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011393s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000148s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000170s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000339s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000368s ]
+
+[ 2016-07-04T14:44:07+08:00 ] ::1 /admin.php/Activity/del/id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000594s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000259s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000288s ]
+NOTIC: [2048] Declaration of Admin\Controller\ActivityController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `e_activity` [ RunTime:0.0004s ]
+SQL: DELETE FROM `e_activity` WHERE `id` = 1 [ RunTime:0.0002s ]
+
+[ 2016-07-04T14:44:10+08:00 ] ::1 /admin.php/Activity/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000173s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000220s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000247s ]
+NOTIC: [2048] Declaration of Admin\Controller\ActivityController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 7 行.
+NOTIC: [8] Undefined index: title /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `e_activity` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_activity` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `e_activity` ORDER BY `id` desc LIMIT 20   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000088s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000123s ]
+NOTIC: [8] Undefined index: title /Users/minghuang/www/exe/App/Runtime/Cache/Admin/40364c1d9e67faec4d35fbfb16f408f2.php 第 162 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010898s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010928s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000117s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000141s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000329s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000358s ]
+
+[ 2016-07-04T14:44:11+08:00 ] ::1 /admin.php/Activity/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000170s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000257s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000284s ]
+NOTIC: [2048] Declaration of Admin\Controller\ActivityController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT `id`,`title`,`integral` FROM `e_group` WHERE `status` = 1 ORDER BY integral asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_activity` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `e_activity` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000086s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000124s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012444s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012478s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000119s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000140s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000358s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000386s ]
+
+[ 2016-07-04T14:44:28+08:00 ] ::1 /admin.php/Activity/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000174s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000219s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000247s ]
+NOTIC: [2048] Declaration of Admin\Controller\ActivityController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 7 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given /Users/minghuang/www/exe/Core/Library/Think/Upload.class.php 第 170 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000317s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000360s ]
+
+[ 2016-07-04T14:44:50+08:00 ] ::1 /admin.php/Activity/save.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000074s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000547s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000362s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000401s ]
+NOTIC: [2048] Declaration of Admin\Controller\ActivityController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `e_activity` [ RunTime:0.0003s ]
+SQL: INSERT INTO `e_activity` (`id`,`title`,`img`,`starttime`,`endtime`,`integral`,`order`,`content`,`status`,`addtime`) VALUES ('0','新人好礼','20160704/577a05cc0d5a3.png','1467561600','1472659200','0','0','&lt;p&gt;新人好礼的测试内容&lt;/p&gt;','1','1467614690') [ RunTime:0.0002s ]
+
+[ 2016-07-04T14:44:53+08:00 ] ::1 /admin.php/Activity/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000166s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000220s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000247s ]
+NOTIC: [2048] Declaration of Admin\Controller\ActivityController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 7 行.
+NOTIC: [8] Undefined index: title /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `e_activity` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_activity` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `e_activity` ORDER BY `id` desc LIMIT 20   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: link_page /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 175 行.
+NOTIC: [8] Undefined variable: the_first /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 192 行.
+NOTIC: [8] Undefined variable: the_end /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 192 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000074s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000104s ]
+NOTIC: [8] Undefined index: title /Users/minghuang/www/exe/App/Runtime/Cache/Admin/40364c1d9e67faec4d35fbfb16f408f2.php 第 162 行.
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0004s ]
+SQL: SELECT `title` FROM `e_group` WHERE `integral` = 0 LIMIT 1   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009720s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009744s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000244s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000271s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000317s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000348s ]
+
+[ 2016-07-04T14:46:38+08:00 ] ::1 /admin.php/Activity/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000177s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000227s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000255s ]
+NOTIC: [2048] Declaration of Admin\Controller\ActivityController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT `id`,`title`,`integral` FROM `e_group` WHERE `status` = 1 ORDER BY integral asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_activity` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_activity` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000089s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000122s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010426s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010460s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000111s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000132s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000305s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000333s ]
+
+[ 2016-07-04T14:47:06+08:00 ] ::1 /admin.php/Activity/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000170s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000221s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000249s ]
+NOTIC: [2048] Declaration of Admin\Controller\ActivityController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 7 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given /Users/minghuang/www/exe/Core/Library/Think/Upload.class.php 第 170 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000350s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000405s ]
+
+[ 2016-07-04T14:47:09+08:00 ] ::1 /admin.php/Activity/save.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000432s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000503s ]
+NOTIC: [2048] Declaration of Admin\Controller\ActivityController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `e_activity` [ RunTime:0.0003s ]
+SQL: INSERT INTO `e_activity` (`id`,`title`,`img`,`starttime`,`endtime`,`integral`,`order`,`content`,`status`,`addtime`) VALUES ('0','vip至尊会','20160704/577a066a11df8.png','1467561600','1409760000','0','0','&lt;p&gt;vip至尊会&lt;/p&gt;','1','1467614829') [ RunTime:0.0002s ]
+
+[ 2016-07-04T14:47:12+08:00 ] ::1 /admin.php/Activity/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000187s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000241s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000270s ]
+NOTIC: [2048] Declaration of Admin\Controller\ActivityController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 7 行.
+NOTIC: [8] Undefined index: title /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `e_activity` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_activity` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `e_activity` ORDER BY `id` desc LIMIT 20   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: link_page /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 175 行.
+NOTIC: [8] Undefined variable: the_first /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 192 行.
+NOTIC: [8] Undefined variable: the_end /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 192 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000078s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000118s ]
+NOTIC: [8] Undefined index: title /Users/minghuang/www/exe/App/Runtime/Cache/Admin/40364c1d9e67faec4d35fbfb16f408f2.php 第 162 行.
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0004s ]
+SQL: SELECT `title` FROM `e_group` WHERE `integral` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `title` FROM `e_group` WHERE `integral` = 0 LIMIT 1   [ RunTime:0.0001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010854s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010879s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000135s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000156s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000298s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000328s ]
+
+[ 2016-07-04T14:47:19+08:00 ] ::1 /admin.php/Activity/add/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000172s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000224s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000252s ]
+NOTIC: [2048] Declaration of Admin\Controller\ActivityController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT `id`,`title`,`integral` FROM `e_group` WHERE `status` = 1 ORDER BY integral asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_activity` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `e_activity` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000110s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009535s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009593s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000107s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000127s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000309s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000360s ]
+
+[ 2016-07-04T14:47:32+08:00 ] ::1 /admin.php/Activity/save.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000334s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000489s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000564s ]
+NOTIC: [2048] Declaration of Admin\Controller\ActivityController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `e_activity` [ RunTime:0.0003s ]
+SQL: UPDATE `e_activity` SET `title`='vip至尊会',`img`='20160704/577a066a11df8.png',`starttime`='1467561600',`endtime`='1482249600',`integral`='0',`order`='0',`content`='&lt;p&gt;vip至尊会&lt;/p&gt;',`status`='1' WHERE `id` = 5 [ RunTime:0.0002s ]
+
+[ 2016-07-04T14:47:36+08:00 ] ::1 /admin.php/Activity/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000192s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000244s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000272s ]
+NOTIC: [2048] Declaration of Admin\Controller\ActivityController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 7 行.
+NOTIC: [8] Undefined index: title /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `e_activity` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_activity` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `e_activity` ORDER BY `id` desc LIMIT 20   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: link_page /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 175 行.
+NOTIC: [8] Undefined variable: the_first /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 192 行.
+NOTIC: [8] Undefined variable: the_end /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 192 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000071s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000099s ]
+NOTIC: [8] Undefined index: title /Users/minghuang/www/exe/App/Runtime/Cache/Admin/40364c1d9e67faec4d35fbfb16f408f2.php 第 162 行.
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0004s ]
+SQL: SELECT `title` FROM `e_group` WHERE `integral` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `title` FROM `e_group` WHERE `integral` = 0 LIMIT 1   [ RunTime:0.0001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009841s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009866s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000156s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000177s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000297s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000324s ]
+
+[ 2016-07-04T14:48:05+08:00 ] ::1 /admin.php/Activity/add/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000171s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000221s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000248s ]
+NOTIC: [2048] Declaration of Admin\Controller\ActivityController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT `id`,`title`,`integral` FROM `e_group` WHERE `status` = 1 ORDER BY integral asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_activity` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `e_activity` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000085s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000120s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009735s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009765s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000104s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000165s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000294s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000322s ]
+
+[ 2016-07-04T14:48:12+08:00 ] ::1 /admin.php/Activity/add/id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000168s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000344s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000376s ]
+NOTIC: [2048] Declaration of Admin\Controller\ActivityController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT `id`,`title`,`integral` FROM `e_group` WHERE `status` = 1 ORDER BY integral asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_activity` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_activity` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000082s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000113s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009894s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009927s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000115s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000135s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000291s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000330s ]
+
+[ 2016-07-04T14:49:46+08:00 ] ::1 /admin.php/Activity/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000172s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000225s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000252s ]
+NOTIC: [2048] Declaration of Admin\Controller\ActivityController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT `id`,`title`,`integral` FROM `e_group` WHERE `status` = 1 ORDER BY integral asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_activity` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_activity` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000083s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000117s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010423s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010456s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000112s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000133s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000301s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000331s ]
+
+[ 2016-07-04T14:50:17+08:00 ] ::1 /admin.php/Activity/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000195s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000222s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000251s ]
+NOTIC: [2048] Declaration of Admin\Controller\ActivityController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 7 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given /Users/minghuang/www/exe/Core/Library/Think/Upload.class.php 第 170 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000249s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000279s ]
+
+[ 2016-07-04T14:50:37+08:00 ] ::1 /admin.php/Activity/save.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000681s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000696s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000829s ]
+NOTIC: [2048] Declaration of Admin\Controller\ActivityController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `e_activity` [ RunTime:0.0003s ]
+SQL: INSERT INTO `e_activity` (`id`,`title`,`img`,`starttime`,`endtime`,`integral`,`order`,`content`,`status`,`addtime`) VALUES ('0','中福在线，连环夺宝','20160704/577a0729ee0e3.png','1467561600','1480780800','0','0','&lt;p&gt;中福在线，连环夺宝&lt;/p&gt;','1','1467615037') [ RunTime:0.0002s ]
+
+[ 2016-07-04T14:50:40+08:00 ] ::1 /admin.php/Activity/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000174s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000220s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000246s ]
+NOTIC: [2048] Declaration of Admin\Controller\ActivityController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 7 行.
+NOTIC: [8] Undefined index: title /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `e_activity` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_activity` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `e_activity` ORDER BY `id` desc LIMIT 20   [ RunTime:0.0006s ]
+NOTIC: [8] Undefined variable: link_page /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 175 行.
+NOTIC: [8] Undefined variable: the_first /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 192 行.
+NOTIC: [8] Undefined variable: the_end /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 192 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000105s ]
+NOTIC: [8] Undefined index: title /Users/minghuang/www/exe/App/Runtime/Cache/Admin/40364c1d9e67faec4d35fbfb16f408f2.php 第 162 行.
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0004s ]
+SQL: SELECT `title` FROM `e_group` WHERE `integral` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `title` FROM `e_group` WHERE `integral` = 0 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `e_group` WHERE `integral` = 0 LIMIT 1   [ RunTime:0.0001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010962s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000148s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000167s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000318s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000347s ]
+
+[ 2016-07-04T14:54:48+08:00 ] ::1 /admin.php/Activity/add/id/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000174s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000247s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000275s ]
+NOTIC: [2048] Declaration of Admin\Controller\ActivityController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT `id`,`title`,`integral` FROM `e_group` WHERE `status` = 1 ORDER BY integral asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_activity` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `e_activity` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000083s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000117s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010818s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010851s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000128s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000150s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000327s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000391s ]
+
+[ 2016-07-04T14:55:06+08:00 ] ::1 /admin.php/Activity/save.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000319s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000334s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000383s ]
+NOTIC: [2048] Declaration of Admin\Controller\ActivityController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `e_activity` [ RunTime:0.0005s ]
+SQL: UPDATE `e_activity` SET `title`='中福在线，连环夺宝',`img`='20160704/577a0729ee0e3.png',`starttime`='1467561600',`endtime`='1480780800',`integral`='0',`order`='0',`content`='&lt;p&gt;中福在线，连环夺宝&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;中福在线，连环夺宝&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;123&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;adsf&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;中福在线，连环夺宝&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;12312adfafds&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;测试&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;啊当时发生地方撒&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;1231312&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;自行车 v 自行车 v&lt;/p&gt;',`status`='1' WHERE `id` = 6 [ RunTime:0.0004s ]
+
+[ 2016-07-04T14:55:09+08:00 ] ::1 /admin.php/Activity/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000244s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000429s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000472s ]
+NOTIC: [2048] Declaration of Admin\Controller\ActivityController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 7 行.
+NOTIC: [8] Undefined index: title /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `e_activity` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_activity` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `e_activity` ORDER BY `id` desc LIMIT 20   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: link_page /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 175 行.
+NOTIC: [8] Undefined variable: the_first /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 192 行.
+NOTIC: [8] Undefined variable: the_end /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 192 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000078s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000121s ]
+NOTIC: [8] Undefined index: title /Users/minghuang/www/exe/App/Runtime/Cache/Admin/40364c1d9e67faec4d35fbfb16f408f2.php 第 162 行.
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0005s ]
+SQL: SELECT `title` FROM `e_group` WHERE `integral` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `title` FROM `e_group` WHERE `integral` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `title` FROM `e_group` WHERE `integral` = 0 LIMIT 1   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013415s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013449s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000152s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000173s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000488s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000547s ]
+
+[ 2016-07-04T14:55:57+08:00 ] ::1 /admin.php/Activity/add/id/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000174s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000225s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000251s ]
+NOTIC: [2048] Declaration of Admin\Controller\ActivityController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT `id`,`title`,`integral` FROM `e_group` WHERE `status` = 1 ORDER BY integral asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_activity` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_activity` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000082s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000117s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009949s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009984s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000124s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000146s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000323s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000353s ]
+
+[ 2016-07-04T14:56:38+08:00 ] ::1 /admin.php/Activity/save.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000345s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000503s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000569s ]
+NOTIC: [2048] Declaration of Admin\Controller\ActivityController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `e_activity` [ RunTime:0.0007s ]
+SQL: UPDATE `e_activity` SET `title`='中福在线，连环夺宝',`img`='20160704/577a0729ee0e3.png',`starttime`='1467561600',`endtime`='1480780800',`integral`='0',`order`='0',`content`='&lt;p&gt;中福在线，连环夺宝&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;中福在线，连环夺宝&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;123&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;adsf&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;中福在线，连环夺宝&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;12312adfafds&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr class=&quot;firstRow&quot;&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot; style=&quot;word-break: break-all;&quot;&gt;标题&lt;/td&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot; style=&quot;word-break: break-all;&quot;&gt;等级&lt;/td&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot; style=&quot;word-break: break-all;&quot;&gt;积分&lt;/td&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot; style=&quot;word-break: break-all;&quot;&gt;测试1&lt;/td&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot; style=&quot;word-break: break-all;&quot;&gt;测试2&lt;/td&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot; style=&quot;word-break: break-all;&quot;&gt;测试3&lt;/td&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot;&gt;&lt;br/&gt;&lt;/td&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot;&gt;&lt;br/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot; style=&quot;word-break: break-all;&quot;&gt;1&lt;/td&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot; style=&quot;word-break: break-all;&quot;&gt;2&lt;/td&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot; style=&quot;word-break: break-all;&quot;&gt;3&lt;/td&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot; style=&quot;word-break: break-all;&quot;&gt;4&lt;/td&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot; style=&quot;word-break: break-all;&quot;&gt;5&lt;/td&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot; style=&quot;word-break: break-all;&quot;&gt;67&lt;/td&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot;&gt;&lt;br/&gt;&lt;/td&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot;&gt;&lt;br/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot; style=&quot;word-break: break-all;&quot;&gt;123&lt;/td&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot; style=&quot;word-break: break-all;&quot;&gt;1231231&lt;/td&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot; style=&quot;word-break: break-all;&quot;&gt;7878&lt;/td&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot; style=&quot;word-break: break-all;&quot;&gt;7878&lt;/td&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot; style=&quot;word-break: break-all;&quot;&gt;67&lt;/td&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot; style=&quot;word-break: break-all;&quot;&gt;67&lt;/td&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot; style=&quot;word-break: break-all;&quot;&gt;6&lt;/td&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot;&gt;&lt;br/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot;&gt;&lt;br/&gt;&lt;/td&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot;&gt;&lt;br/&gt;&lt;/td&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot;&gt;&lt;br/&gt;&lt;/td&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot;&gt;&lt;br/&gt;&lt;/td&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot;&gt;&lt;br/&gt;&lt;/td&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot;&gt;&lt;br/&gt;&lt;/td&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot;&gt;&lt;br/&gt;&lt;/td&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot;&gt;&lt;br/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot;&gt;&lt;br/&gt;&lt;/td&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot;&gt;&lt;br/&gt;&lt;/td&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot;&gt;&lt;br/&gt;&lt;/td&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot;&gt;&lt;br/&gt;&lt;/td&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot;&gt;&lt;br/&gt;&lt;/td&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot;&gt;&lt;br/&gt;&lt;/td&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot;&gt;&lt;br/&gt;&lt;/td&gt;&lt;td width=&quot;61&quot; valign=&quot;top&quot;&gt;&lt;br/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;测试&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;啊当时发生地方撒&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;1231312&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;自行车 v 自行车 v&lt;/p&gt;',`status`='1' WHERE `id` = 6 [ RunTime:0.0007s ]
+
+[ 2016-07-04T14:56:41+08:00 ] ::1 /admin.php/Activity/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000183s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000241s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000269s ]
+NOTIC: [2048] Declaration of Admin\Controller\ActivityController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 7 行.
+NOTIC: [8] Undefined index: title /Users/minghuang/www/exe/App/Admin/Controller/ActivityController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `e_activity` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_activity` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `e_activity` ORDER BY `id` desc LIMIT 20   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: link_page /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 175 行.
+NOTIC: [8] Undefined variable: the_first /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 192 行.
+NOTIC: [8] Undefined variable: the_end /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 192 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000107s ]
+NOTIC: [8] Undefined index: title /Users/minghuang/www/exe/App/Runtime/Cache/Admin/40364c1d9e67faec4d35fbfb16f408f2.php 第 162 行.
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0004s ]
+SQL: SELECT `title` FROM `e_group` WHERE `integral` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `title` FROM `e_group` WHERE `integral` = 0 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `e_group` WHERE `integral` = 0 LIMIT 1   [ RunTime:0.0001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010551s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010575s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000169s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000191s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000453s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000503s ]
+
+[ 2016-07-04T14:59:19+08:00 ] ::1 /admin.php/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000183s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000227s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000254s ]
+NOTIC: [2048] Declaration of Admin\Controller\UserController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/UserController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_group` WHERE `status` = 1 ORDER BY `integral` asc  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: username /Users/minghuang/www/exe/App/Admin/Controller/UserController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `e_user` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_user` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `e_user` ORDER BY `id` desc LIMIT 20   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: link_page /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 175 行.
+NOTIC: [8] Undefined variable: the_first /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 192 行.
+NOTIC: [8] Undefined variable: the_end /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 192 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000077s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000109s ]
+NOTIC: [8] Undefined index: groupid /Users/minghuang/www/exe/App/Runtime/Cache/Admin/4295d5db477f3199c8db51638416159f.php 第 164 行.
+NOTIC: [8] Undefined index: groupid /Users/minghuang/www/exe/App/Runtime/Cache/Admin/4295d5db477f3199c8db51638416159f.php 第 164 行.
+NOTIC: [8] Undefined index: groupid /Users/minghuang/www/exe/App/Runtime/Cache/Admin/4295d5db477f3199c8db51638416159f.php 第 164 行.
+NOTIC: [8] Undefined index: groupid /Users/minghuang/www/exe/App/Runtime/Cache/Admin/4295d5db477f3199c8db51638416159f.php 第 164 行.
+NOTIC: [8] Undefined index: groupid /Users/minghuang/www/exe/App/Runtime/Cache/Admin/4295d5db477f3199c8db51638416159f.php 第 164 行.
+NOTIC: [8] Undefined index: groupid /Users/minghuang/www/exe/App/Runtime/Cache/Admin/4295d5db477f3199c8db51638416159f.php 第 164 行.
+NOTIC: [8] Undefined index: groupid /Users/minghuang/www/exe/App/Runtime/Cache/Admin/4295d5db477f3199c8db51638416159f.php 第 164 行.
+NOTIC: [8] Undefined index: username /Users/minghuang/www/exe/App/Runtime/Cache/Admin/4295d5db477f3199c8db51638416159f.php 第 168 行.
+SQL: SELECT * FROM `e_group` WHERE ( integral<=1 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=3 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=500032 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=200 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=1004 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012331s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012355s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000141s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000162s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000467s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000513s ]
+
+[ 2016-07-04T14:59:22+08:00 ] ::1 /admin.php/User/add/id/10.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000177s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000226s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000252s ]
+NOTIC: [2048] Declaration of Admin\Controller\UserController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/UserController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `e_user` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_user` WHERE `id` = 10 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000092s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000133s ]
+SQL: SHOW COLUMNS FROM `e_days` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_days` WHERE `uid` = 10 LIMIT 1   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013131s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013159s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000138s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000159s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000359s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000413s ]
+
+[ 2016-07-04T14:59:38+08:00 ] ::1 /admin.php/User/add/id/8.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000172s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000227s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000253s ]
+NOTIC: [2048] Declaration of Admin\Controller\UserController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/UserController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `e_user` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_user` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000088s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000122s ]
+SQL: SHOW COLUMNS FROM `e_days` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_days` WHERE `uid` = 8 LIMIT 1   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011300s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011324s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000141s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000160s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000326s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000353s ]
+
+[ 2016-07-04T14:59:56+08:00 ] ::1 /admin.php/Days/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000175s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000220s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000248s ]
+SQL: SHOW COLUMNS FROM `e_days` [ RunTime:0.0003s ]
+SQL: SELECT count("uid") AS `total`,`uid` FROM `e_days` GROUP BY uid ORDER BY total desc LIMIT 10   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `e_days` WHERE `addtime` = 1467561601 ORDER BY id desc LIMIT 10   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000087s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000124s ]
+SQL: SHOW COLUMNS FROM `e_user` [ RunTime:0.0004s ]
+SQL: SELECT `level` FROM `e_user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=1004 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_user` [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `e_user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `level` FROM `e_user` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=500032 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `e_user` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `level` FROM `e_user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=200 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `username` FROM `e_user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `level` FROM `e_user` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=3 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `e_user` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015042s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015067s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000143s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000164s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000295s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000322s ]
+
+[ 2016-07-04T15:10:21+08:00 ] ::1 /admin.php/Days/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000177s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000240s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000268s ]
+SQL: SHOW COLUMNS FROM `e_days` [ RunTime:0.0003s ]
+SQL: SELECT count("uid") AS `total`,`uid` FROM `e_days` GROUP BY uid ORDER BY total desc LIMIT 10   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `e_days` WHERE `addtime` = 1467561601 ORDER BY id desc LIMIT 10   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000088s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000123s ]
+SQL: SHOW COLUMNS FROM `e_user` [ RunTime:0.0004s ]
+SQL: SELECT `level` FROM `e_user` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=500034 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `e_user` [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `e_user` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `level` FROM `e_user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=1004 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `e_user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `level` FROM `e_user` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=500034 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `username` FROM `e_user` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `level` FROM `e_user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=200 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `username` FROM `e_user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `level` FROM `e_user` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=3 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `username` FROM `e_user` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015138s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015161s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000144s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000166s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000302s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000332s ]
+
+[ 2016-07-04T15:10:22+08:00 ] ::1 /admin.php/Days/detail/uid/8.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000172s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000225s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000252s ]
+SQL: SHOW COLUMNS FROM `e_days` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `e_days` WHERE `uid` = 8  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000109s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000162s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014560s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014621s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000242s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000286s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000799s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000919s ]
+
+[ 2016-07-04T15:10:25+08:00 ] ::1 /admin.php/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000169s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000285s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000320s ]
+NOTIC: [2048] Declaration of Admin\Controller\UserController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/UserController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE `status` = 1 ORDER BY `integral` asc  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: username /Users/minghuang/www/exe/App/Admin/Controller/UserController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `e_user` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_user` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `e_user` ORDER BY `id` desc LIMIT 20   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: link_page /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 175 行.
+NOTIC: [8] Undefined variable: the_first /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 192 行.
+NOTIC: [8] Undefined variable: the_end /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 192 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000107s ]
+NOTIC: [8] Undefined index: groupid /Users/minghuang/www/exe/App/Runtime/Cache/Admin/4295d5db477f3199c8db51638416159f.php 第 164 行.
+NOTIC: [8] Undefined index: groupid /Users/minghuang/www/exe/App/Runtime/Cache/Admin/4295d5db477f3199c8db51638416159f.php 第 164 行.
+NOTIC: [8] Undefined index: groupid /Users/minghuang/www/exe/App/Runtime/Cache/Admin/4295d5db477f3199c8db51638416159f.php 第 164 行.
+NOTIC: [8] Undefined index: groupid /Users/minghuang/www/exe/App/Runtime/Cache/Admin/4295d5db477f3199c8db51638416159f.php 第 164 行.
+NOTIC: [8] Undefined index: groupid /Users/minghuang/www/exe/App/Runtime/Cache/Admin/4295d5db477f3199c8db51638416159f.php 第 164 行.
+NOTIC: [8] Undefined index: groupid /Users/minghuang/www/exe/App/Runtime/Cache/Admin/4295d5db477f3199c8db51638416159f.php 第 164 行.
+NOTIC: [8] Undefined index: groupid /Users/minghuang/www/exe/App/Runtime/Cache/Admin/4295d5db477f3199c8db51638416159f.php 第 164 行.
+NOTIC: [8] Undefined index: username /Users/minghuang/www/exe/App/Runtime/Cache/Admin/4295d5db477f3199c8db51638416159f.php 第 168 行.
+SQL: SELECT * FROM `e_group` WHERE ( integral<=1 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=3 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=500034 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=200 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=1004 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011247s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011272s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000143s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000163s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000370s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000402s ]
+
+[ 2016-07-04T15:10:29+08:00 ] ::1 /admin.php/User/add/id/8.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000187s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000241s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000272s ]
+NOTIC: [2048] Declaration of Admin\Controller\UserController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/UserController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `e_user` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_user` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000081s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000113s ]
+SQL: SHOW COLUMNS FROM `e_days` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_days` WHERE `uid` = 8 LIMIT 1   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011141s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011166s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000135s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000156s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000297s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000325s ]
+
+[ 2016-07-04T17:36:49+08:00 ] ::1 /admin.php/Public/logout.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000481s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000435s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000470s ]
+
+[ 2016-07-04T17:36:49+08:00 ] ::1 /admin.php/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000179s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000230s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000259s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000086s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000137s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006491s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006538s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000355s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000390s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001205s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001359s ]
+

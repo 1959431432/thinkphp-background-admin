@@ -21,6 +21,12 @@ class ActivityModel extends CommonModel
 		return array_merge( $condition, $where );
 	}
 
+	public function getIndexList()
+	{
+		$condition = $this->condition();
+		return $this->where( $condition )->select();
+	}
+
 	public function userActivity()
 	{
 		$level     = session('user.level');

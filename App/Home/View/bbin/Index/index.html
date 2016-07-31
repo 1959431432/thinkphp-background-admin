@@ -1,0 +1,46 @@
+<extend name="public/base" />
+
+<block name="body">
+<?php
+    $before_user = session('before_user');
+?>
+	<div class="main fl yxwz index login">
+		<div class="box">
+			<h2>
+				欢迎登陆
+				<p>
+					Welcome
+				</p>
+			</h2>
+			<form action="" class="form ajax_form" method="post">
+				<fieldset>
+	                <div class="formRow">
+	                    <label for="username">我的帐号:</label>
+	                    <div class="huangse">{$_user.username|mb_substr=###,0,4,'utf-8'}***</div>
+	                    <div class="clear"></div>
+	                </div>
+	                
+	                <div class="formRow">
+	                    <label for="password">我的等级:</label>
+	                    <div class="huangse">{$_userGroup.title}</div>
+	                    <div class="clear"></div>
+	                </div>
+
+	                <div class="formRow">
+	                    <label for="password">我的积分:</label>
+	                    <div class="huangse">{$_user.rank}</div>
+	                    <div class="clear"></div>
+	                </div>
+
+
+	                <div class="formRow">
+	                    <label for="password">上次登录:</label>
+	                    <div class="huangse">{$before_user.lastlogin|date='Y-m-d H:i',###}</div>
+	                    <div class="clear"></div>
+	                </div>
+
+	            </fieldset>
+			</form>
+		</div>
+	</div>
+</block>

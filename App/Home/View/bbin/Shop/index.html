@@ -1,0 +1,115 @@
+<extend name="public/base" />
+
+<block name="body">
+<?php
+$rank = session('user.rank');
+?>
+	<div class="main fl shop yxwz">
+	<div class="head">
+		<h2 class="fl">
+			积分商城 精挑细选
+			<p>
+				积分可自由兑换商品啦！！
+			</p>
+		</h2>
+		<img src="__IMG__/shop_empty.png" class='fl'>
+		<h2 class='fl jifen'>
+			可用积分
+			<p>
+				<span>
+					{$rank}
+				</span>
+				分
+			</p>
+		</h2>
+		<div class="cl"></div>
+		<div class="note">
+			注：积分抵用兑换商品过程中无需任何手续费，无需任何的邮寄费，无需任何的加价只需要填写您的收件地址跟联系方式即可兑换商品
+		</div>
+		<div class="cl"></div>
+		<form class='search'>
+			<fieldset>
+				<label>积分范围:</label>
+				<input type="number" name="" value="0"> - 
+				<input type="number" name="" value="99999">
+			</fieldset>
+			<fieldset>
+				商品名称:
+				<input class='shop_name' type="text" name="">
+				<input type="submit" name="" style="display:none">
+			</fieldset>
+		</form>
+	</div>
+	<div class="list">
+		<volist name="lists" id="vo">
+			<div class="item">
+				<div class="buyNow">
+					<a href="">查看详情</a>
+					<gt name="vo.integral" value="$rank">
+                        <a href="#" title="" class="button greyishB">
+                          积分不足
+                        </a>
+                      <else />
+                        <a href="{:U('buy',array('id'=>$vo['id']))}" title="" class="button redB layer_iframe">
+                          立即购买
+                        </a>
+                     </gt>
+				</div>
+				<span class='title'>
+					{$vo.title}
+				</span>
+				<br>
+				<div class="shopImg fl">
+					<img src="__IMG__/shopimg.png">
+				</div>
+				<div class="info fl">
+					<ul>
+						<li>
+							<p class="red" style="font-weight:700;">
+								{$vo.people}人
+							</p>
+							<p>
+								已兑换此商品
+							</p>
+						</li>
+						<li class="shichangjia">
+							<p>
+								市场价
+							</p>
+							<p>
+								￥<span style="text-decoration:line-through;color:#333;">{$vo.price}</span>
+							</p>
+						</li>
+						<li>
+							<p>
+								会员积分
+							</p>
+							<p class="red">
+								{$vo.integral}
+							</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</volist>
+		<div class="cl"></div>
+		<div class="page fl">
+			{$showPage}
+		</div>
+	</div>
+</div>
+</block>
+
+<block name="script">
+	<script>
+		$(".item").hover( function()
+		{
+			var i = $(this).index();
+			$(".buyNow").eq(i).show();
+		},function()
+		{
+			var i = $(this).index();
+			$(".buyNow").eq(i).hide();
+		});
+	</script>
+</block>

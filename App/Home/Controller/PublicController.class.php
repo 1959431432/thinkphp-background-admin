@@ -19,6 +19,7 @@ class PublicController extends Controller
 	public function login()
 	{
 		if( ! IS_POST ){ 
+			
 			$this->display();
 		} else {
 			$userModel = D('user');

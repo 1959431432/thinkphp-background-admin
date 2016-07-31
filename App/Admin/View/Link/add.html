@@ -1,0 +1,56 @@
+<extend name="Public/base" />
+
+<block name="body">
+
+	 <!-- Main content wrapper -->
+    <div class="wrapper">
+        <div class="bc">
+            <ul id="breadcrumbs" class="breadcrumbs">
+                 <li class=""> <a href="{:U('Index/index')}">控制中心</a> </li>
+                 <li class=""> <a href="{:U('index')}">网站配置</a> </li>
+                 <li class="current"><a href="#">配置管理</a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <!-- Validation form -->
+        <form class="form validate" method="post" action="{:U('save')}">
+            <input type="hidden" name='id' value="{$vo.id}">
+        	<fieldset>
+                <div class="widget">
+                    <div class="title"><img src="__IMG__/icons/dark/alert.png" alt="" class="titleIcon" /><h6>友情链接表单</h6></div>
+                    <div class="formRow">
+                        <label>网址:<span class="req">*</span></label>
+                        <div class="formRight">
+                            <input type="text" class="validate[required]" name="url" id="req" value="{$vo.url}"/>
+                            <span class="formNote">＊不加HTTP或者HTTPS</span>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="formRow">
+                        <label>排序:<span class="req">*</span></label>
+                        <div class="formRight">
+                            <input type="text" class="validate[required]" name="order" id="req" value="{$vo.order|default=0}"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>是否开启:<span class="req">*</span></label>
+                        <div class="formRight">
+                            <div class="floatL" style="margin: 2px 0 0 0;">
+
+                            <input type="radio" id="radioReq" name="status" class="validate[required]" data-prompt-position="topRight:102" value='1' checked="checked" /><label for="radioReq">开启</label>
+                            <input type="radio" id="radioReq2" name="status" class="validate[required]" data-prompt-position="topRight:102" value='2' <eq name="vo.status" value='2'> checked='checked'</eq> /><label for="radioReq2">关闭</label>
+
+                            </div>
+                        </div><div class="clear"></div>
+                    </div>
+                    
+                    <div class="formSubmit"><input type="submit" value="提交" class="redB" /></div>
+                    <div class="clear"></div>
+                </div>
+                
+            </fieldset>
+        </form>       
+    </div>>
+</block>

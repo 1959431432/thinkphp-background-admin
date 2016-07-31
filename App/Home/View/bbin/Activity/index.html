@@ -1,0 +1,48 @@
+<extend name="public/base" />
+
+<block name="body">
+
+
+<div class="main fl huodong">
+	<div class="head">
+		<div id="banner">  
+		    <div id="banner_bg">       
+		    </div>
+			<!--标题背景-->
+		    <div id="banner_info"> 
+		    </div>
+			<!--标题-->
+		    <ul>   
+		        <li class="on">
+		            1
+		        </li>
+		        <li>
+		            2
+		        </li>
+		    </ul>
+		    <div id="banner_list">
+		        <a href="#" target="_blank">
+		        	<img src="__IMG__/hd1.png" title="活动图片1" alt="活动图片1">
+		        </a>
+		        <a href="#" target="_blank">
+		        	<img src="__IMG__/hd2.png" title="活动图片2" alt="活动图片2">
+		        </a>
+		    </div>
+		</div>
+	</div>
+	<div class="foot">
+		<div class="foot_box">
+			<div class="slick">
+				<volist name="activitys" id="activity">
+			    	<div>
+			    		<a class='layer_iframe' href="{:U('detail',array('id'=>$activity['id']))}" title="{$activity.title}">		
+			    			<img src="{$activity.img|getImg}" alt="{$activity.title}">
+			    		</a>
+			    	</div>
+				</volist>
+			</div>
+		</div>
+	</div>
+</div>
+
+</block>

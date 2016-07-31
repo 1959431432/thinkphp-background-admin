@@ -1,0 +1,163 @@
+<extend name="public/base" />
+
+<block name="body">
+	<div class="main fl qiandao">
+		<div class="box">
+			<div class="head">
+				<div class="vipname fl">
+					尊敬的 {$_user.username} 会员
+					<?php
+						if( ! $hasSign ){
+							echo ", 您今日还没签到";
+						}
+					?>
+				</div>
+				<div class="button fl">
+					<button id="daysButton">
+						<?php
+							if( $hasSign ){
+								echo "已签到";
+							} else {
+								echo "签到";
+							}
+						?>
+					</button>
+				</div>
+				<div class="guize fl">
+					签到规则及奖励机智
+				</div>
+			</div>
+			<div class="footer">
+				<ul>
+					<!-- <li>
+						连续签到天数
+						<p>
+							{$signNote}
+						</p>
+					</li> -->
+					<li>
+						累计积分奖励
+						<p>
+							<?php
+								$day_rank = O('day_rank');
+								echo $signNote * $day_rank;
+							?>
+						</p>
+					</li>
+					<li>
+						累计签到天数
+						<p>
+							{$signNote}
+						</p>
+					</li>
+					<li>
+						今日签到人数
+						<p>
+							<?php
+								$jinrizuigao = count( $todays );
+								echo ceil( $jinrizuigao * 150 * 0.8 );
+							?>
+						</p>
+					</li>
+					<li>
+						最高签到人数
+						<p>
+							<?php
+								echo ceil( $zonggong * 150 * 0.8 );
+							?>
+						</p>
+					</li>
+				</ul>
+				<div class="cl"></div>
+				<div class="leftTop">
+					<img src="__IMG__/qiandaotop10.png">
+					<table>
+						<thead>
+							<tr>
+								<th>
+									会员账号
+								</th>
+								<th>
+									签到总天数
+								</th>
+								<th>
+									累计积分
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<volist name="todays" id="today">
+								<tr>
+									<td> {$today.uid|getUsername|mb_substr=###,0,3,'utf-8'}*** </td>
+									<td> <?php
+											$today_user_sign = signSumDay( $today['uid']);
+											echo $today_user_sign;
+										?> 
+									</td>
+									<td>
+										<?php
+											echo $today_user_sign * $day_rank;
+										?>
+									</td>
+								</tr>
+							</volist>
+						</tbody>
+					</table>
+				</div>
+				<div class="rightTop">
+					<img src="__IMG__/zongqiandaotop10.png">
+					<table>
+						<thead>
+							<tr>
+								<th>
+									会员账号
+								</th>
+								<th>
+									签到总天数
+								</th>
+								<th>
+									累计积分
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<volist name="sumNumbers" id="sumNumber">
+								<tr>
+									<td>
+										{$sumNumber.uid|getUsername|mb_substr=###,0,3,'utf-8'}***
+									</td>
+									<td> {$sumNumber.num} </td>
+									<td>
+										<?php
+											echo $sumNumber['num'] * $day_rank;
+										?>
+									</td>
+								</tr>
+							</volist>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</block>
+
+<block name="script">
+	<script>
+		// 签到按钮
+		$("#daysButton").click( function()
+		{
+			var ii = layer.load();
+			$.get("{:U('sign')}",{}, function( res ){
+				if( res.status == 1 ){
+					layer.msg( res.info , {icon: 6}, function(){
+						window.location.reload();
+					});
+				} else {
+					layer.msg( res.info , {icon: 5});
+				}
+		        layer.close(ii);					
+			});
+		});
+	</script>
+</block>

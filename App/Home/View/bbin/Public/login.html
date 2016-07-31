@@ -1,0 +1,35 @@
+<extend name="public/base" />
+
+<block name="body">
+	<div class="main fl yxwz login">
+		<div class="box">
+			<h2>
+				欢迎登陆
+				<p>
+					Welcome
+				</p>
+			</h2>
+			<form action="" class="form validate ajax_form" method="post">
+				<fieldset>
+	                <div class="formRow">
+	                    <label for="username">帐号:</label>
+	                    <div class="loginInput"><input type="text" name="username" class="validate[required]" id="username" /></div>
+	                    <div class="clear"></div>
+	                </div>
+	                
+	                <div class="formRow">
+	                    <label for="password">密码:</label>
+	                    <div class="loginInput"><input type="password" name="password" class="validate[required]" id="password" /></div>
+	                    <div class="clear"></div>
+	                </div>
+	                
+	                <div class="loginControl">
+	                    <input type="submit" value="登录客户端" class="dredB logMeIn" />
+	                    <div class="rememberMe"><a href="{:U('Public/register')}">没有帐号？点击注册10秒完成！</a></div>
+	                    <div class="clear"></div>
+	                </div>
+	            </fieldset>
+			</form>
+		</div>
+	</div>
+</block>

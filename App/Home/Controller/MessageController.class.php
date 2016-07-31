@@ -17,6 +17,11 @@ class MessageController extends CommonController
 	{
 		D('Read')->record_status();
 	}
+
+	public function send()
+	{
+		$this->display();
+	}
 }
 
  ?>
