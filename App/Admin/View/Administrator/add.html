@@ -1,0 +1,116 @@
+<extend name="Public/base" />
+
+<block name="body">
+
+	 <!-- Main content wrapper -->
+    <div class="wrapper">
+        <div class="bc">
+            <ul id="breadcrumbs" class="breadcrumbs">
+                 <li class=""> <a href="{:U('Index/index')}">控制中心</a> </li>
+                 <li class=""> <a href="{:U('index')}">管理员列表</a> </li>
+                 <li class="current"><a href="#">管理员管理</a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <!-- Validation form -->
+        <form class="form validate" method="post" action="{:U('save')}">
+            <input type="hidden" name='id' value="{$vo.id}">
+        	<fieldset>
+                <div class="widget">
+                    <div class="title"><img src="__IMG__/icons/dark/alert.png" alt="" class="titleIcon" /><h6>管理员表单</h6></div>
+
+                    <div class="formRow">
+                        <label>管理员帐号:<span class="req">*</span></label>
+                        <div class="formRight">
+                            <input type="text" class="validate[required]" name="user" id="user" value="{$vo.user}"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>管理员密码:</label>
+                        <div class="formRight">
+                            <input type="text" value="" name='pass' />
+                            <span class="formNote">如不修改则留空</span>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    
+                    <?php
+                    
+                    
+
+                    ?>
+                    <div class="formRow">
+                        <label>管理员分组:</label>
+                        <div class="formRight">
+                            <div class="selector">
+                                <select name="group">
+                                    <volist name="groups" id="group">
+                                        <eq name="group.integral" value="$vo.integral">
+                                            <option value="{$group.integral}" selected="selected">{$group.title}</option>
+                                        <else />
+                                            <option value="{$group.integral}">{$group.title}</option>
+                                        </eq>
+                                    </volist>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>注册时间:</label>
+                        <div class="formRight">
+                            <input type="date" disabled="disabled" name="addtime" id="addtime" value="{$vo.addtime|date='Y-m-d',###}"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>登录IP:</label>
+                        <div class="formRight">
+                            <input type="text" disabled="disabled" name="lastip" id="lastip" value="{$vo.lastip}"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>登录地址:</label>
+                        <div class="formRight">
+                            <input type="text" disabled="disabled" name="lastarea" id="lastarea" value="{$vo.lastarea}"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>登录时间:</label>
+                        <div class="formRight">
+                            <input type="date" disabled="disabled" name="lastlogin" id="lastlogin" value="{$vo.lastlogin|date='Y-m-d',###}"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <label>管理员状态:<span class="req">*</span></label>
+                        <div class="formRight">
+                            <div class="floatL" style="margin: 2px 0 0 0;">
+
+                            <input type="radio" id="radioReq" name="status" class="validate[required]" data-prompt-position="topRight:102" value='1' checked="checked" />
+                            <label for="radioReq">开启</label>
+
+                            <input type="radio" id="radioReq2" name="status" class="validate[required]" data-prompt-position="topRight:102" value='2' <eq name="vo.status" value='2'> checked='checked'</eq> />
+                            <label for="radioReq2">关闭</label>
+
+                            </div>
+                        </div><div class="clear"></div>
+                    </div>
+                    
+                    <div class="formSubmit"><input type="submit" value="提交" class="redB" /></div>
+                    <div class="clear"></div>
+                </div>
+                
+            </fieldset>
+        </form>       
+    </div>
+</block>   

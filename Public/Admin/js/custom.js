@@ -638,14 +638,9 @@ $(function() {
 	$("select, input:checkbox, input:radio, input:file").uniform();
 
 
-	$(".confirm").on('click',function()
+	$(".confirm").on('click',function( event )
 	{
-
-		if( confirm( '确定要进行此操作吗？') ) {
-			return true;
-		} else {
-			return false;
-		}
+		return confirm('确定之行此操作？');
 	});
 
 	new showSearch().run();

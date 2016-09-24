@@ -1,0 +1,47 @@
+<extend name="Public/base" />
+
+<block name="body">
+
+	 <!-- Main content wrapper -->
+    <div class="wrapper">
+        <div class="bc">
+            <ul id="breadcrumbs" class="breadcrumbs">
+                 <li class=""> <a href="{:U('Index/index')}">控制中心</a> </li>
+                 <li class=""><a href="{:U('index')}">管理员分组</a></li>
+                 <li class="current"><a href="#">分组权限管理</a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <!-- Validation form -->
+        <form class="form validate" method="post" action="{:U('save')}">
+            <input type="hidden" name='id' value="{$rule.id}">
+        	<fieldset>
+                <div class="widget">
+                    <div class="title"><img src="__IMG__/icons/dark/alert.png" alt="" class="titleIcon" /><h6>权限表单</h6></div>
+
+                    <div class="formRow">
+                        <label>权限选择:</label>
+                        <div class="formRight">
+                            <volist name="rules" id="rule">
+                                <div><span class="checked"><input type="checkbox" name="rules[]" id="rules{$rule.id}" style="opacity: 0;" value="{$rule.id}"></span></div>
+                                <label for="{$rule.id}">{$rule.title}</label>
+                            </volist>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formSubmit"><input type="submit" value="提交" class="redB" /></div>
+                    <div class="clear"></div>
+                </div>
+                
+            </fieldset>
+        </form>       
+    </div>
+    <script type="text/javascript">
+        $(".img").change( function()
+        {
+            var img_path = "__IMG__";
+            $('#preview').attr('src',img_path+'/'+$(this).val());
+        })
+    </script>
+</block>

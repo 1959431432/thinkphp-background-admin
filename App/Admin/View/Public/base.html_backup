@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+<title>网站后台管理系统</title>
+<link href="__CSS__/main.css" rel="stylesheet" type="text/css" />
+<link href="__CSS__/style.css" rel="stylesheet" type="text/css" />
+
+<include file="Common@Tool:script" />
+
+<body>
+
+<!-- Left side content -->
+<div id="leftSide">
+    <div class="logo"><a href="index.html"><img src="__IMG__/logo.png" alt="" /></a></div>
+
+    <div class="sidebarSep"></div>
+    
+    <!-- Left navigation -->
+    <ul id="menu" class="nav">
+        <volist name="_menu" id="menus">
+            <if condition="$menus['children'] neq false">
+                <li class="{$menus.class}"><a class='exp' href="#" title=""><span>{$menus.title}</span></a>
+                    <ul class="sub">
+                        <volist name="menus['children']" id="menu">
+                            <li><a href="{:U($menu['url'])}" title="">{$menu.title}</a></li>
+                        </volist>
+                    </ul>
+                </li>
+            <else />
+                <li class="{$menus.class}"><a href="{:U($menus['url'])}" title=""><span>{$menus.title}</span></a></li>
+            </if>
+        </volist>
+    </ul>
+</div>
+
+<!-- Right side -->
+<div id="rightSide">
+    <!-- Top fixed navigation -->
+    <div class="topNav">
+        <div class="wrapper">
+            <div class="welcome"><a href="#" title=""><img src="__IMG__/userPic.png" alt="" /></a><span>您好，管理员</span></div>
+            <div class="userNav">
+                <ul>
+                    <li><a href="{:U('options/index')}" title=""><img src="__IMG__/icons/topnav/settings.png" alt="" /><span>设置</span></a></li>
+                    <li><a href="{:U('Public/logout')}" title="退出客户端"><img src="__IMG__/icons/topnav/logout.png" alt="" /><span>退出</span></a></li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <!-- Responsive header -->
+    <div class="resp">
+        <div class="respHead">
+            <a href="index.html" title=""><img src="__IMG__/loginLogo.png" alt="" /></a>
+        </div>
+        
+        <div class="cLine"></div>
+        <div class="smalldd">
+            <span class="goTo"><img src="__IMG__/icons/light/home.png" alt="" />导航菜单</span>
+            <ul class="smallDropdown">
+                <volist name="_menu" id="menus">
+                    <if condition="$menus['children'] neq false">
+                        <li class="{$menus.class}"><a class='exp' href="#" title=""><span>{$menus.title}</span></a>
+                            <ul class="sub">
+                                <volist name="menus['children']" id="menu">
+                                    <li><a href="{:U($menu['url'])}" title="">{$menu.title}</a></li>
+                                </volist>
+                            </ul>
+                        </li>
+                    <else />
+                        <li class="{$menus.class}"><a href="{:U($menus['url'])}" title=""><span>{$menus.title}</span></a></li>
+                    </if>
+                </volist>
+            </ul>
+        </div>
+        <div class="cLine"></div>
+    </div>
+    
+    <block name="body">
+
+    </block>
+    <!-- Footer line -->
+    <div id="footer">
+        <div class="wrapper">As usually all rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></div>
+    </div>
+
+</div>
+
+
+
+<div class="clear"></div>
+    
+    <script type="text/javascript">
+        $(function(){
+            oTable = $('.dTable').dataTable({
+                "oLanguage" : { // 汉化
+                    "sProcessing" : "正在加载数据...",
+                    "sLengthMenu": "<span class='itemsPerPage'>每页显示:</span> _MENU_ <a class='add_link' href='{:U('add')}'>+ 添加</a>",
+                    "sZeroRecords" : "没有您要搜索的内容",
+                    "sInfo" : "从_START_ 到 _END_ 条记录——总记录数为 _TOTAL_ 条",
+                    "sInfoEmpty" : "记录数为0",
+                    "sInfoFiltered" : "(全部记录数 _MAX_  条)",
+                    "sInfoPostFix" : "",
+                    "sSearch" : "搜索",
+                    "sUrl" : "",
+                    "oPaginate" : {
+                        "sFirst" : "第一页",
+                        "sPrevious" : " 上一页 ",
+                        "sNext" : " 下一页 ",
+                        "sLast" : " 最后一页 "
+                    }
+                },
+                "bJQueryUI": true,
+                "sPaginationType": "full_numbers",
+                "sDom": '<""l>t<"F"fp>',
+            });
+            //点击打开文件选择器  
+            $("#upload").on('click', function() {
+                $.ajaxFileUpload({  
+                    url:"{:U('upload')}",  
+                    secureuri:false,  
+                    fileElementId:'fileToUpload',//file标签的id  
+                    dataType: 'json',//返回数据的类型  
+                    success: function (data, status) {
+                        if( data.status == 1 ){
+                            $('#hidden_inputFile').val( data.fileName );
+                            $("#showImg").attr('src',"/{:C('UPLOAD_CONFIG.rootPath')}"+data.fileName)
+                            layer.msg( '文件上传成功' , {icon: 6});
+                        } else {
+                            layer.msg( data.error , {icon: 5});
+                        }
+                    },  
+                    error: function (data, status, e) {  
+                        alert(e);  
+                    }  
+                }); 
+            }); 
+
+            var z = $("#breadcrumbs .current a").html();
+            if( z ){
+                var t = $('title').html();
+                $('title').html( z+'_'+t );
+            }
+
+            setTimeout(function(){
+                window.location = "{:U('Public/logout')}";
+            },3600000);
+        });  
+    </script>
+</body>
+</html>

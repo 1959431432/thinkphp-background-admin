@@ -2,7 +2,7 @@
 
 <block name="body">
 
-	 <!-- Main content wrapper -->
+     <!-- Main content wrapper -->
     <div class="wrapper">
         <div class="bc">
             <ul id="breadcrumbs" class="breadcrumbs">
@@ -15,7 +15,7 @@
         <!-- Validation form -->
         <form class="form validate" method="post" action="{:U('save')}">
             <input type="hidden" name='id' value="{$vo.id}">
-        	<fieldset>
+            <fieldset>
                 <div class="widget">
                     <div class="title"><img src="__IMG__/icons/dark/alert.png" alt="" class="titleIcon" /><h6>配置管理表单</h6></div>
                     <div class="formRow">
@@ -27,9 +27,19 @@
                     </div>
 
                     <div class="formRow">
+                        <label>图片选项:</label>
+                        <div class="formRight">
+                            <p><input type="file" id="fileToUpload" name="fileToUpload" /><a id="upload" class='uploadfilebtn' href="javascript:;">开始上传</a></p>
+                            <span class="formNote">＊不重新上传请勿选择</span>
+                            <img alt="图片预览" src="/{:C('UPLOAD_CONFIG.rootPath')}{$vo.option_value}" id="showImg" width="101px" height="101px" onerror="this.src='__IMG__/img.png'">
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
                         <label>选项值:<span class="req">*</span></label>
                         <div class="formRight">
-                            <textarea name="option_value" id="option_value" rows='10' class="validate[required]">{$vo.option_value}</textarea>
+                            <textarea name="option_value" id="hidden_inputFile" rows='10' class="validate[required]">{$vo.option_value}</textarea>
                         </div>
                         <div class="clear"></div>
                     </div>

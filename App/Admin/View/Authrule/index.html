@@ -1,0 +1,58 @@
+<extend name="Public/base" />
+
+<block name="body">
+
+	<div class="wrapper">
+	<div class="bc">
+	    <ul id="breadcrumbs" class="breadcrumbs">
+	         <li class="">
+	              <a href="{:U('Index/index')}">控制中心</a>
+	         </li>
+	         <li class="current"><a href="{:U('index')}">节点管理</a></li>
+	    </ul>
+	    <div class="clear"></div>
+	</div>
+	  <div class="widget">
+        <div class="title">
+		  <h6>节点管理</h6>
+        </div>
+          <table cellpadding="0" cellspacing="0" width="100%" class="sTable withCheck display dTable">
+              <thead>
+                  <tr>
+                    <th>节点名称</th>
+		            <th>节点规则</th>
+		            <th>显示导航</th>
+		            <th>二级导航</th>
+		            <th>节点状态</th>
+		            <th>操作</th>
+                  </tr>
+              </thead>
+              <tbody>
+	        	<volist name="lists" id="vo">
+	                <tr class="gradeA">
+		       			<td class="center">
+		       				<!-- TODO -->
+		       				<eq name="vo.pid" value='0'>
+			       				<a href="{:U('',array('pid'=>$vo['id']))}">
+			       					{$vo.title}
+			       				</a>
+		       				<else />
+		       					{$vo.title}
+		       				</eq>
+		       			</td>
+		       			<td class="center">{$vo.name}</td>
+		       			<td class="center"><?php echo $vo['ismenu'] == 1 ? '是': '否';?></td>
+		       			<td class="center"><?php echo $vo['istop'] == 1 ?  '是': '否';?></td>
+		       			<td class="center">{$vo.status|statusTitle}</td>
+		       			<td class="center">
+		       				<a class='confirm' href="{:U('del',array('id'=>$vo['id']))}">删除</a> &nbsp;&nbsp;
+		       				<a href="{:U('add',array('id'=>$vo['id']))}">修改</a> &nbsp;&nbsp;
+		       			</td>
+			        </tr>
+	        	</volist>
+              </tbody>
+              
+          </table>
+        </div>
+	</div>
+</block>

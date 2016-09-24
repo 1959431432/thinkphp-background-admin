@@ -80,6 +80,9 @@
 <script type="text/javascript" src="/Public/Admin/js//custom.js"></script>
 
 
+
+<!-- 导入自定义标签 -->
+
 <body>
 
 <!-- Left side content -->
@@ -90,13 +93,23 @@
     
     <!-- Left navigation -->
     <ul id="menu" class="nav">
-        <?php if(is_array($_menu)): $i = 0; $__LIST__ = $_menu;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menus): $mod = ($i % 2 );++$i; if($menus['children'] != false): ?><li class="<?php echo ($menus["class"]); ?>"><a class='exp' href="#" title=""><span><?php echo ($menus["title"]); ?></span></a>
+        <li><a href="<?php echo U('Index/index');?>" title=""><span>控制中心</span></a></li>
+        <?php if(is_array($_menus)): $i = 0; $__LIST__ = $_menus;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menus): $mod = ($i % 2 );++$i; if($menus['istop'] != 1): ?><li class="">
+                    <a class='exp' href="#" title="">
+                        <span><?php echo ($menus["title"]); ?></span>
+                    </a>
                     <ul class="sub">
-                        <?php if(is_array($menus['children'])): $i = 0; $__LIST__ = $menus['children'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menu): $mod = ($i % 2 );++$i;?><li><a href="<?php echo U($menu['url']);?>" title=""><?php echo ($menu["title"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+                        <?php if(is_array($menus['children'])): $i = 0; $__LIST__ = $menus['children'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menu): $mod = ($i % 2 );++$i;?><li><a href="<?php echo U($menu['name']);?>" title=""><?php echo ($menu["title"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
                     </ul>
                 </li>
             <?php else: ?>
-                <li class="<?php echo ($menus["class"]); ?>"><a href="<?php echo U($menus['url']);?>" title=""><span><?php echo ($menus["title"]); ?></span></a></li><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                <li class="">
+                    <a href="<?php echo U($menus['name']);?>" title="">
+                        <span><?php echo ($menus["title"]); ?></span>
+                    </a>
+                </li><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+        <li><a href="<?php echo U('Public/logout');?>" title=""><span>退出</span></a></li>
+
     </ul>
 </div>
 
@@ -108,7 +121,6 @@
             <div class="welcome"><a href="#" title=""><img src="/Public/Admin/images//userPic.png" alt="" /></a><span>您好，管理员</span></div>
             <div class="userNav">
                 <ul>
-                    <!-- <li><a href="#" title=""><img src="/Public/Admin/images//icons/topnav/profile.png" alt="" /><span>个人资料</span><span class="numberTop">？</span></a></li> -->
                     <li><a href="<?php echo U('options/index');?>" title=""><img src="/Public/Admin/images//icons/topnav/settings.png" alt="" /><span>设置</span></a></li>
                     <li><a href="<?php echo U('Public/logout');?>" title="退出客户端"><img src="/Public/Admin/images//icons/topnav/logout.png" alt="" /><span>退出</span></a></li>
                 </ul>
@@ -140,7 +152,11 @@
     </div>
     
     
-    
+    <style>
+        .add_link {
+            display: none;
+        }
+    </style>
     <!-- Title area -->
     <div class="titleArea">
         <div class="wrapper">
@@ -183,7 +199,7 @@
         
             <!-- Stats item -->
             <div class="sItem ticketsStats">
-                <h2><a title="" class="value"><?php echo ($statistics["today"]["register_number"]); ?><span>会员注册</span></a></h2>
+                <h2><a title="" class="value"><?php echo ((isset($statistics["today"]["register_number"]) && ($statistics["today"]["register_number"] !== ""))?($statistics["today"]["register_number"]):0); ?><span>会员注册</span></a></h2>
                 <span class="changes">
                     <!-- <span class="negBar" values="5,10,15,20,18,16,14,20,15,16"></span> -->
                     <?php echo backend_statistics( $statistics['counts']['register_number']);?>
@@ -192,7 +208,7 @@
         
             <!-- Stats item -->
             <div class="sItem visitsStats">
-                <h2><a title="" class="value"><?php echo ($statistics["today"]["login_number"]); ?><span>会员登录</span></a></h2>
+                <h2><a title="" class="value"><?php echo ((isset($statistics["today"]["login_number"]) && ($statistics["today"]["login_number"] !== ""))?($statistics["today"]["login_number"]):0); ?><span>会员登录</span></a></h2>
                 <span class="changes">
                     <!-- <span class="posBar" values="5,10,15,20,18,16,14,20,15,16"></span> -->
                     <?php echo backend_statistics( $statistics['counts']['login_number']);?>
@@ -201,7 +217,7 @@
         
             <!-- Stats item -->
             <div class="sItem usersStats">
-                <h2><a title="" class="value"><?php echo ($statistics["today"]["download"]); ?><span>软件下载</span></a></h2>
+                <h2><a title="" class="value"><?php echo ((isset($statistics["today"]["download"]) && ($statistics["today"]["download"] !== ""))?($statistics["today"]["download"]):0); ?><span>软件下载</span></a></h2>
                
                 <span class="changes">
                     <!-- <span class="zeroBar" values="5,10,15,20,18,16,14,20,15,16"></span> -->
@@ -211,7 +227,7 @@
         
             <!-- Stats item -->
             <div class="sItem ordersStats">
-                <h2><a title="" class="value"><?php echo ($statistics["today"]["link_number"]); ?><span>打开网站</span></a></h2>
+                <h2><a title="" class="value"><?php echo ((isset($statistics["today"]["link_number"]) && ($statistics["today"]["link_number"] !== ""))?($statistics["today"]["link_number"]):0); ?><span>打开网站</span></a></h2>
                 <span class="changes">
                     <!-- <span class="negBar" values="5,10,15,20,18,16,14,20,15,16"></span> -->
                     <?php echo backend_statistics( $statistics['counts']['link_number']);?>
@@ -231,9 +247,86 @@
                 <p><strong>系统提醒: </strong>后台账户密码过去简单，<a href="<?php echo U('options/index');?>" title="">请重新设置。</a></p>
             </div><?php endif; ?>
         
-    	<!-- Dynamic table -->
+        <!-- Dynamic table -->
+        <div class="widgets">
+            <div class="oneTwo">
+                <div class="widget">
+                    <div class="title">
+                        <img src="/Public/Admin/images//icons/dark/settings.png" alt="" class="titleIcon" />
+                        <h6>系统信息</h6>
+                    </div>
+                    <table cellpadding="0" cellspacing="0" border="0" class="display myTable">
+                        <tbody style="text-align: center;">
+                            <tr>
+                                <th>程序版本</th>
+                                <td>1.0.1</td>
+                            </tr>
+                            <tr>
+                                <th>服务器操作系统</th>
+                                <td><?php echo (PHP_OS); ?></td>
+                            </tr>
+                            <tr>
+                                <th>框架版本</th>
+                                <td><?php echo (THINK_VERSION); ?></td>
+                            </tr>
+                            <tr>
+                                <th>运行环境</th>
+                                <td><?php echo ($_SERVER['SERVER_SOFTWARE']); ?></td>
+                            </tr>
+                            <tr>
+                                <th>MYSQL版本</th>
+                                <?php $system_info_mysql = M()->query("select version() as v;"); ?>
+                                <td><?php echo ($system_info_mysql["0"]["v"]); ?></td>
+                            </tr>
+                            <tr>
+                                <th>上传限制</th>
+                                <td><?php echo ini_get('upload_max_filesize');?></td>
+                            </tr>
+                        </tbody>
+                    </table>  
+                </div>
+            </div>
+            <div class="oneTwo">
+                <div class="widget">
+                    <div class="title">
+                        <img src="/Public/Admin/images//icons/dark/settings.png" alt="" class="titleIcon" />
+                        <h6>服务器信息</h6>
+                    </div>
+                    <table cellpadding="0" cellspacing="0" border="0" class="display myTable">
+                        <tbody style="text-align: center;">
+                            <tr>
+                                <th>域名信息</th>
+                                <td><?php echo ($_SERVER['SERVER_NAME']); ?></td>
+                            </tr>
+                            <tr>
+                                <th>服务器IP</th>
+                                <td><?php echo gethostbyname($_SERVER["SERVER_NAME"]);?></td>
+                            </tr>
+                            <tr>
+                                <th>服务器端口</th>
+                                <td><?php echo ($_SERVER['SERVER_PORT']); ?></td>
+                            </tr>
+                            <tr>
+                                <th>所在文件夹</th>
+                                <td><?php echo ($_SERVER['DOCUMENT_ROOT']); ?></td>
+                            </tr>
+                            <tr>
+                                <th>登陆IP地址</th>
+                                <td><?php echo get_client_ip();?></td>
+                            </tr>
+                            <tr>
+                                <th>是否授权</th>
+                                <td>是</td>
+                            </tr>
+                        </tbody>
+                    </table>  
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+
         <div class="widget">
-            <div class="title"><img src="/Public/Admin/images//icons/dark/full2.png" alt="" class="titleIcon" /><h6>用户登录记录</h6></div>                          
+            <div class="title"><img src="/Public/Admin/images//icons/dark/full2.png" alt="" class="titleIcon" /><h6>前台用户登录记录</h6></div>                          
             <table cellpadding="0" cellspacing="0" border="0" class="display dTable">
             <thead>
                 <tr>
@@ -253,9 +346,8 @@
             </tbody>
             </table>  
         </div>
-    
+        
     </div>
-
 
     <!-- Footer line -->
     <div id="footer">

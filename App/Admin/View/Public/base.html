@@ -9,6 +9,10 @@
 
 <include file="Common@Tool:script" />
 
+
+<!-- 导入自定义标签 -->
+<tagLib name="Mylabel"/>
+
 <body>
 
 <!-- Left side content -->
@@ -19,19 +23,29 @@
     
     <!-- Left navigation -->
     <ul id="menu" class="nav">
-        <volist name="_menu" id="menus">
-            <if condition="$menus['children'] neq false">
-                <li class="{$menus.class}"><a class='exp' href="#" title=""><span>{$menus.title}</span></a>
+        <li><a href="{:U('Index/index')}" title=""><span>控制中心</span></a></li>
+        <volist name="_menus" id="menus">
+            <if condition="$menus['istop'] eq 1">
+                <li class="">
+                    <a class='exp' href="#" title="">
+                        <span>{$menus.title}</span>
+                    </a>
                     <ul class="sub">
                         <volist name="menus['children']" id="menu">
-                            <li><a href="{:U($menu['url'])}" title="">{$menu.title}</a></li>
+                            <li><a href="{:U($menu['name'])}" title="">{$menu.title}</a></li>
                         </volist>
                     </ul>
                 </li>
             <else />
-                <li class="{$menus.class}"><a href="{:U($menus['url'])}" title=""><span>{$menus.title}</span></a></li>
+                <li class="">
+                    <a href="{:U($menus['name'])}" title="">
+                        <span>{$menus.title}</span>
+                    </a>
+                </li>
             </if>
         </volist>
+        <li><a href="{:U('Public/logout')}" title=""><span>退出</span></a></li>
+
     </ul>
 </div>
 
@@ -43,7 +57,6 @@
             <div class="welcome"><a href="#" title=""><img src="__IMG__/userPic.png" alt="" /></a><span>您好，管理员</span></div>
             <div class="userNav">
                 <ul>
-                    <!-- <li><a href="#" title=""><img src="__IMG__/icons/topnav/profile.png" alt="" /><span>个人资料</span><span class="numberTop">？</span></a></li> -->
                     <li><a href="{:U('options/index')}" title=""><img src="__IMG__/icons/topnav/settings.png" alt="" /><span>设置</span></a></li>
                     <li><a href="{:U('Public/logout')}" title="退出客户端"><img src="__IMG__/icons/topnav/logout.png" alt="" /><span>退出</span></a></li>
                 </ul>

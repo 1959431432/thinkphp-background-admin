@@ -11,7 +11,6 @@ class IndexController extends CommonController {
     	$statistics = D('counts')->backend();
     	$this->assign('statistics',$statistics);
 
-
 		$this->display();
     }
 

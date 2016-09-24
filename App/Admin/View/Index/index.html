@@ -2,7 +2,11 @@
 
 
 <block name="body">
-    
+    <style>
+        .add_link {
+            display: none;
+        }
+    </style>
     <!-- Title area -->
     <div class="titleArea">
         <div class="wrapper">
@@ -45,7 +49,7 @@
         
             <!-- Stats item -->
             <div class="sItem ticketsStats">
-                <h2><a title="" class="value">{$statistics.today.register_number}<span>会员注册</span></a></h2>
+                <h2><a title="" class="value">{$statistics.today.register_number|default=0}<span>会员注册</span></a></h2>
                 <span class="changes">
                     <!-- <span class="negBar" values="5,10,15,20,18,16,14,20,15,16"></span> -->
                     {:backend_statistics( $statistics['counts']['register_number'])}
@@ -54,7 +58,7 @@
         
             <!-- Stats item -->
             <div class="sItem visitsStats">
-                <h2><a title="" class="value">{$statistics.today.login_number}<span>会员登录</span></a></h2>
+                <h2><a title="" class="value">{$statistics.today.login_number|default=0}<span>会员登录</span></a></h2>
                 <span class="changes">
                     <!-- <span class="posBar" values="5,10,15,20,18,16,14,20,15,16"></span> -->
                     {:backend_statistics( $statistics['counts']['login_number'])}
@@ -63,7 +67,7 @@
         
             <!-- Stats item -->
             <div class="sItem usersStats">
-                <h2><a title="" class="value">{$statistics.today.download}<span>软件下载</span></a></h2>
+                <h2><a title="" class="value">{$statistics.today.download|default=0}<span>软件下载</span></a></h2>
                
                 <span class="changes">
                     <!-- <span class="zeroBar" values="5,10,15,20,18,16,14,20,15,16"></span> -->
@@ -73,7 +77,7 @@
         
             <!-- Stats item -->
             <div class="sItem ordersStats">
-                <h2><a title="" class="value">{$statistics.today.link_number}<span>打开网站</span></a></h2>
+                <h2><a title="" class="value">{$statistics.today.link_number|default=0}<span>打开网站</span></a></h2>
                 <span class="changes">
                     <!-- <span class="negBar" values="5,10,15,20,18,16,14,20,15,16"></span> -->
                     {:backend_statistics( $statistics['counts']['link_number'])}
@@ -97,9 +101,88 @@
             </div>
         </if>
         
-    	<!-- Dynamic table -->
+        <!-- Dynamic table -->
+        <div class="widgets">
+            <div class="oneTwo">
+                <div class="widget">
+                    <div class="title">
+                        <img src="__IMG__/icons/dark/settings.png" alt="" class="titleIcon" />
+                        <h6>系统信息</h6>
+                    </div>
+                    <table cellpadding="0" cellspacing="0" border="0" class="display myTable">
+                        <tbody style="text-align: center;">
+                            <tr>
+                                <th>程序版本</th>
+                                <td>1.0.1</td>
+                            </tr>
+                            <tr>
+                                <th>服务器操作系统</th>
+                                <td>{$Think.const.PHP_OS}</td>
+                            </tr>
+                            <tr>
+                                <th>框架版本</th>
+                                <td>{$Think.VERSION}</td>
+                            </tr>
+                            <tr>
+                                <th>运行环境</th>
+                                <td>{$_SERVER['SERVER_SOFTWARE']}</td>
+                            </tr>
+                            <tr>
+                                <th>MYSQL版本</th>
+                                <php>
+                                    $system_info_mysql = M()->query("select version() as v;");
+                                </php>
+                                <td>{$system_info_mysql.0.v}</td>
+                            </tr>
+                            <tr>
+                                <th>上传限制</th>
+                                <td>{:ini_get('upload_max_filesize')}</td>
+                            </tr>
+                        </tbody>
+                    </table>  
+                </div>
+            </div>
+            <div class="oneTwo">
+                <div class="widget">
+                    <div class="title">
+                        <img src="__IMG__/icons/dark/settings.png" alt="" class="titleIcon" />
+                        <h6>服务器信息</h6>
+                    </div>
+                    <table cellpadding="0" cellspacing="0" border="0" class="display myTable">
+                        <tbody style="text-align: center;">
+                            <tr>
+                                <th>域名信息</th>
+                                <td>{$_SERVER['SERVER_NAME']}</td>
+                            </tr>
+                            <tr>
+                                <th>服务器IP</th>
+                                <td>{:gethostbyname($_SERVER["SERVER_NAME"])}</td>
+                            </tr>
+                            <tr>
+                                <th>服务器端口</th>
+                                <td>{$_SERVER['SERVER_PORT']}</td>
+                            </tr>
+                            <tr>
+                                <th>所在文件夹</th>
+                                <td>{$_SERVER['DOCUMENT_ROOT']}</td>
+                            </tr>
+                            <tr>
+                                <th>登陆IP地址</th>
+                                <td>{:get_client_ip()}</td>
+                            </tr>
+                            <tr>
+                                <th>是否授权</th>
+                                <td>是</td>
+                            </tr>
+                        </tbody>
+                    </table>  
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+
         <div class="widget">
-            <div class="title"><img src="__IMG__/icons/dark/full2.png" alt="" class="titleIcon" /><h6>用户登录记录</h6></div>                          
+            <div class="title"><img src="__IMG__/icons/dark/full2.png" alt="" class="titleIcon" /><h6>前台用户登录记录</h6></div>                          
             <table cellpadding="0" cellspacing="0" border="0" class="display dTable">
             <thead>
                 <tr>
@@ -121,7 +204,6 @@
             </tbody>
             </table>  
         </div>
-    
+        
     </div>
-
 </block>

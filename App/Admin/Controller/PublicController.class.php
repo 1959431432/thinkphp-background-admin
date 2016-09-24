@@ -11,9 +11,7 @@ class PublicController extends Controller
 	{
 		if( ! IS_POST ){ 
 			$this->display();
-
 		} else {
-			
 			$status = D('User')->admin_login();
 			if( $status ) {
 				$this->success('欢迎管理员登录',U('Index/index'));
@@ -21,7 +19,6 @@ class PublicController extends Controller
 				$this->error('帐号或密码错误,请重试');
 			}
 		}
-
 	}
 
 	public function logout()
@@ -29,8 +26,6 @@ class PublicController extends Controller
 		session_destroy();
 		tourl('login');
 	}
-
-
 }
 
  ?>

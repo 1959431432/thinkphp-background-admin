@@ -8,14 +8,8 @@ class BaseController extends Controller {
 
     public function _initialize()
     {
-    	$_menu = C('_menu');
-    	$this->assign('_menu',$_menu);
-
-        // admin user check
-        // $admin_user = session('admin');
-        // if( empty( $admin_user ) ){
-        //     redirect( U('Public/login' ) );
-        // }
+    	// $_menu = C('_menu');
+    	// $this->assign('_menu',$_menu);
     }
 
     public function index(){
@@ -57,7 +51,6 @@ class BaseController extends Controller {
     	$model->delete( $id );
     	$this->success('操作成功');
     }
-
 
     public function save( $modelName = null)
     {

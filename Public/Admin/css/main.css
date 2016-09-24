@@ -1,9 +1,9 @@
 @import "reset.css";
 @import "fullcalendar.css";
 @import "datatable.css";
-@import "ui_custom.css";
+/*@import "ui_custom.css";
 @import "prettyPhoto.css";
-@import "elfinder.css";
+@import "elfinder.css";*/
 
 
 /* Table of Content
@@ -227,6 +227,7 @@ ul.userDropdown li a:hover { border-right: none; border-left: none; }
 .nav li.ui a span { background-image: url(../../images/icons/light/user.png); }
 .nav li.widgets a span { background-image: url(../../images/icons/light/fullscreen.png); }
 .nav li.setting a span { background-image: url(../../images/icons/topnav/settings.png); }
+.nav li.tags a span { background-image: url(../../images/icons/light/tags.png); }
 .nav li.clock a span { background-image: url(../../images/icons/light/clock.png); }
 
 .nav li a span { background-position: 12px 13px; background-repeat: no-repeat; }
@@ -242,7 +243,7 @@ ul.userDropdown li a:hover { border-right: none; border-left: none; }
 .nav li a { display: block; background: url(../../images/backgrounds/navItemBg.png) repeat-x 0 0; border-bottom: 1px solid #1c252b; border-top: 1px solid #404950; }
 .nav li a:hover { background-position: 0 -43px; border-top: 1px solid #516271; }
 .nav li a.active, .nav li a:active { background-position: 0 -86px; border-top: 1px solid #657d92; }
-.nav li a span { padding: 10px 0 12px 42px; display: block; font-size: 10px; text-transform: uppercase; font-weight: bold; color: #efefef; }
+.nav li a span { padding: 10px 0 12px 10px; display: block; font-size: 10px; text-transform: uppercase; font-weight: bold; color: #efefef; }
 
 .nav li a strong { background: #1b232a; display: block; position: absolute; right: 10px; padding: 0 7px; top: 12px; box-shadow: 0 1px 1px #38444f; -webkit-box-shadow: 0 1px 1px #38444f; -moz-box-shadow: 0 1px 1px #38444f; font-size: 11px; color: #efefef; }
 .nav li a.active strong, .nav li a:active strong { background: #212a31; box-shadow: 0 1px 1px #557188; -webkit-box-shadow: 0 1px 1px #557188; -moz-box-shadow: 0 1px 1px #557188; }
