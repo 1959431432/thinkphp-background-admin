@@ -1,0 +1,119 @@
+[ 2016-09-26T11:33:28+08:00 ] ::1 /admin.php/public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000170s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000393s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000448s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000051s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000086s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003888s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003920s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000092s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000113s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000318s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000369s ]
+
+[ 2016-09-26T11:33:31+08:00 ] ::1 /admin.php/public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000198s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000375s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000421s ]
+SQL: SHOW COLUMNS FROM `e_user` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `e_options` [ RunTime:0.0005s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'admin_user' LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'admin_pass' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-09-26T11:33:34+08:00 ] ::1 /admin.php/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000177s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000230s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000257s ]
+SQL: SHOW COLUMNS FROM `e_auth_rule` [ RunTime:0.0004s ]
+SQL: SELECT `id`,`pid`,`name`,`title`,`istop` FROM `e_auth_rule` WHERE `pid` = 0 AND `ismenu` = 1 AND `status` = 1 ORDER BY `sort` desc  [ RunTime:0.0011s ]
+SQL: SELECT * FROM `e_auth_rule` WHERE `pid` = 8 AND `ismenu` = 1 AND `status` = 1  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `e_auth_rule` WHERE `pid` = 9 AND `ismenu` = 1 AND `status` = 1  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_auth_rule` WHERE `pid` = 22 AND `ismenu` = 1 AND `status` = 1  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_auth_rule` WHERE `pid` = 30 AND `ismenu` = 1 AND `status` = 1  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `e_auth_rule` WHERE `pid` = 40 AND `ismenu` = 1 AND `status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `e_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `e_user` LIMIT 100   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `e_counts` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `e_counts` WHERE `id` = 1474819201 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `e_counts` WHERE `id` = 1474732801 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000103s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000137s ]
+NOTIC: [8] Undefined variable: _menu /Users/minghuang/www/exe/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 142 行.
+SQL: SHOW COLUMNS FROM `e_options` [ RunTime:0.0007s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'admin_user' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `option_value` FROM `e_options` WHERE `option_name` = 'admin_pass' LIMIT 1   [ RunTime:0.0002s ]
+SQL: select version() as v; [ RunTime:0.0004s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016530s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016560s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000140s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000160s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000319s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000351s ]
+
+[ 2016-09-26T11:34:27+08:00 ] ::1 /admin.php/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000188s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000327s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000397s ]
+NOTIC: [2048] Declaration of Admin\Controller\UserController::condition() should be compatible with Common\Controller\BaseController::condition($where = Array) /Users/minghuang/www/exe/App/Admin/Controller/UserController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `e_auth_rule` [ RunTime:0.0004s ]
+SQL: SELECT `id`,`pid`,`name`,`title`,`istop` FROM `e_auth_rule` WHERE `pid` = 0 AND `ismenu` = 1 AND `status` = 1 ORDER BY `sort` desc  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_auth_rule` WHERE `pid` = 8 AND `ismenu` = 1 AND `status` = 1  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_auth_rule` WHERE `pid` = 9 AND `ismenu` = 1 AND `status` = 1  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_auth_rule` WHERE `pid` = 22 AND `ismenu` = 1 AND `status` = 1  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_auth_rule` WHERE `pid` = 30 AND `ismenu` = 1 AND `status` = 1  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_auth_rule` WHERE `pid` = 40 AND `ismenu` = 1 AND `status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `e_group` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `e_group` WHERE `status` = 1 ORDER BY `integral` asc  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: username /Users/minghuang/www/exe/App/Admin/Controller/UserController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `e_user` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `e_user` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `e_user` ORDER BY `id` desc LIMIT 20   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: link_page /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 175 行.
+NOTIC: [8] Undefined variable: the_first /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 192 行.
+NOTIC: [8] Undefined variable: the_end /Users/minghuang/www/exe/Core/Library/Think/Page.class.php 第 192 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000089s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000193s ]
+NOTIC: [8] Undefined variable: _menu /Users/minghuang/www/exe/App/Runtime/Cache/Admin/4295d5db477f3199c8db51638416159f.php 第 142 行.
+NOTIC: [8] Undefined index: groupid /Users/minghuang/www/exe/App/Runtime/Cache/Admin/4295d5db477f3199c8db51638416159f.php 第 176 行.
+NOTIC: [8] Undefined index: groupid /Users/minghuang/www/exe/App/Runtime/Cache/Admin/4295d5db477f3199c8db51638416159f.php 第 176 行.
+NOTIC: [8] Undefined index: groupid /Users/minghuang/www/exe/App/Runtime/Cache/Admin/4295d5db477f3199c8db51638416159f.php 第 176 行.
+NOTIC: [8] Undefined index: groupid /Users/minghuang/www/exe/App/Runtime/Cache/Admin/4295d5db477f3199c8db51638416159f.php 第 176 行.
+NOTIC: [8] Undefined index: groupid /Users/minghuang/www/exe/App/Runtime/Cache/Admin/4295d5db477f3199c8db51638416159f.php 第 176 行.
+NOTIC: [8] Undefined index: groupid /Users/minghuang/www/exe/App/Runtime/Cache/Admin/4295d5db477f3199c8db51638416159f.php 第 176 行.
+NOTIC: [8] Undefined index: groupid /Users/minghuang/www/exe/App/Runtime/Cache/Admin/4295d5db477f3199c8db51638416159f.php 第 176 行.
+NOTIC: [8] Undefined index: username /Users/minghuang/www/exe/App/Runtime/Cache/Admin/4295d5db477f3199c8db51638416159f.php 第 180 行.
+SQL: SELECT * FROM `e_group` WHERE ( integral<=3 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=500040 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=200 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `e_group` WHERE ( integral<=1004 ) ORDER BY integral desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012763s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012786s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000142s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000162s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000306s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000332s ]
+

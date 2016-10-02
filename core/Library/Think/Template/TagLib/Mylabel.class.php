@@ -38,10 +38,11 @@ class Mylabel extends TagLib{
         }
 
         $parseStr   .= '<?php  foreach($'.$options.' as $key=>$val) { ?>';
-        $parseStr   .= '<?php if( '.$selected.' == $val['.$fieldvalue.']){ ?>';
+        $parseStr   .= '<?php if( $'.$selected.' == $val['.$fieldkey.']){ ?>';
         $parseStr   .= '<option value="<?php echo $val['.$fieldkey.']; ?>" selected="selected"><?php echo $val['.$fieldvalue.']; ?></option>';
         $parseStr   .= '<?php }else{ ?>';
-        $parseStr   .= '<option value="<?php echo $val['.$fieldkey.']; ?>"><?php echo $val['.$fieldvalue.']; ?></option>';
+        $parseStr   .= '<option value="
+        <?php echo $val['.$fieldkey.']; ?>"><?php echo $val['.$fieldvalue.']; ?></option>';
         $parseStr   .= '<?php } } ?>';
         $parseStr   .= '</select>';
         return $parseStr;

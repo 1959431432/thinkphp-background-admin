@@ -152,130 +152,69 @@
     </div>
     
     
-
-
-	<!-- Main content wrapper -->
     <div class="wrapper">
-        <div class="bc">
-            <ul id="breadcrumbs" class="breadcrumbs">
-                 <li class=""> <a href="<?php echo U('Index/index');?>">控制中心</a> </li>
-                 <li class=""> <a href="<?php echo U('index');?>">节点列表</a> </li>
-                 <li class="current"><a href="#">节点管理</a></li>
-            </ul>
-            <div class="clear"></div>
-        </div>
-        <!-- Validation form -->
-        <form class="form validate" method="post" action="<?php echo U('save');?>">
-            <input type="hidden" name='id' value="<?php echo ($vo["id"]); ?>">
-        	<fieldset>
-                <div class="widget">
-                    <div class="title"><img src="/Public/Admin/images//icons/dark/alert.png" alt="" class="titleIcon" /><h6>节点表单</h6></div>
-                    <div class="formRow">
-                        <label>节点名称:<span class="req">*</span></label>
-                        <div class="formRight">
-                            <input type="text" class="validate[required]" name="title" id="req" value="<?php echo ($vo["title"]); ?>"/>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-
-                    <div class="formRow">
-                        <label>节点分组:<span class="req">*</span></label>
-                        <div class="formRight">
-                            <select id="" name="pid" class="" ><option value="" >顶级节点</option><?php  foreach($rules as $key=>$val) { if( $vo[pid] == $val[id]){ ?><option value="<?php echo $val[id]; ?>" selected="selected"><?php echo $val[title]; ?></option><?php }else{ ?><option value="
-        <?php echo $val[id]; ?>"><?php echo $val[title]; ?></option><?php } } ?></select>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-
-                    <div class="formRow">
-                        <label>节点规则:<span class="req">*</span></label>
-                        <div class="formRight">
-                            <input type="text" class="validate[required]" name="name" id="name" value="<?php echo ($vo["name"]); ?>"/>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-
-                    <div class="formRow">
-                        <label>节点类型:<span class="req">*</span></label>
-                        <div class="formRight">
-                            <div class="floatL" style="margin: 2px 0 0 0;">
-                            <input type="radio" id="radioReq" name="type" class="validate[required]" data-prompt-position="topRight:102" value='1' checked="checked" /><label for="radioReq">普通</label>
-                            <input type="radio" id="radioReq2" name="type" class="validate[required]" data-prompt-position="topRight:102" value='2' <?php if(($vo["type"]) == "2"): ?>checked='checked'<?php endif; ?> /><label for="radioReq2">高级</label>
-
-                            </div>
-                        </div><div class="clear"></div>
-                    </div>
-
-                    <div class="formRow">
-                        <label>是否显示在导航:<span class="req">*</span></label>
-                        <div class="formRight">
-                            <div class="floatL" style="margin: 2px 0 0 0;">
-
-                            <input type="radio" id="ismenu2" name="ismenu" class="validate[required]" data-prompt-position="topRight:102" value='2' checked="checked"/><label for="ismenu2">否</label>
-
-                            <input type="radio" id="ismenus" name="ismenu" class="validate[required]" data-prompt-position="topRight:102" value='1'  <?php if(($vo["ismenu"]) == "1"): ?>checked='checked'<?php endif; ?>  /><label for="ismenus">是</label>
-
-                            </div>
-                        </div><div class="clear"></div>
-                    </div>
-
-                    <div class="formRow">
-                        <label>是否二级导航:<span class="req">*</span></label>
-                        <div class="formRight">
-                            <div class="floatL" style="margin: 2px 0 0 0;">
-
-                            <input type="radio" id="istop2" name="istop" class="validate[required]" data-prompt-position="topRight:102" value='2' checked="checked"/><label for="istop2">否</label>
-
-                            <input type="radio" id="istop1" name="istop" class="validate[required]" data-prompt-position="topRight:102" value='1'  <?php if(($vo["istop"]) == "1"): ?>checked='checked'<?php endif; ?>  /><label for="istop1">是</label>
-
-                            </div>
-                        </div><div class="clear"></div>
-                    </div>
-
-                    
-                    <div class="formRow">
-                        <label>节点条件:</label>
-                        <div class="formRight">
-                            <input type="text" class="" name="condition" id="req" value="<?php echo ($vo["condition"]); ?>"/>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-
-                    <div class="formRow">
-                        <label>排序:</label>
-                        <div class="formRight">
-                            <input type="text" class="" name="sort" id="sort" value="<?php echo ($vo["sort"]); ?>"/>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-
-
-                    <div class="formRow">
-                        <label>是否开启:<span class="req">*</span></label>
-                        <div class="formRight">
-                            <div class="floatL" style="margin: 2px 0 0 0;">
-
-                            <input type="radio" id="radioReq" name="status" class="validate[required]" data-prompt-position="topRight:102" value='1' checked="checked" /><label for="radioReq">开启</label>
-                            <input type="radio" id="radioReq2" name="status" class="validate[required]" data-prompt-position="topRight:102" value='2' <?php if(($vo["status"]) == "2"): ?>checked='checked'<?php endif; ?> /><label for="radioReq2">关闭</label>
-
-                            </div>
-                        </div><div class="clear"></div>
-                    </div>
-                    
-                    <div class="formSubmit"><input type="submit" value="提交" class="redB" /></div>
-                    <div class="clear"></div>
-                </div>
-                
-            </fieldset>
-        </form>       
+    <div class="bc">
+        <ul id="breadcrumbs" class="breadcrumbs">
+             <li class="">
+                  <a href="<?php echo U('Index/index');?>">控制中心</a>
+             </li>
+             <li class="current"><a href="#">消息中心</a></li>
+        </ul>
+        <div class="clear"></div>
     </div>
-    <script type="text/javascript">
-        $(".img").change( function()
-        {
-            var img_path = "/Public/Admin/images/";
-            $('#preview').attr('src',img_path+'/'+$(this).val());
-        })
-    </script>
+      <div class="widget">
+        <div class="title">
+          <h6>消息列表</h6>
+          <h6 class='fr'>
+            <a class='' href="<?php echo U('add');?>">＋发送消息</a>
+          </h6>
+          <h6 class="fr">
+            <form class='form'> 
+                <input type="text" class='searchInput' name="title" placeholder="请输入消息标题" value="<?php echo ($_GET['title']); ?>" /> 
+                <input type='submit' class='redB searchButton' value='搜索'>
+            </form>
+          </h6>
+        </div>
+          <table cellpadding="0" cellspacing="0" width="100%" class="sTable withCheck display myTable">
+              <thead>
+                  <tr>
+                    <th>消息标题</th>
+                    <th>接受用户</th>
+                    <th>发送时间</th>
+                    <th>消息类型</th>
+                    <th>操作</th>
+                  </tr>
+              </thead>
+              <tbody>
+                <?php if(is_array($lists)): $i = 0; $__LIST__ = $lists;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="gradeA">
+                        <td class="center searchContent"><?php echo ($vo["title"]); ?></td>
+                        <td class="center">
+                            <?php if(($vo["touid"]) == "0"): ?>全站会员
+                            <?php else: ?>
+                                <?php echo (getUsername($vo["touid"])); endif; ?>                            
+                        </td>
+                        <td class="center"><?php echo (date('Y-m-d',$vo["addtime"])); ?></td>
+                        <td class="center">
+                            <?php if(($vo["type"]) == "1"): ?>提醒
+                            <?php else: ?>
+                              警告<?php endif; ?>
+                        </td>
+                        <td class="center">
+                            <a class='confirm ajax' href="<?php echo U('del',array('id'=>$vo['id']));?>">删除</a> &nbsp;&nbsp;
+                            <a href="<?php echo U('add',array('id'=>$vo['id']));?>">修改</a> &nbsp;&nbsp;
+                        </td>
+                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+              </tbody>
+              <tfoot>
+                <tr>
+                    <td colspan="10" class='pagination'>
+                        <?php echo ($showPage); ?>
+                    </td>
+                </tr>
+              </tfoot>
+          </table>
+        </div>
+    </div>
 
     <!-- Footer line -->
     <div id="footer">

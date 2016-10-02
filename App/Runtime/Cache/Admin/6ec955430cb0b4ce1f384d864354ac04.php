@@ -80,6 +80,9 @@
 <script type="text/javascript" src="/Public/Admin/js//custom.js"></script>
 
 
+
+<!-- 导入自定义标签 -->
+
 <body>
 
 <!-- Left side content -->
@@ -91,7 +94,7 @@
     <!-- Left navigation -->
     <ul id="menu" class="nav">
         <li><a href="<?php echo U('Index/index');?>" title=""><span>控制中心</span></a></li>
-        <?php if(is_array($_menus)): $i = 0; $__LIST__ = $_menus;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menus): $mod = ($i % 2 );++$i; if($menus['children'] != false): ?><li class="">
+        <?php if(is_array($_menus)): $i = 0; $__LIST__ = $_menus;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menus): $mod = ($i % 2 );++$i; if($menus['istop'] == 1): ?><li class="">
                     <a class='exp' href="#" title="">
                         <span><?php echo ($menus["title"]); ?></span>
                     </a>

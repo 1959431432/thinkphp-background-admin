@@ -14,7 +14,6 @@ class CommonController extends BaseController {
     	if( ! $admin_user ){
     	
     		tourl('Public/login');
-    	
     	}
 
     	parent::_initialize();
